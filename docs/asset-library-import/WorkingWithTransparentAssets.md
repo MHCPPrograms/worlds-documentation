@@ -132,23 +132,24 @@ Click on the image to watch a step-by-step tutorial on YouTube
 
 It’s worth noting that Horizon supports multiple methods of handling transparency, each with its own advantages and limitations:
 
-1. Blended (Unlit) Materials
+### Blended (Unlit) Materials
 	•	Do not receive or cast lighting or shading.
 	•	Have no specular or reflection properties.
 	•	The material name in the FBX must end with _Blend.
 
-2. Transparent Materials
+### Transparent Materials
 	•	Allow light to pass through.
 	•	Use a specular channel to control both specular and reflection levels.
 	•	Support two textures, which provide finer control over PBR properties.
 	•	The material name in the FBX must end with _Transparent.
 
-3. Masked Materials
+### Masked Materials
 	•	Control how two textures mix together.
 	•	Respond to specular and roughness, but are always fully rough (roughness = 1).
 	•	The alpha channel of the texture defines opacity (white = opaque, black = transparent).
 	•	Alpha cutout occurs at 0.5, consistent with GLTF 2.0 and Unity defaults.
 	•	The material name in the FBX must end with _Masked.
+
 
 ## References
 
