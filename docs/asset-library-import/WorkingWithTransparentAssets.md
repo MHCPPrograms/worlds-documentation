@@ -12,7 +12,7 @@ September 1st, 2025
 
 <!-- This section should describe what this document is going to cover. Try to provide some background and motivation as to why a creator would want to read your document. -->
 
-This tutorial introduces a foundational workflow for importing semi-transparent assets into Horizon Worlds using the _Blend method. As a case study, we will demonstrate the process by creating a sheer curtain and refining its transparency settings. We'll also discuss differences between _Blend vs trully Transparent material handling.
+This tutorial introduces a foundational workflow for importing semi-transparent assets into Horizon Worlds using the Unlit Blend method. As a case study, we will demonstrate the process by creating a sheer curtain and refining its transparency settings. We'll also discuss differences between Blend vs Transparent vs Masked material handling.
 
 <img width="1150" height="388" alt="photo 1 - sheer curtain" src="https://github.com/user-attachments/assets/1aafb031-4009-409c-8d7a-7a26b125914c" />
 
@@ -34,6 +34,7 @@ This document has three main parts, covering texture prep, model prep and import
 * [Topic Two: Preparing Your Textured Model in Blender](#topic-two--preparing-your-textured-model-in-blender)
 * [Topic Three: Importing Your Model to Horizon Worlds](#topic-three-importing-your-model-to-horizon-worlds)
 * [Step-By-Step Video Tutorial](#step-by-step-video-tutorial)
+* [ADVANCED CONCEPTS: Blend vs Transparent vs Masked](#advanced-concepts-blend-vs-transparent-vs-masked)
 * [References](#references)
 
 ## Topic One : Preparing Your Texture in Adobe Photoshop
