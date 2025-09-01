@@ -1,5 +1,5 @@
 <!-- The title of your document -->
-# Working With Transparent Assets
+# Working With Transparent Assets (Unlit Blend Method)
 
 <!-- Put your name, at least your Horizon Name, as the author -->
 Metacrafters and voytek.lorenc
