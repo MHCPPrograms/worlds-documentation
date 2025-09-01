@@ -31,44 +31,13 @@ This document has two parts, that discuss how you would talk about two topics. A
 
 * [Topic One](#topic-one)
 * [Topic Two](#topic-two)
+* [Topic Three](#topic-three)
 * [References](#references)
 
 ## Topic One
 
 This is where we discuss the *first* interesting topic of this document.  
 
-### Lists
-
-There might be lists
-
-#### Unordered
-- some
-  - unordered
-  - nested
-    - lists
-- of
-- data
-
-#### Ordered
-1. some
-   1. ordered
-   1. nested
-      1. lists
-1. of
-1. data
-
-### Code
-
-You will likely want to reference code:
-
-```ts
-function myFancyFunction(value: number) {
-  console.log(`You chose ${value}!`);
-}
-```
-
-### Images
-It might have some images:
 
 ![OG MHCP](../../images/MHCP_OG_image.jpg)
 
@@ -76,26 +45,8 @@ It might have some images:
 
 This is where we discuss the **second** interesting topic of this document.
 
-### Tables
+## Topic Three
 
-An advanced formatting option is tables
-
-| Heading 1 | Heading 2 | Heading 3 |
-| --- | --- | --- |
-| Data 1 | Data 2 | Data 3 |
-| Data 4 | Data 5 | Data 6 |
-
-
-### Diagrams
-
-Diagrams are a very advanced markdown topic (and may not render correctly in non GitHub previews)
-
-```mermaid
-graph TD;
-    A[Get Idea]-->B;
-    B(Form Plan)-->C;
-    C{?}-->D[Profit!];
-```
 
 ## References
 
