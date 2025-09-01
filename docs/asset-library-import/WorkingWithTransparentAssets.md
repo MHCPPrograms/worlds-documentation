@@ -30,12 +30,12 @@ Note that github automatically creates a clickable Outline from your section hea
 
 This document has three main parts, covering texture prep, model prep and importing. Additionally there is a reference section at the end. 
 
-* [Topic One](#topic-one)
-* [Topic Two](#topic-two)
-* [Topic Three](#topic-three)
+* [Topic One: Preparing Your Texture in Adobe Photoshop](#topic-one--preparing-your-texture-in-adobe-photoshop)
+* [Topic Two: Preparing Your Textured Model in Blender](#topic-two--preparing-your-textured-model-in-blender)
+* [Topic Three: Importing Your Model to Horizon Worlds](#topic-three-importing-your-model-to-horizon-worlds)
 * [References](#references)
 
-## Topic One
+## Topic One : Preparing Your Texture in Adobe Photoshop
 
 We’ll start by creating a 2K (2048 x 2048 px) document.  
 
@@ -57,7 +57,7 @@ Transparency: Checked
 
 ![OG MHCP](../../images/MHCP_OG_image.jpg)
 
-## Topic Two
+## Topic Two : Preparing Your Textured Model in Blender
 
 Open your 3d model in Blender.  
 
@@ -81,7 +81,7 @@ Here make sure to select Selected Objects, Mesh, and Apply All Transforms
 I named my file curtain.fbx
 
 
-## Topic Three
+## Topic Three: Importing Your Model to Horizon Worlds
 
 Open the Horizon Worlds Desktop Editor, click on Asset Library, and navigate to My Assets.
 Once you select the desired location click on “Add New” and choose 3D Model
