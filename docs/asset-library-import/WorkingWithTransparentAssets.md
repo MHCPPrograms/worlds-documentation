@@ -6,20 +6,21 @@ Wojciech Lorenc (voytek.lorenc)
 <!-- IMPORTANT: Put the date this document was last updated! This is
 important information for people to tell how 'stale' this info might 
 be.-->
-August 31, 2025  
+September 1st, 2025  
 
 ## Introduction
 
 <!-- This section should describe what this document is going to cover. Try to provide some background and motivation as to why a creator would want to read your document. -->
 
-Transparent Curtain Case Study
-Writing documentation that is clear and concise is not a simple task. This document will attempt to provide you with an outline that you can follow to organize your writing into a way that people can quickly and easily access the information you're providing.
+This tutorial introduces a foundational workflow for importing semi-transparent assets into Horizon Worlds. As a case study, we will demonstrate the process by creating a sheer curtain and refining its transparency settings.
+
+[PHOTO]
 
 ### Prerequisites and Expectations
 
 <!-- This section should indicate any expectations you have of your readers, such as other materials or concepts they should already be familiar with in order to get the most out of your document. -->
 
-You will need a GitHub account to contribute documentation, and you should be familiar with using GitHub Markdown for formatting. Also, it's presumed that as a prerequisite, you have some knowledge about the topic you are about to write a document on.
+This tutorial assumes a basic familiarity with Adobe Photoshop, Blender, and the Horizon Worlds Desktop Editor.
 
 ### Document Organization
 
@@ -27,7 +28,7 @@ You will need a GitHub account to contribute documentation, and you should be fa
 
 Note that github automatically creates a clickable Outline from your section headings. Make sure you properly 'nest' your headings by using ##, ###, ####, #####, etc for sub sections so that the outline has a good hierarchy and makes navigating your document easier. I recommend only using # for the initial title, as the font for H1 renders very large. -->
 
-This document has two parts, that discuss how you would talk about two topics. Additionally there is a reference section at the end. For such a simple document, you probably don't need this section. 
+This document has three main parts, covering texture prep, model prep and importing. Additionally there is a reference section at the end. 
 
 * [Topic One](#topic-one)
 * [Topic Two](#topic-two)
@@ -36,17 +37,66 @@ This document has two parts, that discuss how you would talk about two topics. A
 
 ## Topic One
 
-This is where we discuss the *first* interesting topic of this document.  
+We’ll start by creating a 2K (2048 x 2048 px) document.  
 
+[PHOTO]
+
+Add the image of your choice.  Here I pasted a photo of an actual curtain that I plan to recreate in 3D.  
+
+[PHOTO]
+
+Using the Opacity Slider in the Layers Window, set the desired transparency value.  In practice you might need to come back to this step as you iterate on your asset.
+
+[PHOTO]
+
+Export a transparent PNG file of your texture and name it MATERIAL_BA.png
+
+File>Export>Export As>
+Format: PNG
+Transparency: Checked
 
 ![OG MHCP](../../images/MHCP_OG_image.jpg)
 
 ## Topic Two
 
-This is where we discuss the **second** interesting topic of this document.
+Open your 3d model in Blender.  
+
+Appropriate naming of the material is a crucial step of this workflow.  Make sure that your material is named MATERIAL_Blend
+
+[PHOTO]
+
+Import MATERIAL_BA.png (created in the previous section) and connect it to Base Color in Principled BSDF
+
+Using the UV Mapping tools assure that the material is placed on your 3d object appropriately. 
+
+[PHOTO]
+
+Export your 3d object as an FBS file.  
+Select your object and go to File > Export > FBX
+Here make sure to select Selected Objects, Mesh, and Apply All Transforms
+
+[PHOTO]
+
+
+I named my file curtain.fbx
+
 
 ## Topic Three
 
+Open the Horizon Worlds Desktop Editor, click on Asset Library, and navigate to My Assets.
+Once you select the desired location click on “Add New” and choose 3D Model
+
+[PHOTO]
+
+In the Import Model(s) window, click on “+ Choose files on your device” and select the files you saved in TOPIC 1 and TOPIC 2: MATERIAL_BA.png and curtain.fbx
+
+[PHOTO]
+
+Once the Desktop Editor finishes processing your asset, you should be ready to use it in your world.
+
+[PHOTO]
+
+If you are not satisfied with the transparency value, return to Step 1, adjust the opacity in Photoshop, and export a new version of MATERIAL_BA. Repeat this process as needed.
 
 ## References
 
