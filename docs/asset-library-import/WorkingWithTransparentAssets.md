@@ -34,7 +34,7 @@ This document has three main parts, covering texture prep, model prep and import
 * [Topic Two: Preparing Your Textured Model in Blender](#topic-two--preparing-your-textured-model-in-blender)
 * [Topic Three: Importing Your Model to Horizon Worlds](#topic-three-importing-your-model-to-horizon-worlds)
 * [Step-By-Step Video Tutorial](#step-by-step-video-tutorial)
-* [ADVANCED CONCEPTS: Blend vs Transparent vs Masked](#advanced-concepts-blend-vs-transparent-vs-masked)
+* [ADVANCED CONCEPTS: Blend vs Transparent vs Masked](#advanced-concepts--blend-vs-transparent-vs-masked)
 * [References](#references)
 
 ## Topic One : Preparing Your Texture in Adobe Photoshop
