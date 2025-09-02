@@ -29,13 +29,15 @@ Note that github automatically creates a clickable Outline from your section hea
 
 This document has three main parts, covering texture prep, model prep and importing. Additionally there is a reference section at the end. 
 
-- [Topic One: Preparing Your Texture in Adobe Photoshop](#topic-one--preparing-your-texture-in-adobe-photoshop)  
-- [Topic Two: Preparing Your Textured Model in Blender](#topic-two--preparing-your-textured-model-in-blender)  
-- [Topic Three: Importing Your Model to Horizon Worlds](#topic-three-importing-your-model-to-horizon-worlds)  
-- [Topic Four: Designing with 2D and 3D Assets in Horizon Worlds](#topic-four---designing-with-2d-and-3d-assets-in-horizon-worlds)  
-- [Step-By-Step Video Tutorial](#step-by-step-video-tutorial)  
-- [Advanced Concepts: Blend vs Transparent vs Masked](#advanced-concepts--blend-vs-transparent-vs-masked)  
-- [References](#references)  
+- [Why use 2D cutout assets?](#why-use-2d-cutout-assets)
+- [Why the Masked method?](#why-the-masked-method)
+- [Topic One: Preparing Your Texture in Adobe Photoshop](#topic-one--preparing-your-texture-in-adobe-photoshop)
+- [Topic Two: Preparing Your Textured Model in Blender](#topic-two--preparing-your-textured-model-in-blender)
+- [Topic Three: Importing Your Model to Horizon Worlds](#topic-three-importing-your-model-to-horizon-worlds)
+- [Topic Four: Designing with 2D and 3D Assets in Horizon Worlds](#topic-four---designing-with-2d-and-3d-assets-in-horizon-worlds)
+- [Step-By-Step Video Tutorial](#step-by-step-video-tutorial)
+- [Advanced Concepts: Blend vs Transparent vs Masked](#advanced-concepts--blend-vs-transparent-vs-masked)
+- [References](#references)
 
 ## Why use 2D cutout assets?
 Cutout assets are a cost-effective way to enrich your world. They’re perfect for building visually rich environments, enhancing 3D assets, and adding props or background characters—all without significantly impacting performance in your Horizon Worlds creations.
