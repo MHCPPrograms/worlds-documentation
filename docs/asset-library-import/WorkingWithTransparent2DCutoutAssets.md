@@ -14,6 +14,9 @@ September 1st, 2025
 
 This tutorial walks you through a simple workflow for importing 2D cutout assets with transparent backgrounds into Horizon Worlds using the Masked method. As a case study, we’ll demonstrate the process by creating 2D aliens and other design elements.
 
+![2d coutous assets can be used in horizon worlds](https://github.com/user-attachments/assets/86ac85c3-f296-4e6c-9199-f48c3091a026)
+
+
 ### Prerequisites and Expectations
 
 <!-- This section should indicate any expectations you have of your readers, such as other materials or concepts they should already be familiar with in order to get the most out of your document. -->
@@ -33,17 +36,23 @@ This document has three main parts, covering texture prep, model prep and import
 - [Why the Masked method?](#why-the-masked-method)
 - [Preparing Your Texture in Adobe Photoshop](#preparing-your-texture-in-adobe-photoshop)
 - [Preparing Your Textured Model in Blender](#preparing-your-textured-model-in-blender)
-- [Topic Three: Importing Your Model to Horizon Worlds](#topic-three-importing-your-model-to-horizon-worlds)
-- [Topic Four - Designing with 2D and 3D assets in Horizon Worlds](#topic-four---designing-with-2d-and-3d-assets-in-horizon-worlds)
+- [Importing Your Model to Horizon Worlds](#importing-your-model-to-horizon-worlds)
 - [Step-By-Step Video Tutorial](#step-by-step-video-tutorial)
 - [Advanced Concepts: Blend vs Transparent vs Masked](#advanced-concepts--blend-vs-transparent-vs-masked)
 - [References](#references)
 
 ## Why use 2D cutout assets?
-Cutout assets are a cost-effective way to enrich your world. They’re perfect for building visually rich environments, enhancing 3D assets, and adding props or background characters—all without significantly impacting performance in your Horizon Worlds creations.
+Use cutouts for background scenery, distant crowd characters, props, signs, UI elements, and decorative layers to save polygon/scene budget. Cutout assets are a cost-effective way to enrich your world. They’re perfect for building visually rich environments, enhancing 3D assets, and adding props or background characters—all without significantly impacting performance in your Horizon Worlds creations.
+
+<img width="2778" height="1284" alt="why use 2d cutout assets" src="https://github.com/user-attachments/assets/5eefda17-08bb-47b8-8b94-ed4e634b6f42" />
+
 
 ## Why the Masked method?
 Using the Masked method for cutout assets with transparent backgrounds dramatically reduces world capacity compared with the Transparent or Blend methods. Transparency is far more demanding for Horizon Worlds’ rendering engine: whenever semi-transparent elements are processed, performance costs increase. Whenever possible, use masked cutouts instead of semi-transparent assets to optimize performance.
+
+Reserve semi-transparent materials (Transparent or Blend methods) only when soft edges or translucency are essential; otherwise use hard-cut cut-outs (Masked method) for better performance. The Masked method will not work well on assets with soft (blurry) edges.
+![the masked method works only with assets that have hard edges](https://github.com/user-attachments/assets/3adcd269-dce5-448b-a9e8-3e42cefe70de)
+
 
 
 ## Preparing Your Texture in Adobe Photoshop
@@ -52,7 +61,8 @@ Using the Masked method for cutout assets with transparent backgrounds dramatica
 2. Place or paste your artwork (alien, prop, etc.) into the document.
 3. Remove the background so only the visible art remains. Use the: “Remove background” AI tool to remove the background with only one click. 
 
-[PHOTO]
+<img width="860" height="714" alt="remove the background so only the desired design remains" src="https://github.com/user-attachments/assets/414899fb-6b40-4f56-8a96-36165e30b6b2" />
+
 
 4. Export a transparent PNG and name it exactly: MATERIAL_BA.png.
    - File → Export → Export As…
@@ -60,7 +70,7 @@ Using the Masked method for cutout assets with transparent backgrounds dramatica
    - Transparency: Checked
    - Export
 
-[PHOTO]
+<img width="936" height="639" alt="save your texture as material ba" src="https://github.com/user-attachments/assets/8e0f0084-3b52-45ad-bd56-01687047f5af" />
 
 
 
@@ -71,16 +81,17 @@ Using the Masked method for cutout assets with transparent backgrounds dramatica
 3. Add a plane: Shift + A → Mesh → Plane. This plane will be your 2D cut-out mesh.
 4. Create a new material and name it exactly: MATERIAL_MASKED 
 PLEASE NOTE: The exact name is important for consistent workflow.
-   - Material Properties → New → rename to: MATERIAL_MASKED    
+   - Material Properties → New → rename to: MATERIAL_MASKED
+     
+<img width="614" height="668" alt="prepare your texture in Blender" src="https://github.com/user-attachments/assets/d808d860-7b94-4fee-bb14-d06e79542968" />
 
-[PHOTO] 5
 
 5. Open the Shader Editor:
    - Add an Image Texture node and load MATERIAL_BA.png.
    - Connect Image Color → Principled BSDF Base Color.
 6. Confirm the image displays correctly in the viewport (Material Preview or Rendered).
 
-[PHOTO] 6
+<img width="676" height="683" alt="add the texture in the shader editor" src="https://github.com/user-attachments/assets/a0b9db61-0388-4847-bbcf-0449ffbe734f" />
 
 7. Check UVs:
    - Open UV Editor and ensure the plane’s UV covers the full texture area and aligns with your artwork.
@@ -91,19 +102,14 @@ PLEASE NOTE: The exact name is important for consistent workflow.
 10. Export as FBX:
     - Select only the mesh(es) to export.
     - File → Export → FBX (.fbx)
-      - Check “Selected Objects”
-      - Under Object Types: enable only: Mesh
-      - Ensure transforms are applied (you already applied them).
-It should look something like this:
-
-[PHOTO]
-
+    - Check “Selected Objects”
+    - Under Object Types: enable only: Mesh
     - Save with a descriptive name (example: Alien.fbx)
 
-[PHOTO]
+<img width="893" height="660" alt="save with a descriptive name" src="https://github.com/user-attachments/assets/3c7b09b9-70a8-42b0-bd04-7b6333e47011" />
 
 
-## Topic Three: Importing Your Model to Horizon Worlds
+## Importing Your Model to Horizon Worlds
 
 1. Open Horizon Worlds Desktop Editor → Asset Library → My Assets.
 2. Click Add New → 3D Model.
@@ -113,18 +119,6 @@ It should look something like this:
 
 5. Click Import and wait for Horizon Worlds to process the asset. Processing may take a moment; if it fails, try re-exporting or a different browser. Make sure: “Preserve offset pivots” is OFF.
 6. Once processing completes you can place the cut-out in your world and test collision, lighting, and scale.
-
-[PHOTO] 9 
-
-
-## Topic Four - Designing with 2D and 3D assets in Horizon Worlds
-
-Use cut-outs for background scenery, distant crowd characters, props, signs, UI elements, and decorative layers to save polygon/scene budget.
-Reserve semi-transparent materials (Transparent or Blend methods) only when soft edges or translucency are essential; otherwise use hard-cut cut-outs (Masked method) for performance.
-Keep texture atlases in mind: grouping multiple small cut-outs into one texture (UV-packed) reduces draw calls. Use consistent texture sizes (1024/2048/4096) where possible.
-- Apply consistent scale and origin points in Blender so assets snap correctly in Horizon Worlds.
-
-[PHOTO] 10 11
 
 
 ## Step-By-Step Video Tutorial
