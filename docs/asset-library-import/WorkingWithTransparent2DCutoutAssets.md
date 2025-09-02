@@ -120,7 +120,8 @@ PLEASE NOTE: The exact name is important for consistent workflow.
 ## Step-By-Step Video Tutorial
 
 Click on the image to watch a step-by-step tutorial on YouTube
-[![Watch the video](https://img.youtube.com/vi/37Z5I5g3Ing/0.jpg)](https://www.youtube.com/watch?v=37Z5I5g3Ing)
+
+[![Watch the video](https://img.youtube.com/vi/fmx-MogzVUU/0.jpg)](https://www.youtube.com/watch?v=fmx-MogzVUU)
 
 
 ## ADVANCED CONCEPTS:  Blend vs Transparent vs Masked
