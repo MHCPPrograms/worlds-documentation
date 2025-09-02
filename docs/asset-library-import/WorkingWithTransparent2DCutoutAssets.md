@@ -42,7 +42,7 @@ This document has three main parts, covering texture prep, model prep and import
 - [References](#references)
 
 ## Why use 2D cutout assets?
-Use cutouts for background scenery, distant crowd characters, props, signs, UI elements, and decorative layers to save polygon/scene budget. Cutout assets are a cost-effective way to enrich your world. They’re perfect for building visually rich environments, enhancing 3D assets, and adding props or background characters—all without significantly impacting performance in your Horizon Worlds creations.
+Use cutouts for background scenery, distant crowd characters, props, signs, UI elements, and decorative layers to save polygon/scene budget. Cutout assets are a cost-effective way to enrich your world. They’re perfect for building visually rich environments, enhancing 3D assets, and adding props or background characters - all without significantly impacting performance in your Horizon Worlds creations.
 
 <img width="2778" height="1284" alt="why use 2d cutout assets" src="https://github.com/user-attachments/assets/5eefda17-08bb-47b8-8b94-ed4e634b6f42" />
 
@@ -59,12 +59,12 @@ Reserve semi-transparent materials (Transparent or Blend methods) only when soft
 
 1. Create a new document at 2048 × 2048 px (2K). Square textures are standard and supported sizes include 1024×1024, 2048×2048, 4096×4096 - stick to those where possible.
 2. Place or paste your artwork (alien, prop, etc.) into the document.
-3. Remove the background so only the visible art remains. Use the: “Remove background” AI tool to remove the background with only one click. 
+3. Remove the background so only the visible art remains. Use the: “Remove background” AI tool in Photoshop to remove the background with only one click. 
 
 <img width="860" height="714" alt="remove the background so only the desired design remains" src="https://github.com/user-attachments/assets/414899fb-6b40-4f56-8a96-36165e30b6b2" />
 
 
-4. Export a transparent PNG and name it exactly: MATERIAL_BA.png.
+4. Export a transparent PNG and name it MATERIAL_BA.png
    - File → Export → Export As…
    - Format: PNG
    - Transparency: Checked
@@ -78,15 +78,14 @@ Reserve semi-transparent materials (Transparent or Blend methods) only when soft
 
 1. Start a new Blender file and save it (e.g., Alienfriends.blend).
 2. Delete default objects you don't need (camera, light) for a clean scene.
-3. Add a plane: Shift + A → Mesh → Plane. This plane will be your 2D cut-out mesh.
-4. Create a new material and name it exactly: MATERIAL_MASKED 
+3. Add a plane: Shift + A → Mesh → Plane. This plane will be your 2D cutout mesh.
+4. Create a new material and name it MATERIAL_MASKED 
 PLEASE NOTE: The exact name is important for consistent workflow.
    - Material Properties → New → rename to: MATERIAL_MASKED
      
 <img width="614" height="668" alt="prepare your texture in Blender" src="https://github.com/user-attachments/assets/d808d860-7b94-4fee-bb14-d06e79542968" />
 
-
-5. Open the Shader Editor:
+5. Open the Shader Editor
    - Add an Image Texture node and load MATERIAL_BA.png.
    - Connect Image Color → Principled BSDF Base Color.
 6. Confirm the image displays correctly in the viewport (Material Preview or Rendered).
@@ -95,15 +94,12 @@ PLEASE NOTE: The exact name is important for consistent workflow.
 
 7. Check UVs:
    - Open UV Editor and ensure the plane’s UV covers the full texture area and aligns with your artwork.
-8. If you have multiple cut-outs, duplicate the plane (Shift + D) and edit each copy in Edit Mode to fit different parts of the texture or to have different scales.
-9. Apply transforms before export:
-   - In Object Mode select all relevant objects → Ctrl/Cmd + A → Apply All Transforms.
-   - Verify each object’s Scale reads 1.0,1.0,1.0 and rotation/location are applied as needed.
-10. Export as FBX:
+8. If you have multiple cutouts, duplicate the plane (Shift + D) and edit each copy in Edit Mode to fit different parts of the texture or to have different scales.
+9. Export as FBX:
     - Select only the mesh(es) to export.
     - File → Export → FBX (.fbx)
     - Check “Selected Objects”
-    - Under Object Types: enable only: Mesh
+    - Under Object Types enable Mesh
     - Save with a descriptive name (example: Alien.fbx)
 
 <img width="893" height="660" alt="save with a descriptive name" src="https://github.com/user-attachments/assets/3c7b09b9-70a8-42b0-bd04-7b6333e47011" />
@@ -115,10 +111,10 @@ PLEASE NOTE: The exact name is important for consistent workflow.
 2. Click Add New → 3D Model.
 3. In the Import Model(s) window click “+ Choose files on your device” and select:
    -  MATERIAL_BA.png 
-   -  Alien.fbx  (or your exported FBX)
+   -  Alien.fbx 
 
-5. Click Import and wait for Horizon Worlds to process the asset. Processing may take a moment; if it fails, try re-exporting or a different browser. Make sure: “Preserve offset pivots” is OFF.
-6. Once processing completes you can place the cut-out in your world and test collision, lighting, and scale.
+5. Click Import and wait for Horizon Worlds to process the asset. Processing may take a moment.
+6. Once processing completes you can place the cutout in your world.
 
 
 ## Step-By-Step Video Tutorial
