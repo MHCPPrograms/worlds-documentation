@@ -12,7 +12,7 @@ September 1st, 2025
 
 <!-- This section should describe what this document is going to cover. Try to provide some background and motivation as to why a creator would want to read your document. -->
 
-This tutorial walks you through a simple workflow for importing 2D cutout assets with transparent backgrounds into Horizon Worlds using the Masked method. As a case study, we’ll demonstrate the process by creating 2D aliens and other design elements.
+This tutorial walks you through a workflow for importing 2D cutout assets with transparent backgrounds into Horizon Worlds using the Masked method. As a case study, we’ll demonstrate the process by creating 2D aliens and other design elements.
 
 ![2d coutous assets can be used in horizon worlds](https://github.com/user-attachments/assets/86ac85c3-f296-4e6c-9199-f48c3091a026)
 
@@ -48,7 +48,7 @@ Use cutouts for background scenery, distant crowd characters, props, signs, UI e
 
 
 ## Why the Masked method?
-Using the Masked method for cutout assets with transparent backgrounds dramatically reduces world capacity compared with the Transparent or Blend methods. Transparency is far more demanding for Horizon Worlds’ rendering engine: whenever semi-transparent elements are processed, performance costs increase. Whenever possible, use masked cutouts instead of semi-transparent assets to optimize performance.
+Using the Masked method for cutout assets with transparent backgrounds is more economical compared with the Transparent or Blend methods. Transparency is far more demanding for Horizon Worlds’ rendering engine: whenever semi-transparent elements are processed, performance costs increase. Whenever possible, use masked cutouts instead of semi-transparent assets to optimize performance.
 
 Reserve semi-transparent materials (Transparent or Blend methods) only when soft edges or translucency are essential; otherwise use hard-cut cut-outs (Masked method) for better performance. The Masked method will not work well on assets with soft (blurry) edges.
 ![the masked method works only with assets that have hard edges](https://github.com/user-attachments/assets/3adcd269-dce5-448b-a9e8-3e42cefe70de)
