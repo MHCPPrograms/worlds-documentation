@@ -146,6 +146,7 @@ It’s worth noting that Horizon supports multiple methods of handling transpare
 	•	Alpha cutout occurs at 0.5, consistent with GLTF 2.0 and Unity defaults.
 	•	The material name in the FBX must end with _Masked.
 
+
 ## References
 
 <!-- this is the place to put useful supplementary information, such as references to other websites or documents in the github repo that are relevant to your topic -->
