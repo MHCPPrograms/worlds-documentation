@@ -31,10 +31,10 @@ This document has three main parts, covering texture prep, model prep and import
 
 - [Why use 2D cutout assets?](#why-use-2d-cutout-assets)
 - [Why the Masked method?](#why-the-masked-method)
-- [Topic One: Preparing Your Texture in Adobe Photoshop](#topic-one--preparing-your-texture-in-adobe-photoshop)
-- [Topic Two: Preparing Your Textured Model in Blender](#topic-two--preparing-your-textured-model-in-blender)
+- [Preparing Your Texture in Adobe Photoshop](#preparing-your-texture-in-adobe-photoshop)
+- [Preparing Your Textured Model in Blender](#preparing-your-textured-model-in-blender)
 - [Topic Three: Importing Your Model to Horizon Worlds](#topic-three-importing-your-model-to-horizon-worlds)
-- [Topic Four: Designing with 2D and 3D Assets in Horizon Worlds](#topic-four---designing-with-2d-and-3d-assets-in-horizon-worlds)
+- [Topic Four - Designing with 2D and 3D assets in Horizon Worlds](#topic-four---designing-with-2d-and-3d-assets-in-horizon-worlds)
 - [Step-By-Step Video Tutorial](#step-by-step-video-tutorial)
 - [Advanced Concepts: Blend vs Transparent vs Masked](#advanced-concepts--blend-vs-transparent-vs-masked)
 - [References](#references)
@@ -46,7 +46,7 @@ Cutout assets are a cost-effective way to enrich your world. They’re perfect f
 Using the Masked method for cutout assets with transparent backgrounds dramatically reduces world capacity compared with the Transparent or Blend methods. Transparency is far more demanding for Horizon Worlds’ rendering engine: whenever semi-transparent elements are processed, performance costs increase. Whenever possible, use masked cutouts instead of semi-transparent assets to optimize performance.
 
 
-## Topic One : Preparing Your Texture in Adobe Photoshop
+## Preparing Your Texture in Adobe Photoshop
 
 1. Create a new document at 2048 × 2048 px (2K). Square textures are standard and supported sizes include 1024×1024, 2048×2048, 4096×4096 - stick to those where possible.
 2. Place or paste your artwork (alien, prop, etc.) into the document.
@@ -64,7 +64,7 @@ Using the Masked method for cutout assets with transparent backgrounds dramatica
 
 
 
-## Topic Two : Preparing Your Textured Model in Blender
+## Preparing Your Textured Model in Blender
 
 1. Start a new Blender file and save it (e.g., Alienfriends.blend).
 2. Delete default objects you don't need (camera, light) for a clean scene.
