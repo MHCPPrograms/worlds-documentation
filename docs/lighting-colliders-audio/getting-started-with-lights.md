@@ -2,7 +2,7 @@
 
 ## Overview
 
-This directory contains comprehensive documentation for implementing advanced lighting systems in Horizon Worlds. The documentation is structured to avoid duplication - each concept is documented once in its most appropriate location with cross-references throughout.
+This directory contains comprehensive documentation for implementing advanced lighting systems in Horizon Worlds.
 
 ## Documentation Structure
 
