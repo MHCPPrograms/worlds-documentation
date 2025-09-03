@@ -16,9 +16,6 @@ This directory contains comprehensive documentation for implementing advanced li
 ### ⚡ **Performance & Optimization**
 - **[lighting-performance-optimization.md](./lighting-performance-optimization.md)** - **Single source of truth** for performance monitoring, optimization, and troubleshooting
 
-### 📖 **Complete Reference**
-- **[mastering-horizon-worlds-lighting-complete-guide.md](./mastering-horizon-worlds-lighting-complete-guide.md)** - Comprehensive reference with cross-links to detailed sections
-
 ## Quick Start Guide
 
 1. **Begin with Fundamentals**: Start with [lighting-fundamentals-basics.md](./lighting-fundamentals-basics.md) for core concepts
@@ -35,11 +32,9 @@ This directory contains comprehensive documentation for implementing advanced li
 
 ### 🎭 **Three-Point Lighting Setup**
 - **Fundamentals**: [lighting-fundamentals-basics](./lighting-fundamentals-basics.md#three-point-lighting-principle)
-- **Complete Guide**: [mastering-horizon-worlds-lighting-complete-guide](./mastering-horizon-worlds-lighting-complete-guide.md#three-point-lighting-setup)
 
 ### 🔧 **Environment & Atmosphere**
 - **Primary Source**: [advanced-lighting-techniques](./advanced-lighting-techniques.md#environment-gizmo-for-atmosphere)
-- **Implementation**: [mastering-horizon-worlds-lighting-complete-guide](./mastering-horizon-worlds-lighting-complete-guide.md#environment-gizmo--daynight-transitions)
 
 ### ⚡ **Performance Guidelines**
 - **Single Source**: [lighting-performance-optimization.md](./lighting-performance-optimization.md)

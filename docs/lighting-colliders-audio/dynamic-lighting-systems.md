@@ -46,6 +46,9 @@ Proximity-based lighting creates immersive experiences by responding to player m
 
 ## Network Event Systems
 
+<iframe width="1378" height="775" src="https://www.youtube.com/embed/yZArJ26YJMQ" title="MHCP - TRIGGER LIGHTS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 ### Trigger Broadcasting System
 
 The TriggerBroadcaster component detects when players enter or exit trigger zones and sends network events.
@@ -53,14 +56,17 @@ The TriggerBroadcaster component detects when players enter or exit trigger zone
 ```typescript
 import { Component, PropTypes, NetworkEvent, CodeBlockEvents, Player, Entity } from 'horizon/core';
 
-// Define the network event. This should match the event name used by the receiving script.
+// Define the network events. These should match the event names used by any receiving scripts.
 const PlayerEntered = new NetworkEvent('PlayerEntered');
+const PlayerExited = new NetworkEvent('PlayerExited');
 
 export class TriggerBroadcaster extends Component<typeof TriggerBroadcaster> {
   static propsDefinition = {
-    // The entity that will receive the network event.
+    // The entity that will receive the network events.
     target: { type: PropTypes.Entity },
   };
+
+  private playerCount: number = 0;
 
   override preStart() {
     // Connect to the trigger event that fires when a player enters.
@@ -71,6 +77,15 @@ export class TriggerBroadcaster extends Component<typeof TriggerBroadcaster> {
         this.handlePlayerEnter(player);
       }
     );
+
+    // Connect to the trigger event that fires when a player exits.
+    this.connectCodeBlockEvent(
+      this.entity,
+      CodeBlockEvents.OnPlayerExitTrigger,
+      (player: Player) => {
+        this.handlePlayerExit(player);
+      }
+    );
   }
 
   override start() {
@@ -78,12 +93,28 @@ export class TriggerBroadcaster extends Component<typeof TriggerBroadcaster> {
   }
 
   private handlePlayerEnter(player: Player) {
-    // Check if the target entity prop has been assigned in the editor.
-    if (this.props.target) {
-      // Send the 'PlayerEntered' network event to the target entity.
-      this.sendNetworkEvent(this.props.target, PlayerEntered, {});
-    } else {
-      console.error("TriggerBroadcaster: 'target' prop is not set.");
+    this.playerCount++;
+
+    // If this is the first player to enter the trigger, send the event.
+    if (this.playerCount === 1) {
+      if (this.props.target) {
+        this.sendNetworkEvent(this.props.target, PlayerEntered, {});
+      } else {
+        console.error("TriggerBroadcaster: 'target' prop is not set.");
+      }
+    }
+  }
+
+  private handlePlayerExit(player: Player) {
+    this.playerCount--;
+
+    // If this was the last player to leave the trigger, send the event.
+    if (this.playerCount === 0) {
+      if (this.props.target) {
+        this.sendNetworkEvent(this.props.target, PlayerExited, {});
+      } else {
+        console.error("TriggerBroadcaster: 'target' prop is not set.");
+      }
     }
   }
 }
@@ -98,8 +129,9 @@ The LightChanger component receives network events and modifies lighting propert
 ```typescript
 import { Component, PropTypes, NetworkEvent, DynamicLightGizmo, Color } from 'horizon/core';
 
-// Define the network event that will trigger the light change.
+// Define the network events that will trigger the light change.
 const PlayerEntered = new NetworkEvent('PlayerEntered');
+const PlayerExited = new NetworkEvent('PlayerExited');
 
 export class LightChanger extends Component<typeof LightChanger> {
   static propsDefinition = {
@@ -107,31 +139,51 @@ export class LightChanger extends Component<typeof LightChanger> {
     light: { type: PropTypes.Entity },
   };
 
+  private originalColor?: Color;
+
   override preStart() {
     // Listen for the 'PlayerEntered' network event.
     this.connectNetworkEvent(this.entity, PlayerEntered, () => {
-      this.changeLightColor();
+      this.setLightToWhite();
+    });
+
+    // Listen for the 'PlayerExited' network event.
+    this.connectNetworkEvent(this.entity, PlayerExited, () => {
+      this.restoreOriginalColor();
     });
   }
 
   override start() {
-    // Initialization logic can go here.
+    if (this.props.light) {
+      const lightGizmo = this.props.light.as(DynamicLightGizmo);
+      if (lightGizmo) {
+        // Save the original color of the light when the script starts.
+        this.originalColor = lightGizmo.color.get();
+      } else {
+        console.error("LightChanger: The provided 'light' entity is not a DynamicLightGizmo.");
+      }
+    } else {
+      console.error("LightChanger: 'light' prop is not set.");
+    }
   }
 
-  private changeLightColor() {
-    if (!this.props.light) {
-      console.error("LightChanger: 'light' prop is not set.");
-      return;
-    }
+  private setLightToWhite() {
+    if (!this.props.light) return;
 
-    // Cast the entity to a DynamicLightGizmo.
     const lightGizmo = this.props.light.as(DynamicLightGizmo);
-
     if (lightGizmo) {
-      // Change the light's color to red.
-      lightGizmo.color.set(new Color(1, 0, 0));
-    } else {
-      console.error("LightChanger: The provided entity is not a DynamicLightGizmo.");
+      // Change the light's color to white.
+      lightGizmo.color.set(new Color(1, 1, 1));
+    }
+  }
+
+  private restoreOriginalColor() {
+    if (!this.props.light || !this.originalColor) return;
+
+    const lightGizmo = this.props.light.as(DynamicLightGizmo);
+    if (lightGizmo) {
+      // Restore the light's original color.
+      lightGizmo.color.set(this.originalColor);
     }
   }
 }
@@ -145,56 +197,103 @@ Component.register(LightChanger);
 
 ### Color Cycling System
 
+<iframe width="1378" height="775" src="https://www.youtube.com/embed/NIRQQgtCBrU" title="MHCP - DISCO LIGHT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 Create dynamic color transitions for atmospheric effects:
 
 ```typescript
-import { Component, PropTypes, DynamicLightGizmo, Color } from 'horizon/core';
+import { Component, PropTypes, NetworkEvent, DynamicLightGizmo, Color } from 'horizon/core';
 
-export class ColorCycler extends Component<typeof ColorCycler> {
+// Define the network events. These should match the events sent by the trigger script.
+const PlayerEntered = new NetworkEvent('PlayerEntered');
+const PlayerExited = new NetworkEvent('PlayerExited');
+
+export class StaticLightChanger extends Component<typeof StaticLightChanger> {
   static propsDefinition = {
+    // The light entity that will change color.
     light: { type: PropTypes.Entity },
-    cycleSpeed: { type: PropTypes.Number, defaultValue: 2000 },
   };
 
-  private colorInterval?: number;
-  private colors: Color[] = [
-    new Color(1, 0, 0),    // Red
-    new Color(0, 1, 0),    // Green
-    new Color(0, 0, 1),    // Blue
-    new Color(1, 1, 0),    // Yellow
-    new Color(1, 0, 1),    // Magenta
-    new Color(0, 1, 1),    // Cyan
-  ];
-  private currentColorIndex = 0;
+  private originalColor?: Color;
+  private colorChangeInterval?: number;
+
+  override preStart() {
+    // Listen for the 'PlayerEntered' network event to start the color changes.
+    this.connectNetworkEvent(this.entity, PlayerEntered, () => {
+      this.startColorChange();
+    });
+
+    // Listen for the 'PlayerExited' network event to stop the color changes.
+    this.connectNetworkEvent(this.entity, PlayerExited, () => {
+      this.stopColorChange();
+    });
+  }
 
   override start() {
-    this.startColorCycle();
+    if (this.props.light) {
+      const lightGizmo = this.props.light.as(DynamicLightGizmo);
+      if (lightGizmo) {
+        // Store the original color of the light when the script starts.
+        this.originalColor = lightGizmo.color.get();
+      } else {
+        console.error("StaticLightChanger: The provided 'light' entity is not a DynamicLightGizmo.");
+      }
+    } else {
+      console.error("StaticLightChanger: 'light' prop is not set.");
+    }
   }
 
-  private startColorCycle() {
-    this.colorInterval = this.async.setInterval(() => {
-      this.cycleToNextColor();
-    }, this.props.cycleSpeed);
+  private startColorChange() {
+    // Clear any existing interval to prevent duplicates.
+    if (this.colorChangeInterval) {
+      this.async.clearInterval(this.colorChangeInterval);
+    }
+
+    // Start a new interval to change the color every 3 seconds.
+    this.colorChangeInterval = this.async.setInterval(() => {
+      this.setRandomColor();
+    }, 3000);
   }
 
-  private cycleToNextColor() {
+  private stopColorChange() {
+    // Clear the interval.
+    if (this.colorChangeInterval) {
+      this.async.clearInterval(this.colorChangeInterval);
+      this.colorChangeInterval = undefined;
+    }
+    // Restore the light's original color.
+    this.restoreOriginalColor();
+  }
+
+  private setRandomColor() {
     if (!this.props.light) return;
 
     const lightGizmo = this.props.light.as(DynamicLightGizmo);
     if (lightGizmo) {
-      this.currentColorIndex = (this.currentColorIndex + 1) % this.colors.length;
-      lightGizmo.color.set(this.colors[this.currentColorIndex]);
+      // Create a new random color.
+      const randomColor = new Color(Math.random(), Math.random(), Math.random());
+      lightGizmo.color.set(randomColor);
+    }
+  }
+
+  private restoreOriginalColor() {
+    if (!this.props.light || !this.originalColor) return;
+
+    const lightGizmo = this.props.light.as(DynamicLightGizmo);
+    if (lightGizmo) {
+      lightGizmo.color.set(this.originalColor);
     }
   }
 
   override dispose() {
-    if (this.colorInterval) {
-      this.async.clearInterval(this.colorInterval);
+    // Ensure the interval is cleared if the component is destroyed.
+    if (this.colorChangeInterval) {
+      this.async.clearInterval(this.colorChangeInterval);
     }
   }
 }
 
-Component.register(ColorCycler);
+Component.register(StaticLightChanger);
 ```
 
 ### Intensity Pulsing System
@@ -282,7 +381,6 @@ Component.register(IntensityPulser);
 
 - **Advanced Techniques**: Explore [advanced-lighting-techniques.md](./advanced-lighting-techniques.md)
 - **Performance Optimization**: Study [lighting-performance-optimization.md](./lighting-performance-optimization.md)
-- **Complete Reference**: Review [mastering-horizon-worlds-lighting-complete-guide.md](./mastering-horizon-worlds-lighting-complete-guide.md)
 
 ---
 

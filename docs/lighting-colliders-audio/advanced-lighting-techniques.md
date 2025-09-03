@@ -24,7 +24,7 @@ Understanding of lighting fundamentals from [lighting-fundamentals-basics.md](./
 
 The Environment Gizmo is your primary tool for setting the overall mood and atmosphere of your world.
 
-![Environment Gizmo Interface](./assets/EnvirontmentGizmo.png)
+<iframe width="1378" height="775" src="https://www.youtube.com/embed/-eByBYkd2U0" title="Creating a Custom Skybox in the Worlds Desktop Editor ☁️🌈" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### **Setting Up Environment Lighting:**
 
@@ -42,8 +42,6 @@ The Environment Gizmo is your primary tool for setting the overall mood and atmo
 
 ### **Environment Presets Available:**
 
-![Environment Presets Gallery](./assets/Env Options.png)
-
 - **Daytime**: Bright, natural lighting
 - **Night**: Dark atmosphere with subtle ambient light
 - **Sunrise/Sunset**: Warm, golden lighting
@@ -57,8 +55,6 @@ The Environment Gizmo is your primary tool for setting the overall mood and atmo
 - **0.2+**: Heavy fog (use sparingly)
 
 **Important**: Fog density is extremely sensitive. Values above 0.1 can make building difficult as it affects visibility in build mode.
-
-**📖 For basic environment setup**: See [lighting-fundamentals-basics.md#environment-gizmo](./lighting-fundamentals-basics.md#environment-gizmo)
 
 ---
 
@@ -91,7 +87,7 @@ Dynamic lights provide interactive, scriptable lighting with real-time shadows a
    - Adjust falloff distance for desired coverage
    - Configure spread angle for spot lights
 
-**📖 For basic dynamic light setup**: See [lighting-fundamentals-basics.md#using-dynamic-lights](./lighting-fundamentals-basics.md#using-dynamic-lights)
+**📖 For basic dynamic light setup**: Click [here](https://developers.meta.com/horizon-worlds/learn/documentation/code-blocks-and-gizmos/dynamic-light-gizmo).
 
 ---
 
@@ -111,6 +107,7 @@ Static lighting provide unlimited lighting without performance impact.
 - Combine with environment gizmo for complete world lighting
 - Perfect for neon signs, magical effects, and mood lighting
 
+**📖 For basic static light setup**: Click [here](https://developers.meta.com/horizon-worlds/learn/documentation/code-blocks-and-gizmos/static-light-gizmo).
 ---
 
 ## Practical Lighting Techniques
@@ -200,7 +197,6 @@ Component.register(AdvancedLightController);
 
 - **Interactive Systems**: Explore [dynamic-lighting-systems.md](./dynamic-lighting-systems.md)
 - **Performance Optimization**: Study [lighting-performance-optimization.md](./lighting-performance-optimization.md)
-- **Complete Reference**: Review [mastering-horizon-worlds-lighting-complete-guide.md](./mastering-horizon-worlds-lighting-complete-guide.md)
 
 ---
 

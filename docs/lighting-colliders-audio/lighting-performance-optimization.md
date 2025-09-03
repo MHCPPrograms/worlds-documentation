@@ -237,7 +237,6 @@ Horizon Worlds provides a built-in Real-time Metrics panel to monitor your world
 - **Lighting Fundamentals**: Review [lighting-fundamentals-basics.md](./lighting-fundamentals-basics.md)
 - **Advanced Techniques**: Explore [advanced-lighting-techniques.md](./advanced-lighting-techniques.md)
 - **Dynamic Systems**: Study [dynamic-lighting-systems.md](./dynamic-lighting-systems.md)
-- **Complete Reference**: Review [mastering-horizon-worlds-lighting-complete-guide.md](./mastering-horizon-worlds-lighting-complete-guide.md)
 
 ---
 

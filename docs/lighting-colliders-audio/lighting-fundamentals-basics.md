@@ -27,8 +27,6 @@ This guide covers the essential concepts of lighting theory, gizmo types, and ba
 
 Lighting is one of the most powerful tools in your world-building arsenal. It can transform a simple scene into something magical, guide player attention, and create emotional responses. Understanding how light works in the real world helps you create more convincing virtual environments.
 
-![Light Theory Diagram - Three Point Lighting Setup](./assets/3PointLight.png)
-
 **Key Concepts:**
 
 - **Intensity:** Brightness of the light
@@ -149,8 +147,6 @@ Can be approximated with static and dynamic lights:
 - Key: Directional Disk or Rectangle (static) or Spot (dynamic)
 - Fill: Cuboid or Ellipsoid (static) or Point (dynamic)
 - Rim: Use spot/point strategically (dynamic only if movement needed)
-
-**📖 For detailed three-point lighting setup**: See [mastering-horizon-worlds-lighting-complete-guide.md#three-point-lighting-setup](./mastering-horizon-worlds-lighting-complete-guide.md#three-point-lighting-setup)
 
 ---
 
