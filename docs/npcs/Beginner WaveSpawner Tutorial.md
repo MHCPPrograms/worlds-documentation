@@ -1,5 +1,5 @@
-#Goal
-This importable script creates a **spawner** in Horizon Worlds that generates enemies at a fixed interval (every second by default). Yes, I know the moral reprocussions of generating more enemies into the world, but corporate required it... 
+# Goal
+This importable script creates a **spawner** in Horizon Worlds that generates enemies at a fixed interval (every second by default). Yes, I know the moral repercussions of generating more enemies in the world, but the corporation required it... 
 
 ---
 ## 1. Understanding the Script Basics
@@ -49,12 +49,12 @@ override start() {
 }
 ```
 
-- This method runs when the component starts. Hence the "override start()" bit at the beginning.
+- This method runs when the component starts. Hence, the "override start()" bit at the beginning.
 - Checks if `enemyPrefab` has been assigned. It'll get mad at you if you forget to tell the enemy spawner what enemy--Charles--to spawn.
 - If yes, sets up a **timer** to call `spawnEnemy()` every 1000 ms (1 sec).
-- Also, don't forget, if the spawner is somehow despawned then it won't make more monsters. If Charles's mama goes to heaven, then she can't create more Charlies.
+- Also, don't forget, if the spawner is somehow despawned, then it won't make more monsters.
 
-Still tracking? Great!!! Let's get into the spawning logic next, and don't worry we don't need a doula. 
+Still tracking? Great!!! Let's get into the spawning logic next, and don't worry, we don't need a doula. 
 
 ---
 ### Spawn Logic
@@ -99,7 +99,7 @@ Component.register(WaveSpawner);
 
 - **Create an enemy prefab**
   - Build your enemy (model + scripts).
-  - Save it as an **Template Asset**. Otherwise referred to as "Charles Prime." 
+  - Save it as a **Template Asset**. Otherwise referred to as "Charles Prime." 
 - **Create a spawner entity**  
   - Add an empty object (or marker) where you want enemies to appear.
   - To recap - this is Charles's mama's location and where Charles Prime's clones will be born.
@@ -116,7 +116,7 @@ Component.register(WaveSpawner);
 ---
 ## 3. Key Notes
 
-- Like we mentioned, if no enemy prefab asset is assigned, the script safely stops and prints an error. Essentially you're telling Charles's Mama to spawn a Charles but you never told her that her child should be named "Charles" or even what he looks like.
+- Like we mentioned, if no enemy prefab asset is assigned, the script safely stops and prints an error. Essentially, you're telling Charles's Mama to spawn a Charles, but you never told her that her child should be named "Charles" or even what he looks like.
 - Enemies will spawn forever until you stop the world or remove the spawner. Translation: Charle's mom is boundless. 
 - Be mindful of **performance** since spawning a sea of infinite Charlies in someone's headset or phone will definitely melt down those tiny GPUs. 
 
@@ -168,7 +168,7 @@ Component.register(WaveSpawner);
 ```
 Okay, so that's the basics of spawning Charlies. But there's ever-so-much-more we can do together... Take my hand, sweet developer, and let's dive into the advanced tutorial? 
 
-Afraid? No problem we can stop here. But do you want to shake the foundations of the Charlieverse? Let's do it.
+Afraid? No problem, we can stop here. But do you want to shake the foundations of the Charlieverse? Let's do it.
 ---
 
 # ADVANCED: WaveSpawnerOnePoint — Next Level Tutorial
