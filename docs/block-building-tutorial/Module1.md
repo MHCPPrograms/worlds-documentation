@@ -1,4 +1,4 @@
-# Module 2 - Overall Manager Systems
+# Module 1 - Overall Manager Systems
 
 This section provides overviews of the manager systems. These are singleton, server-controlled scripts that act as the "brains" of the Voxel Builder. They manage the world state, handle object creation and destruction, and assign tools to players, ensuring a consistent and synchronized experience for everyone.
 
