@@ -295,7 +295,7 @@ Component.register(AdvWaveSpawnerOnePoint);
 - *Spawning at wrong place*: Verify `spawnPoint` or the host entity transform. You can also go into the code and change the spawn point to whatever you prefer. 
 - *Overlap too tight*: Increase `spread` or add slight Z offsets inside the loop if needed.
 
-# 🎵 Super Advanced BPM Wave Spawner Tutorial
+# 🎵 SUPER ADVANCED: BPM Wave Spawner Tutorial
 
 ## Goal
 
@@ -473,12 +473,11 @@ Component.register(BPMWaveSpawner);
   
   - Place an empty entity in your world.
   - Add `BPMWaveSpawner` to it (or assign it via `spawnPoint`).
+  - Just dance.
 2. **Assign prefabs**
-  
   - Set `enemyPrefab1–3` to any prefabs (same or different).
   - Leave empty slots blank.
 3. **Tune musical properties**
-  
   - `bpm`: starting tempo
   - `initialSubdivision`: 1=quarter, 2=eighths, 4=sixteenths…
   - `spawnEveryNBeats`: e.g., 4 → only spawn once per bar (at 4/4)
@@ -501,7 +500,7 @@ Component.register(BPMWaveSpawner);
 
 - **Rhythm shooter**: spawn waves synced to music beats
 - **Dance game**: enemies appear on downbeats / offbeats
-- **Boss fights**: tempo ramps up as phase progresses
+- **Boss fights**: tempo ramps up as phase progresses (More music? More Charlies.)
 - **Interactive music**: let players tap tempo to drive enemy waves
 
 ---
@@ -509,10 +508,10 @@ Component.register(BPMWaveSpawner);
 ## Tips
 
 - To **sync with a song**, call `resetPhase()` on the first downbeat.
-- Use **tap tempo** to align to live DJ/Band performance.
+- Use **tap tempo** to align to live DJ/Band performance and discover if you actually have rhythm.
 - Use **smoothing** for gentle tempo drifts, or set it to `1.0` for instant BPM jumps.
 - Keep `minIntervalMs` ≥ 40 to avoid stutter at very high BPMs.
 
 ---
 
-Enjoy creating BPM‑driven rhythm gameplay!
+Enjoy creating BPM‑driven rhythm gameplay! May Charles live on and reign supreme!
