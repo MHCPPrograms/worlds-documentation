@@ -71,4 +71,72 @@ I will be using Photoshop for this process in order to utilize layer masks and t
 
 The first thing to note is that a PNG image coming into or out of Photoshop does not support a traditional alpha channel, but rather, supports transparency directly within the pixels of the image itself. Utilizing a layer mask is the easiest way to access and edit this transparency with a value-based visualization.
 
+Once the texture has been opened, click on the Mask button in the Layer panel to add a white layer mask. This white mask means the image is totally opaque, as it is to start with, or full rough once imported into Horizons.
 
+<img width="131" height="139" alt="Layer Mask Button" src="https://github.com/user-attachments/assets/0eb8823e-079d-43d2-b2e7-b6a78f27a07f" />
+
+In order to edit this layer mask, hold “Alt” and then click on it. This will change the current mode from editing the image layer to instead editing the layer mask.Remember this shortcut, as we’ll be using it a couple of times!
+
+<img width="545" height="380" alt="Viewing Layer Mask" src="https://github.com/user-attachments/assets/7fb61a4f-c66d-45a0-879b-aac603bfd352" />
+
+To get a starting point that more closely matches our texture and isn’t just a solid color, I’m going to open the Channel palette (Window > Channels) and click on one to view it. I'm choosing the green channel - sort of at random, but also because I want something that has good mid-range values to start with.
+
+<img width="128" height="143" alt="Channel Panel" src="https://github.com/user-attachments/assets/bac7cad4-ac1e-463d-b87e-ce3b0ccc9ee7" />
+
+Remember, brighter values mean higher roughness and less of a shine, and darker values will mean lower roughness, and more of a shine. I’m going to pick the green channel, as it has a good value separation between the different elements of the leaves. With the green channel active, I’m going to press Ctrl+A to select the entire channel, and then Ctrl+C to copy it.
+
+Next, I’m going to alt+click back over to the layer mask, where I will Ctrl+V to paste the copied channel into the layer mask. If we simply left-click back on the main layer itself, we can see now that the image has taken on some transparency.
+
+<img width="549" height="371" alt="Image with Transparency" src="https://github.com/user-attachments/assets/d422c11f-7243-4270-b904-4d27013fa206" />
+
+Now to actually adjust these values to our liking. The first of which will be the flower petals: I don’t want those to have any shine, so I am simply going to fill in that area with white. This will remove any transparency from this area, and will later also tell Horizons that this area is to be matte and not have any shine. 
+
+Next, I am going to open the Curves editor via Image > Adjustments > Curves. This will allow me to easily select and edit individual values of the image (i.e. the light parts, the dark parts) separately from each other. In the bottom left corner of the Curves editor, there is a hand icon with some arrows - click on this to enable the interactive curves adjustment mode.
+
+<img width="80" height="68" alt="Interactive Toggle for Curves" src="https://github.com/user-attachments/assets/f9c2278f-e0ff-484b-8771-f58d6df0f434" />
+
+Now with this active, I can simply click and drag on any area of the image, and the corresponding value on the curve histogram will adjust accordingly. 
+
+The first thing I’m going to do is simply click once on a gray medium-value area to create an “anchor point” on the curve histogram - this will prevent this value range from changing, and make it easier to isolate the lights and darks for further adjustments.
+
+<img width="490" height="265" alt="anchor point" src="https://github.com/user-attachments/assets/d8f3f7f0-598d-4788-808c-288e3f41ac6a" />
+
+Here’s how I’ve adjusted the curve: brightening the middle veins of the leaf, darkening some of the middle areas, and then brightening some of the variegation, keeping in mind that darker values will equate to gloss and shine. 
+
+<img width="719" height="365" alt="Edited Curves" src="https://github.com/user-attachments/assets/1d1935bc-0f9d-42da-b221-73c67873ee53" />
+
+The last thing I’m going to do is brighten the entire mask. I want the shine to be fairly subtle, so I’m going to use Image > Adjustments > Brightness/Contrast and further adjust the entire image, which will ultimately lower the amount of shine displayed in Horizons. 
+
+<img width="185" height="185" alt="Adjusted Layer Mask" src="https://github.com/user-attachments/assets/5ade839d-be46-4769-aa87-032ce588a8f1" />
+
+If we switch back to the main color layer, we’ll see that it now looks like this, with odd transparency - exactly what we want! Save this image, making sure that it’s PNG format, and again, with the “_BR” suffix. I also suggest saving a copy of this file in your application's native format (for me, .PSD) so that it can easily be edited later. Since we're essentially just guessing at the roughness values currently, it's likely that this may need some corrections once we see how it's applied. 
+
+<img width="192" height="192" alt="Final Image with Transparency" src="https://github.com/user-attachments/assets/103c86b7-6076-43d0-98cd-3cea4c2985bb" />
+
+## Mesh Creation
+
+Onto the fun part - creating the mesh! For this next part, I’ll be creating my mesh using Blender. (Any software that can export .FBX can be used, though.)
+
+Upon opening Blender and being met with the default scene, remove it all by press “A” to select all, and then press “Delete” on your keyboard. 
+
+To start, let’s add a plane. (“Shift+A” and then select Mesh > Plane.) With the plane selected (it should have an orange outline - if it doesn’t, simply left-click on it) open the Material tab. This is the red ball icon on the panel to the right side of the screen:
+
+<img width="109" height="50" alt="material panel" src="https://github.com/user-attachments/assets/bb442369-5a8d-45f7-8e9b-a818f0b4c6e7" />
+
+Here, click the big “New” button to add a new material. A single material entry will be added into the panel at the top, simply named “Material.” Click on the box underneath that panel where the name is displayed, and we’re going to rename it. Remember, this material name you are assigning in Blender MUST match the name of your texture in order for Horizons to process your assets correctly. Since my texture is saved as “Plant_BR.png,” I need to name my material “Plant” to match. (Simply remove the texture-type suffix, in this case “_BR” to find out what the material name needs to be.)
+
+<img width="222" height="176" alt="Naming the Material" src="https://github.com/user-attachments/assets/440a2d48-5c19-4e00-b0e2-1cbc31c06749" />
+
+Then down in the material settings, find the entry for “Base Color” and click on the yellow dot next to it. This will open a menu - we’re going to change the material so that the base color value will use a texture instead of only a color. Select “Image Texture” as the type.
+
+<img width="466" height="239" alt="Importing a texture into the mateiral" src="https://github.com/user-attachments/assets/f6dfda03-6949-428b-a88c-40339c90a837" />
+
+Underneath that Base Color property, after setting it to an Image Texture, you’ll now have the option to “Open” a texture. Click on the “Open” button and select the _BR texture we created earlier. 
+
+We’re going to repeat that same thing for the “Roughness” value - click on the gray dot to the left of the entry, and change the type to “Texture Image.” Since we’ve already imported our image, we can simply click on the image thumbnail dropdown to the left of the “new” and “Open” buttons, and then select our BR texture to reuse it. Because the roughness channel is a single value, Blender will automatically know to use the alpha channel.
+ 
+Now in order to see the texture on the mesh, we need to change material mode to display the texture. We’re going to change the rendering mode to “Material Preview.”
+
+<img width="220" height="70" alt="material shading" src="https://github.com/user-attachments/assets/70fd9861-3f49-4a06-af54-01a79ef10a02" />
+
+This will now allow you to see a mostly-accurate representation of how your asset will look in the Worlds Desktop Editor with roughness applied. Keep in mind that it will not be a perfect 1:1 match, because the two programs are using entirely different rendering engines - but it is extremely close. At this point, you may want (or have) to go back and make more edits to your alpha channel mask to correct the roughness as previously mentioned. 
