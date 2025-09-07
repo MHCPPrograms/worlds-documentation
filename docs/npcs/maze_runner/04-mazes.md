@@ -23,11 +23,13 @@ Like with the other files we must first import the `Events` and `GameState` from
 ```typescript
 import { Events, GameState } from 'GameUtils';
 ```
-Next we will plan our `propsDefinition` for the `Maze` component. This will include any properties we want to expose for customisation. We will make our maze size configurable and made up of two main properties: `width` and `height`, both of which will be integers representing the dimensions of the maze grid. For the maze walls we will use `assets` we will have two type of walls a simple wall and a detailed wall, the walls we will be using today will be 4x10x4. Also because we will make our maze dynamic we will need to position the start and end zones within the maze, so we will need properties to store a reference to them also. Extend the `propsDefinition` object in your class to the following:
+Next we will plan our `propsDefinition` for the `Maze` component. This will include any properties we want to expose for customisation. We will make our maze size configurable and made up of two main properties: `width` and `height`, both of which will be integers representing the dimensions of the maze grid. For the maze walls we will use `assets` we will have two type of walls a simple wall and a detailed wall, we will need to set the default rotation of our walls and which column to rotate the detailed wall, the walls we will be using today will be 4x10x4. Also because we will make our maze dynamic we will need to position the start and end zones within the maze, so we will need properties to store a reference to them also. Extend the `propsDefinition` object in your class to the following:
 ```typescript
     static propsDefinition = {
         wallDetailed: { type: hz.PropTypes.Asset, required: true },
         wallSimple: { type: hz.PropTypes.Asset, required: true },
+        wallDefaultRotation: { type: hz.PropTypes.Vec3, default: new hz.Vec3(270, 0, 0) },
+        wallRotateOn: { type: hz.PropTypes.String, default: 'Z' },
         wallWidth: { type: hz.PropTypes.Number, default: 4 },
         wallHeight: { type: hz.PropTypes.Number, default: 10 },
         width: { type: hz.PropTypes.Number, default: 19 },
@@ -50,7 +52,7 @@ Then with both assets saved you can delete the original wall objects from your s
 
 ![Wall Simpler](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wrk1zed9822q7ndwa13y.png)
 
-![Maze Script Props](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ccyk5h2dviagmc9jnold.png)
+![Maze Script Props](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/x0m4inegfwee2zdayf7a.png)
 
 Now with the relevant properties set we in the desktop editor you can return to your code editor, and open `Maze.ts`. Next we will add a private property which we will use to store our maze grid. Beneath the `propsDefinition` add a line to define a private attribute that is an array of arrays of hashes. In typescript you need to explicitly define the hash that will be stored for type checking, in our hash we will have keys for the `wall` asset, grid `type` and `x`, `y`, and `z` positions.
 ```typescript
@@ -69,7 +71,7 @@ Then to implement the `generateMazeGrid` function, we will first need to calcula
     private generateMazeGrid() {
         let width = this.props.width * this.props.wallWidth;
         let height = this.props.height * this.props.wallWidth;
-       
+
     }
 ```
 Next we will need to calculate the start x, y and z positions for our grid, the y will always be half our wall height for our assets. The x will be half the full width of the maze and the z will be zero minus half the full height of the maze. This will ensure we start drawing the grid from the south west corner as our game is designed.
@@ -82,9 +84,9 @@ Now we are going to iterate over the height and width of the maze to create the 
 ```typescript
         let startX = x;
 ```
-To add variety to our maze, we'll randomly rotate the detailed wall assets so that different sides are visible each time the maze is generated. Since the simple wall looks the same on all sides, we can use a fixed rotation for it. Let's introduce a `simpleRotation` variable for the simple wall, while the detailed wall will use a random rotation.
+To add variety to our maze, we'll randomly rotate the detailed wall assets so that different sides are visible each time the maze is generated. Since the simple wall looks the same on all sides, we can use a fixed rotation for it. Let's introduce a `simpleRotation` variable for the simple wall, while the detailed wall will use a random rotation. We can use the property we defined previously.
 ```typescript
-        let simpleRotation = hz.Quaternion.fromEuler(new hz.Vec3(270, 0, 0));
+        let simpleRotation = hz.Quaternion.fromEuler(this.props.wallDefaultRotatio);
 ```
 We also need to create a local 2d array to hold our wall entities before we set the global property. Use the same type definition as the `walls` property.
 ```typescript
@@ -94,7 +96,7 @@ Next we need to do something a little strange, we need to declare a variable tha
 ```typescript
         let undefined_entity: hz.Entity | undefined = undefined;
 ```
-The final variable we need to declare is something I call `at_the_races`, this variable will by used to keep track of the number of wall entities that are still being spawned. There is more than one way to handle this race condition, but a simple approach is to use a counter that increments when a wall entity is spawned and decrements when it is finished. 
+The final variable we need to declare is something I call `at_the_races`, this variable will by used to keep track of the number of wall entities that are still being spawned. There is more than one way to handle this race condition, but a simple approach is to use a counter that increments when a wall entity is spawned and decrements when it is finished.
 ```typescript
         let at_the_races = 0;
 ```
@@ -103,7 +105,7 @@ Now to implement the iteration needed to generate our grid, we will iterate over
         for (let i = 0; i < height; i += this.props.wallWidth) {
             let row = [];
             for (let j = 0; j < width; j += this.props.wallWidth) {
-        
+
             }
 
         }
@@ -121,10 +123,10 @@ Next, create a grid cell using the same type definition as the `walls` property.
                 let cell: { wall: hz.Entity | undefined, type: string, x: number, y: number, z: number } = { wall: undefined_entity, type: 'W', x: x, y: y, z: z };
                 row.push(cell);
 ```
-Now we need to decide which wall asset to spawn. For now we will implement simple logic that will make the third wall in each row a detailed wall. When we identify that we will spawn a detailed wall, we will also randomly rotate it. Add the following after 'row.push(cell)'.
+Now we need to decide which wall asset to spawn. For now we will implement simple logic that will make the third wall in each row a detailed wall. When we identify that we will spawn a detailed wall, we will also randomly rotate it via a helper function we will define later. Add the following after 'row.push(cell)'.
 ```typescript
                 let [asset, rotation] = (j + i / this.props.wallWidth) % 3 === 0
-                    ? [this.props.wallDetailed, hz.Quaternion.fromEuler(new hz.Vec3(270, 0, 90 * Math.floor(Math.random() * 4)))]
+                    ? [this.props.wallDetailed, hz.Quaternion.fromEuler(this.randomWallRotation())]
                     : [this.props.wallSimple, simpleRotation];
 ```
 Then increment `at_the_races` as a wall entity is about to be spawned via a promise.
@@ -150,7 +152,7 @@ Now that is our grid width row is being drawn correctly, next is the height iter
             x = startX;
             z += this.props.wallWidth;
 ```
-With that in place we have only our race condition to handle, after the height itteration add the following:
+With that in place we have only our race condition to handle, after the height iteration add the following:
 ```typescript
         let racer = 0;
         racer = this.async.setInterval(() => {
@@ -172,7 +174,7 @@ Your current `generateMazeGrid` function should look like this:
         let y = this.props.wallHeight / 2;
         let z = 0 - (height / 2);
         let startX = x;
-        let simpleRotation = hz.Quaternion.fromEuler(new hz.Vec3(270, 0, 0));
+        let simpleRotation = hz.Quaternion.fromEuler(this.props.wallDefaultRotation);
         let walls: { wall: hz.Entity | undefined, type: string, x: number, y: number, z: number }[][] = [];
         let undefined_entity: hz.Entity | undefined = undefined;
         let at_the_races = 0;
@@ -189,7 +191,7 @@ Your current `generateMazeGrid` function should look like this:
                 row.push(cell);
                 at_the_races++;
                 let [asset, rotation] = (j + i / this.props.wallWidth) % 3 === 0
-                    ? [this.props.wallDetailed, hz.Quaternion.fromEuler(new hz.Vec3(270, 0, 90 * Math.floor(Math.random() * 4)))]
+                    ? [this.props.wallDetailed, hz.Quaternion.fromEuler(this.randomWallRotation())]
                     : [this.props.wallSimple, simpleRotation];
                 if (asset) this.world.spawnAsset(asset, position, rotation).then(spawnedObjects => {
                     spawnedObjects.forEach(obj => {
@@ -215,6 +217,21 @@ Your current `generateMazeGrid` function should look like this:
         }, 100);
     }
 ```
+Now before your code will compile we will need to implement the `randomWallRotation` function. Add the following code to your `Maze` class:
+
+```typescript
+    private randomWallRotation(): hz.Vec3 {
+        let rotation = 90 * Math.floor(Math.random() * 4);
+        let on = this.props.wallRotateOn.toUpperCase();
+        return on === 'X'
+            ? new hz.Vec3(this.props.wallDefaultRotation.x, this.props.wallDefaultRotation.y, rotation)
+            : on === 'Y'
+                ? new hz.Vec3(this.props.wallDefaultRotation.x, rotation, this.props.wallDefaultRotation.z)
+                : new hz.Vec3(this.props.wallDefaultRotation.x, this.props.wallDefaultRotation.y, rotation);
+  }
+```
+This code calculates a random rotation and then uses a ternary operator to check whether the `wallRotateOn` property is set to either the X, Y or Z axis and returns a relevant vec3.
+
 You will now be able to save, and enter preview mode in your desktop editor. You should see a 9x9 grid of walls in the center of the game area.
 
 ![9x9 Grid](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/o2ldedisoh0ta8lxxsqf.png)
@@ -233,7 +250,7 @@ Next we need to setup our event listener so that we can randomly generate the ma
         });
     }
 ```
-Note how we have added some validation to ensure the maze dimensions are odd numbers, this is to handle the earlier mentioned caveat with the algorithm we are about to implement which relies on a grid structure that is always odd in both dimensions to render perfectly. 
+Note how we have added some validation to ensure the maze dimensions are odd numbers, this is to handle the earlier mentioned caveat with the algorithm we are about to implement which relies on a grid structure that is always odd in both dimensions to render perfectly.
 
 To implement the carve function start with this boilerplate code:
 ```typescript
