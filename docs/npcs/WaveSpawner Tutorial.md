@@ -9,7 +9,7 @@ This importable script creates a **spawner** in Horizon Worlds that generates en
 ```ts
 import { Component, PropTypes, Asset } from 'horizon/core';
 ```
-Depending on your editor settings, this could also have an ampersand symbol like: 
+Depending on your editor settings, this could also have an "AT" symbol like: 
 ```ts
 import { Component, PropTypes, Asset } from '@horizon/core';
 ```
@@ -166,7 +166,7 @@ export class WaveSpawner extends Component<typeof WaveSpawner> {
 
 Component.register(WaveSpawner);
 ```
-Okay, so that's the basics of spawning Charlies. But there's ever-so-much-more we can do together... Take my hand, sweet developer, and let's dive into the advanced tutorial? 
+Okay, so that's the basics of spawning Charlies. But there's ever-so-much-more we can do together... Take my hand, sweet developer, and let's dive into the advanced tutorial. 
 
 Afraid? No problem, we can stop here. But do you want to shake the foundations of the Charlieverse? Let's do it.
 ---
