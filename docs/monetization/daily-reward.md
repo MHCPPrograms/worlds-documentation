@@ -6,7 +6,7 @@ Thibaut Quentin (Tquentin)
 <!-- IMPORTANT: Put the date this document was last updated! This is
 important information for people to tell how 'stale' this info might 
 be.-->
-September 05, 2025  
+September 08, 2025  
 
 ## Introduction
 
@@ -20,11 +20,11 @@ In this tutorial, we will learn how to use and set up the [Daily Rewards Asset T
 
 <!-- This section should indicate any expectations you have of your readers, such as other materials or concepts they should already be familiar with in order to get the most out of your document. -->
 
-The [basic understanding](https://mhcpcreators.github.io/worlds-documentation/docs/understanding-the-desktop-editor/Worlds-desktop-tools-basics) of the Meta Horizon Wolrd desktop editor is needed. But you don't need to have a lot of understanding of TypeScript as everything will be explained with their TypeScript code.
+The [basic understanding](https://mhcpcreators.github.io/worlds-documentation/docs/understanding-the-desktop-editor/Worlds-desktop-tools-basics) of the Meta Horizon World desktop editor is needed. But you don't need to have a lot of understanding of TypeScript, as everything will be explained with their TypeScript code.
 
 As for every monetization doc, you need to be a member of MHCP and have accepted the monetization Terms of Service in the creator portal in order to create in-world items that we will use. Find out more about monetization [here](https://developers.meta.com/horizon-worlds/learn/documentation/mhcp-program/monetization/creator-monetization-partner-program)
 
-Please note that this documentation is based on the version XXXX of the [Daily Rewards Asset Template](https://developers.meta.com/horizon-worlds/learn/documentation/code-blocks-and-gizmos/daily-rewards-asset-template) and could not work for newer versions.
+Please note that this documentation is based on the version of the [Daily Rewards Asset Template](https://developers.meta.com/horizon-worlds/learn/documentation/code-blocks-and-gizmos/daily-rewards-asset-template) published the 4th April 2025.
 
 ### Document Organization
 
@@ -34,8 +34,13 @@ This document will show you step by step how to implement the daily reward and g
 
 You can find the quick access link below to each part here:
 
-* [Topic One](#topic-one)
-* [Topic Two](#topic-two)
+* [Plan your reward](#plan-your-reward)
+* [Items setup](#items-setup)
+* [Set up the Daily Reward Asset](#set-up-the-daily-reward-asset)
+* [Troubleshooting](#troubleshooting)
+* [Configure a trigger](#configure-a-trigger)
+* [Multiple Daily Rewards](#multiple-daily-rewards)
+* [Go beyond with TypeScript](#go-beyond-with-typescript)
 * [References](#references)
 
 ## Plan your reward
@@ -44,10 +49,10 @@ Before doing anything, you need to plan what you want to achieve with daily rewa
 
 Here are some examples:
 - Temporary bonus  
-  Every day, the user can gain a one-time bonus, like:
+  Every day, the user can gain a one-time bonus, such as:
   - a temporary speed boot
   - a daily (24h) coin boost with a multiplier for the user
-  - a global (for the entire server) boost the highlight the user name that activated it (to engage more and add player interaction)
+  - a global (for the entire server) boost to highlight the user name that activated it (to engage more and add player interaction)
     
 - Cosmetic  
   Specific cosmetics for users who come every day can be attractive to new users to come daily.
@@ -66,15 +71,58 @@ In this part, we will add consumable items to our world. If you have already cre
 
 To add an item, follow the steps of [this official documentation](https://developers.meta.com/horizon-worlds/learn/documentation/mhcp-program/monetization/meta-horizon-worlds-inworld-purchase-guide#creating-an-item). Please note that you need to add every item in the 7-day windows of your daily reward.
 
-## Setup the Daily Reward Asset
+## Set up the Daily Reward Asset
 
 Once your items have been configured, we can now add the [Daily Rewards Asset Template](https://developers.meta.com/horizon-worlds/learn/documentation/code-blocks-and-gizmos/daily-rewards-asset-template) and configure it.
 
 ### Import 
 
+To start, open the [Desktop Editor](https://developers.meta.com/horizon-worlds/learn/documentation/desktop-editor/desktop-editor) and open your world.  
+Then go to the "Public Assets" (1) section under "Asset Library" (2) and use the search tool and type "Daily Rewards" (3) to find the Daily Rewards asset (4) created by MetaHorizon. And add it to your world.  
+
+![impot_DRA_a](https://github.com/user-attachments/assets/7dbf5dbc-64f7-4a62-b80b-4ad82595cd8a)  
+
+A warning message can appear "Asset includes script(s)" as this asset needs TypeScript script to work. You can just click the "OK" button and continue.
+
+#### Asset content
+
+With this import, you have added more than just an object to your world. As you can see on the Hierarchy tab if you unfold the asset:
+
+<p align="center">
+  <img width="250" height="467" alt="Hierarchy" src="https://github.com/user-attachments/assets/4bd2ccb0-2370-4a06-be72-2826141df87f" />
+</p>
+
+There are a lot of objects, but do not worry, there are clearly labelled and easy to work with!
+ 
+- Daily Rewards
+  The main object. It is the root for all the children objects. If you click on this, you will have access to the main option of the asset.
+  - Daily Rewards UI Pool  
+    This repository contains all the User Interface (UI) that can be displayed. Daily Rewards are user-related, every player will have a specific state on the daily reward system, so each will need a different UI. When a user joins your world, a Daily Rewards UI script will be assigned to handle the UI.
+  
+  - Daily Rewards Button Pool
+    Same as the UI pool, but for the button shown on the screen to open the Daily Reward UI.
+
+To learn more about how the pool gizmos work, check the official documentation [here](https://developers.meta.com/horizon-worlds/learn/documentation/code-blocks-and-gizmos/asset-pool-gizmo).  
+Please note that your world will need to have the same number of Pool children as the maximum number of players. If you change it in the future, make sure to add enough scripts for every player to enjoy your daily rewards!  
+
+Also,  two TypeScript scripts have been imported to your world:
+
+- daily_rewards.ts
+  This is the main script that interacts with the persistent variable that we will set up next. It has all the logic and handles events to interact with the local scripts of the pools
+- ui_toggle_button.ts
+  This script handles the player's assigned toggle button. This script allows the player attached script to interact with the server script.
+- daily_rewards_ui.ts
+  This script handles the player's assigned UI and buttons. This script allows the player attached script to interact with the server script.
+
+To summarize, the system works as follows, with an event system:
+<p align="center">
+  <img width="961" height="711" alt="Daily Reward " src="https://github.com/user-attachments/assets/2d60330e-03ad-4b08-96dc-2837e7b0918e" />
+</p>
+
+
 ### Setup persistent variable
 
-This ID is the link with the storage of your world through the [Persistent variables](https://developers.meta.com/horizon-worlds/learn/documentation/desktop-editor/quests-leaderboards-and-variable-groups/variable-groups/managing-persistent-variables-associated-with-a-variable-group) system. It is what allow the world to know where the users are on the daily streak.  
+This ID is the link with the storage of your world through the [Persistent variables](https://developers.meta.com/horizon-worlds/learn/documentation/desktop-editor/quests-leaderboards-and-variable-groups/variable-groups/managing-persistent-variables-associated-with-a-variable-group) system. It is what allows the world to know where the users are on the daily streak.  
   
 It can be configured on the World Editor by going to the Systems > Variable Groups 
   
@@ -96,7 +144,7 @@ Once created, you will see the added variable in the group view:
   
 <photo>  
   
-Finally, you have to click on the "copy" button to copy the complete ID of your variable (it is formatted with group_name:variable_name) and paste it in the Persistent object Variable field of the Daily Reward.
+Finally, you have to click on the "copy" button to copy the complete ID of your variable (it is formatted with group_name:variable_name) and paste it in the Persistent object Variable field of the Daily Reward.  
   
 ### Set the items
 
@@ -107,22 +155,40 @@ Day X Reward Thumbnail: The thumbnail of the chosen award item to be granted.
 
 ### Options
 
-The options description can be found on the official documentation [here](https://developers.meta.com/horizon-worlds/learn/documentation/code-blocks-and-gizmos/daily-rewards-asset-template#visual-and-interaction).  
+The options description can be found on the official documentation [here](https://developers.meta.com/horizon-worlds/learn/documentation/code-blocks-and-gizmos/daily-rewards-asset-template#visual-and-interaction).   
 
-This is some additional information on the most important one that you need to configure: 
+This is some additional information on the most important one that you need to configure:  
 
 #### Id
 It's the unique identifier for the current daily reward. If you want to have multiple ones (as detailed above), you need to differentiate each with a different ID.
-The ID is a string; it can be whatever you want, but it must be unique.
+The ID is a string; it can be whatever you want, but it must be unique.   
 
 #### Persistent Object Variable
+It represents the place to store the data for each user. If you have already set up the persistent object, then paste the ID here.  
+To have more explanation on how to create this variable, follow the steps [here](#setup-persistent-variable)    
 
-
-Once done, your daily reward is now set up properly with your world!
 
 #### Daily Rewards Activation
 
 This indicates whether the daily rewards system is active or not. The daily reward is activated by default. You need to set it to false if you want to activate it dynamically with TypeScript, as detailed in the next sections.
+
+### Test it!
+
+Once you have done every step, your daily reward is now set up properly with your world!  
+It is now time to start your world and check if it works!
+
+## Troubleshooting
+
+Sometime something don't go as planned, if you daily reward don't work, here are some common issues that you can encounter:
+
+- "Warning : Can't get value for Store:DailyRewards. ID was deleted or never existed. Go to Systems tab in creation UI to confirm."  
+  This error typically appears when you have not created your [persistent variable](#setup-persistent-variable) or set a wrong id. Check that the ID on the warning message is the good ID for your persistent variable, change it if needed, then restart your world.
+
+- The UI does not show  
+  If your Daily Reward UI do not appear when you click on the UI button, double check the following:
+  - All the items has been configured (none of them are blank)
+  - The Daily Reward ID is consistent. If you have modified it on the main asset, you need to modify it under every button of the pool.
+  - If you use a custom trigger, verify your code with the next section.
 
 
 ## Configure a trigger
@@ -142,7 +208,7 @@ import { PanelEvents } from 'daily_rewards_ui';
 ```
 
 This will allow your script to use the event system with 'PanelEvents.ShowPanel' and 'PanelEvents.HidePanel'.
-Both of them require a Player object and a nullable String as id to select a specific one. Please note that if the id is null, every daily reward menu will be shown.  
+Both of them require a Player object and a nullable String as an ID to select a specific one. Please note that if the ID is null, every daily reward menu will be shown.  
 
 Then we add the basic Trigger script :
 ```ts
@@ -171,7 +237,7 @@ this.connectCodeBlockEvent(this.entity, hz.CodeBlockEvents.OnPlayerEnterTrigger,
 
 And voilà! You now have a functional script that lets a Trigger Gizmos open your daily reward UI.
 
-At the end, the script will look like that:
+At the end, the script will look like this:
 
 ```ts
 
@@ -179,7 +245,7 @@ import { PanelEvents } from 'daily_rewards_ui';
 
 
 /*
- * This class allow a trigger to open a daily reward view with the id in the props definition
+ * This class allows a trigger to open a daily reward view with the id in the props definition
  */
 class StartDailyRewardView extends hz.Component<typeof StartDailyRewardView>{
 
@@ -188,7 +254,7 @@ class StartDailyRewardView extends hz.Component<typeof StartDailyRewardView>{
   };
 
   start(){
-    //Send a showPanel event when a user enter the trigger to open the Daily Reward menu
+    //Send a showPanel event when a user enters the trigger to open the Daily Reward menu
     this.connectCodeBlockEvent(this.entity, hz.CodeBlockEvents.OnPlayerEnterTrigger, (player) => {
       this.sendNetworkBroadcastEvent(PanelEvents.ShowPanel, {player: player, id: this.props.id})
     })
@@ -197,13 +263,13 @@ class StartDailyRewardView extends hz.Component<typeof StartDailyRewardView>{
 hz.Component.register(StartDailyRewardView);
 ```
 
-Once done, you just have to add a trigger Gizmos in your world and attach it to ScriptName:StartDailyRewardView and set the id of your Daily Reward.
+Once done, you just have to add a trigger Gizmos in your world and attach it to ScriptName:StartDailyRewardView and set the ID of your Daily Reward.
   
 
-## Have multiple Daily Rewards
+## Multiple Daily Rewards
 
 Currently, the [Daily Rewards Asset Template](https://developers.meta.com/horizon-worlds/learn/documentation/code-blocks-and-gizmos/daily-rewards-asset-template) could only have a 7-day window, but for some usage, it is not enough. Also, it may be needed to have more than one daily reward schedule with specific rewards each week (in a rotation of some weeks) or multiple rewards for different bonuses.  
-This section discusses how to have multiple daily rewards and how to handle it properly.
+This section discusses how to have multiple daily rewards and how to handle them properly.
 
 
 ## Go beyond with TypeScript
@@ -219,75 +285,15 @@ function myFancyFunction(value: number) {
 }
 ```
 
-## Topic One
-
-This is where we discuss the *first* interesting topic of this document.  
-
-### Lists
-
-There might be lists
-
-#### Unordered
-- some
-  - unordered
-  - nested
-    - lists
-- of
-- data
-
-#### Ordered
-1. some
-   1. ordered
-   1. nested
-      1. lists
-1. of
-1. data
-
-### Code
-
-You will likely want to reference code:
-
-```ts
-function myFancyFunction(value: number) {
-  console.log(`You chose ${value}!`);
-}
-```
-
-### Images
-It might have some images:
-
-![OG MHCP](../../images/MHCP_OG_image.jpg)
-
-## Topic Two
-
-This is where we discuss the **second** interesting topic of this document.
-
-### Tables
-
-An advanced formatting option is tables
-
-| Heading 1 | Heading 2 | Heading 3 |
-| --- | --- | --- |
-| Data 1 | Data 2 | Data 3 |
-| Data 4 | Data 5 | Data 6 |
-
-
-### Diagrams
-
-Diagrams are a very advanced markdown topic (and may not render correctly in non GitHub previews)
-
-```mermaid
-graph TD;
-    A[Get Idea]-->B;
-    B(Form Plan)-->C;
-    C{?}-->D[Profit!];
-```
-
 ## References
 
 <!-- this is the place to put useful supplementary information, such as references to other websites or documents in the github repo that are relevant to your topic -->
 
-- https://medium.com/shecodeafrica/a-guide-to-technical-writing-7efcd0e70166
-  - an article on writing good technical documentation
-- https://docs.google.com/presentation/d/14pFo4zP9LvEP5-bG9i-iwCVK0kyMZwrl5VuuxEwtHJI/edit?usp=sharing
-  - slidedeck presentation of "Fast-track your Docs with GitHub Templates" Build Along Workshop
+- https://developers.meta.com/horizon-worlds/learn/documentation/code-blocks-and-gizmos/daily-rewards-asset-template
+  - The official documentation about the Daily Rewards Asset
+- https://developers.meta.com/horizon-worlds/learn/documentation/code-blocks-and-gizmos/asset-pool-gizmo
+  - Official documentation about the Pool Asset Gizmo
+- https://developers.meta.com/horizon-worlds/learn/documentation/desktop-editor/quests-leaderboards-and-variable-groups/variable-groups/using-variable-groups/
+  - Persistent storage for meta horizon world documentation
+- https://developers.meta.com/horizon-worlds/learn/documentation/desktop-editor/custom-ui/api-reference-for-custom-ui
+  - The custom UI official documentation
