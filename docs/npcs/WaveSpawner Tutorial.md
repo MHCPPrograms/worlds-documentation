@@ -514,4 +514,4 @@ Component.register(BPMWaveSpawner);
 
 ---
 
-Enjoy creating BPM‑driven rhythm gameplay! May Charles live on and reign supreme!
+Enjoy creating BPM‑driven rhythm gameplay! May Charles live on and reign supreme! 
