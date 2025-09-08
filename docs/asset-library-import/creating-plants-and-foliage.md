@@ -60,6 +60,14 @@ Since we’re creating a stylized asset, I am going to hand-paint my textures. T
 
 If you want to try to follow along, I suggest using a tablet with a pen stylus that supports pressure sensitivity. A pen tablet (such as a Wacom) connected to your computer and a program like Photoshop would be the standard, but any device/app that you can draw on and get the results onto your computer will work. I am using a Samsung Galaxy Tab with the Sketchbook app, and transferring my images to my computer via Google Drive. 
 
+### Texture Size
+
+Make sure to create your textures at a reasonable size. If your plant is a large centerpiece in the middle of a lobby, then you can justify using a larger, more detailed texture versus if it were a small background decor item. 
+
+For stylized assets, I find that using a texel density of 1x1 meter in the 3D world equals 256x256 pixels of texture space usually works well. I usually work at 1024x1024 to ensure that I have enough room to add details, and then shrink the size after the texture is finished.
+
+Your textures **must** be some power of 2. The most common dimensions for a lightweight web/mobile platform like Horizon Worlds will be 256, 512, and 1024. Texture size impacts load times, travel times, etc, so you want to try to use the smallest texture size you can while still maintaining visual quality. 
+
 ### Identifying Needed Components
 
 The first step is to decide on how many unique parts and variations my final plant will need. You can think of this like a checklist: leaves, stems, flowers, etc. I suggest having at least 2 different leaf variations to avoid too much visual repetition - things like shape, size, and color can be varied slightly between them for a more natural appearance. 
