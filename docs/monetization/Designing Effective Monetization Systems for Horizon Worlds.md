@@ -1,3 +1,11 @@
+# Youtube video: Designing Monetization Systems in Horizon Worlds | Tutorial for Creators
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FKsOIkQwO7E?si=HOANlhV27y9Qn5DF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+
+
 # Designing Effective Monetization Systems for Horizon Worlds
 
 Monetization in Horizon Worlds is more than simply adding in-app purchases (IAP). A well-designed system should feel natural, provide value to players, and sustain the creator’s vision without harming the social experience. This tutorial explores how to **design strong monetization strategies** for short-session, multiplayer, social F2P experiences—common formats in Horizon Worlds, especially on mobile, browser, and VR.
