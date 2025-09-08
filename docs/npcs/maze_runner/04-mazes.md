@@ -398,6 +398,6 @@ Before we finish for this instalment, lets now tidy up our game world. We no lon
 
 In the end your game world should now look something like this:
 
-![Final Preview](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tec6ph1tc3a3o8tfufn0.png)
+![Final Preview](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2wlz23cv9fuje5k8r6m4.png)
 
 This concludes this part of the tutorial. You now have a fully functional maze game with a randomly generated maze each time you play. In the final instalment of this series, we'll look at adding NPCs to race against within your maze.

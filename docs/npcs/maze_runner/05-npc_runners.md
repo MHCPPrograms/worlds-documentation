@@ -6,9 +6,9 @@ Let's get started! We will begin with the random runner. First, open the Maze Ru
 
 ![NPC gizmo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6g1knh5v34wx80rgn0gj.png)
 
-![Rex](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1ny0l1htq04io4w96h8e.png)
+![Rex](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/390macoov2ernt02au7p.png)
 
-Next, we will quickly customise our NPC. Click the 'Edit Avatar' button in the properties panel. This will open the avatar editor in a web browser. Here you can change the appearance of your NPC. Edit the avatar to your liking, then save your changes and return to the desktop editor. Refresh and the NPC will update to reflect your changes. 
+Next, we will quickly customise our NPC. Click the 'Edit Avatar' button in the properties panel. This will open the avatar editor in a web browser. Here you can change the appearance of your NPC. Edit the avatar to your liking, then save your changes and return to the desktop editor. Refresh and the NPC will update to reflect your changes.
 
 ![Edit Rex](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dr7gnqomezzgogatzfhg.png)
 
@@ -18,7 +18,7 @@ Next, we will quickly customise our NPC. Click the 'Edit Avatar' button in the p
 
 Once you are happy with you NPC'S appearance, you will need to add a spawn location in the same position that you set your avatar. This will be used to spawn the NPC back into the correct position after a maze round has been completed. To do this, drag and drop a spawn point gizmo into the scene. Position it in the same location as your NPC and set the rotation to match. Rename the spawn point to `RexSpawnPoint` (replacing Rex with the name of your Avatar).
 
-![Rex Spawn Point](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qsiuubxsyarwibvkrn4p.png)
+![Rex Spawn Point](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jaiaz11incf3gb21r45v.png)
 
 Now that the NPC and its spawn point are set up, it's time to start coding its behavior. In the Scripts panel, add a new script and name it `RandomNPCRunner`. After creating the script, attach it to your NPC object to begin controlling its movement.
 
@@ -208,8 +208,8 @@ Next we will implement the `setNPCPath` function, we will step through this func
 ```typescript
      private setNPCPath(): void {
         if (!this.npc || !this.maze) return;
-     
-     
+
+
      }
 ```
 Now we are going to abstract some logic into a helper function `buildMazePath` which we will use to build the path the NPC will take through the maze. Add the following callback inside the `setNPCPath` function:
@@ -225,7 +225,7 @@ Then to implement the `buildMazePath` function, add the following function defin
 To start we will define some local variables to hold the current position of the NPC in the maze grid, as well as the an array of `Vec3` positions representing the path the NPC will take. We will also define an array to hold the possible directions the NPC can move in, a visited set which we will use to prevent the same paths from being taken twice and a last found index we can use to backtrack when we find dead ends.
 ```typescript
         let maze = this.maze;
-        let x: number = 1; 
+        let x: number = 1;
         let y: number = 0.5;
         let z: number = 1;
         let path: { position: hz.Vec3, direction: string }[] = [];
@@ -280,7 +280,7 @@ Now we will get a reference to the next cell in the maze grid.
 If the cell is not 'undefined' then we know that it is a valid path cell, remember we filter out walls when we broadcast the maze data.
 ```typescript
         if (cell) {
-            
+
         }
 ```
 Then push push the new position and direction into the path array, check if the cell type is 'E' if it is then set the direction to 'end' so that we exit the parent while loop on the next iteration.
@@ -305,7 +305,7 @@ First add the conditional code:
 ```typescript
         if (!found) {
             if (path.length > 1 && lastFoundIndex < path.length) {
-       
+
             } else {
                 break;
             }
@@ -325,15 +325,15 @@ We will then update the current x and z coordinates to this position. We need to
 ```
 Then we will push a new position into the path array with the opposite direction to indicate we are backtracking.
 ```typescript
-                path.push({ 
-                    position: new hz.Vec3(prev.x, y, prev.z), 
-                    direction: lastStep.direction == 'up' 
-                        ? 'down' 
-                        : lastStep.direction == 'down' 
-                            ? 'up' 
-                            : lastStep.direction == 'left' 
-                                ? 'right' 
-                                : 'left' 
+                path.push({
+                    position: new hz.Vec3(prev.x, y, prev.z),
+                    direction: lastStep.direction == 'up'
+                        ? 'down'
+                        : lastStep.direction == 'down'
+                            ? 'up'
+                            : lastStep.direction == 'left'
+                                ? 'right'
+                                : 'left'
                 });
 ```
 And finally we will increment the `lastFoundIndex` by 2 so that we can continue backtracking in the next loop if required. We increment by 2 because we want to skip the last position we just backtracked to, and get the one before that.
@@ -348,7 +348,7 @@ Your final `buildMazePath` function should look like this:
 ```typescript
     private buildMazePath(): { position: hz.Vec3, direction: string }[] {
         let maze = this.maze;
-        let x: number = 1; 
+        let x: number = 1;
         let y: number = 0.5;
         let z: number = 1;
         let path: { position: hz.Vec3, direction: string }[] = [];
@@ -401,10 +401,10 @@ Your final `buildMazePath` function should look like this:
                     z = maze[x].findIndex(cell => cell && cell.x === prev.x && cell.z === prev.z);
                     path.push({
                         position: new hz.Vec3(prev.x, y, prev.z),
-                        direction: lastStep.direction == 'up' 
-                            ? 'down' 
+                        direction: lastStep.direction == 'up'
+                            ? 'down'
                             : lastStep.direction == 'down'
-                                ? 'up' 
+                                ? 'up'
                                 : lastStep.direction == 'left'
                                 ? 'right'
                                 : 'left'
@@ -518,7 +518,7 @@ Your final `setNPCPath` function should look like this:
         }
     }
 ```
-The final function we need to implement is `moveNPCToLobby`. This function will teleport the NPC back to the lobby spawn point. 
+The final function we need to implement is `moveNPCToLobby`. This function will teleport the NPC back to the lobby spawn point.
 ```typescript
     private moveNPCToLobby(): void {
         let player = this.npc?.agentPlayer.get();
@@ -546,7 +546,7 @@ Next create a new NPC in your scene using the same steps as before, but this tim
 
 ![Eliza](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r3ijkchwupefrgaz7sp7.png)
 
-![Eliza Spawn Point](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b7m6a2gel65475q4cqr9.png)
+![Eliza Spawn Point](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nvlyid30q03rw7plsk31.png)
 
 If you were to now run your game you will have two NPCs running randomly through the maze. To modify this second NPC to run directly to the finish line we will need to make some changes to the `DirectNPCRunner` script. Open the `DirectNPCRunner` script in your editor. First we will need to rename our class, change all references to `RandomNPCRunner` to `DirectNPCRunner`, and then update the `minSpeed` and `maxSpeed` properties to be slower than the random NPC. In my example I will set the min speed to 2 and the max speed to 4. Update the `propsDefinition` as follows:
 ```typescript
@@ -566,7 +566,7 @@ Then return to the `buildMazePath` function and replace the entire function with
 ```typescript
     private buildMazePath(): { position: hz.Vec3, direction: string }[] {
         let maze = this.maze;
-        let x: number = 1; 
+        let x: number = 1;
         let y: number = 0.5;
         let z: number = 1;
         let path: { position: hz.Vec3, direction: string }[] = [];
@@ -576,8 +576,8 @@ Then return to the `buildMazePath` function and replace the entire function with
             [0, -1, 'down'],
             [-1, 0, 'left'],
         ];
-     
-     
+
+
      }
 ```
 These are all the same variables we defined in the previous version of the function. Next we will define our stack and visited set. We will also define a variable to hold the end node once we find it.
@@ -635,7 +635,7 @@ Your final implementation of the `buildMazePath` function using DFS should look 
 ```typescript
     private buildMazePath(): { position: hz.Vec3, direction: string }[] {
         let maze = this.maze;
-        let x: number = 1; 
+        let x: number = 1;
         let y: number = 0.5;
         let z: number = 1;
         let path: { position: hz.Vec3, direction: string }[] = [];
@@ -695,6 +695,6 @@ Now save the script file, return to the desktop editor and allow the scripts to 
 
 ![NPC Runners](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6o53e13ek6qnr5di7zdf.png)
 
-With both random and direct NPC runners now implemented, your maze game features two distinct challenges for players to compete against. 
+With both random and direct NPC runners now implemented, your maze game features two distinct challenges for players to compete against.
 
-This concludes the this tutorial series I hope you have enjoyed it and do not stop here, there are plenty of opportunities to expand and refine your maze game further. I’m excited to see how you build on these foundations!s
+This concludes the this tutorial series I hope you have enjoyed it and do not stop here, there are plenty of opportunities to expand and refine your maze game further. I’m excited to see how you build on these foundations!

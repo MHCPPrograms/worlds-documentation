@@ -137,7 +137,7 @@ With this in place when you now enter preview mode, you should see the timer HUD
 
 ![Timer](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kq9mzgydmqgo20i40ut4.png)
 
-Now that we have the timer working, let's add some sound to our game. Today we will be adding background music to enhance the gaming experience. We will use two sound tracks: one for the lobby and one for the game area. 
+Now that we have the timer working, let's add some sound to our game. Today we will be adding background music to enhance the gaming experience. We will use two sound tracks: one for the lobby and one for the game area.
 
 First we will need to prepare our `GameController`, open this file in you code editor and then inside of the `propsDefinition` add definitions for our two sound assets:
 ```typescript

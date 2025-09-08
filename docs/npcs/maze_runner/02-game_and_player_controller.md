@@ -6,7 +6,7 @@ So lets continue, first we need to create a new script for our game controller. 
 
 ![Script GameController](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4gz126gd6bbhafwcf1xh.png)
 
-Then if you open the script you should see the following boilerplate code: 
+Then if you open the script you should see the following boilerplate code:
 ```typescript
 import * as hz from 'horizon/core';
 
@@ -254,7 +254,7 @@ Save the file, and then return to the desktop editor. Attach the script to the t
 
 ![Start Button Trigger](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2mficj4texrsx6suwx4t.png)
 
-Now if we enter preview mode, we will see the text 'loading the game...' appear but the button is not able to be pressed. 
+Now if we enter preview mode, we will see the text 'loading the game...' appear but the button is not able to be pressed.
 
 ![Loading](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/hdrz1r3vug6ncinzfppw.png)
 
@@ -266,7 +266,7 @@ Save the file, allow the scripts to compile and re-enter your preview mode. Hope
 
 ![Countdown](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/u3jcev5t7ccy16ma59bn.png)
 
-To create the logic needed to spawn the player into the game area we will first need to create a new spawn point using a gizmo in the desktop editor. Once you have added the spawn point to the world position it in the south west corner of the game area at position `hz.Vec3(32,1,-32)`. We leave some spacing either side as these will be solid walls when we eventually render the maze. Remember to disable the `Spawn on start` option in the properties.
+To create the logic needed to spawn the player into the game area we will first need to create a new spawn point using a gizmo in the desktop editor. Once you have added the spawn point to the world position it in the south east corner of the game area at position `hz.Vec3(32,1,-32)`. We leave some spacing either side as these will be solid walls when we eventually render the maze. Remember to disable the `Spawn on start` option in the properties.
 
 ![Add Spawn Point](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ga8pj4kcstsj7idz3doa.png)
 
@@ -314,7 +314,7 @@ Then to implement the `handleGameStateChanged` function to handle the state tran
         }
     }
 ```
-So we only really care about two statuses in the player controller: `Playing` and `Finished`. When transitioning to `Playing`, we need to move all players from the lobby to the match. When transitioning to `Finished`, we need to move all players from the match back to the lobby. Let's implement the `moveAllLobbyPlayersToMatch` first. 
+So we only really care about two statuses in the player controller: `Playing` and `Finished`. When transitioning to `Playing`, we need to move all players from the lobby to the match. When transitioning to `Finished`, we need to move all players from the match back to the lobby. Let's implement the `moveAllLobbyPlayersToMatch` first.
 ```typescript
     private moveAllLobbyPlayersToMatch() {
         this.matchPlayers = new Array<hz.Player>();
@@ -344,7 +344,7 @@ Now you should be able to test and once the countdown reaches zero, the game sta
 
 Next we need to go from `Playing` to `Ending` once the match is over. To achieve this we will need to add a finish point to our maze. We will do this by creating a trigger zone at the end of the maze that will detect when players reach it. To make this ending slightly more interesting we can add a text gizmo that displays a "Finish" message when players arrive at the finish point and a star.
 
-Return to the desktop editor and add a new trigger gizmo, position this at the north eastern corner of the maze, in this example that is `hz.Vec3(-32,5,32)` and set the scale to `hz.Vec3(4,10,4)`. 
+Return to the desktop editor and add a new trigger gizmo, position this at the north western corner of the maze, in this example that is `hz.Vec3(-32,5,32)` and set the scale to `hz.Vec3(4,10,4)`.
 
 ![trigger gizmo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/psre4etv7huml2a3ckm7.png)
 
@@ -368,7 +368,7 @@ With these objects in place, group them together to keep your hierarchy organise
 
 ![Group](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/07jcu9it3vdaf7j8k0fp.png)
 
-For the trigger zone to work we must create a script, in the editor create a new script called `Finish` and attach it to the `FinishTrigger` object. This script will handle the logic for detecting when players enter the finish zone and transitioning the game state to `Ending`. 
+For the trigger zone to work we must create a script, in the editor create a new script called `Finish` and attach it to the `FinishTrigger` object. This script will handle the logic for detecting when players enter the finish zone and transitioning the game state to `Ending`.
 
 ![Attach to FinishTrigger](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qqqmtw4z1s01nc4eq88m.png)
 
@@ -401,7 +401,7 @@ Then, within the `start` function, you can add an event listener for when player
         );
     }
 ```
-Now save the file and return to the editor. You should now be able to test the finish trigger by playing the game and reaching the end of the maze. When a player enters the finish trigger, the game state should change to `Ending`, and your player should be declared the winner via the global popup. After 10 seconds you should see the game transition to the `Finished` state, and your player should be returned to the lobby. 
+Now save the file and return to the editor. You should now be able to test the finish trigger by playing the game and reaching the end of the maze. When a player enters the finish trigger, the game state should change to `Ending`, and your player should be declared the winner via the global popup. After 10 seconds you should see the game transition to the `Finished` state, and your player should be returned to the lobby.
 
 Finally to finish up, move the `GameSpawnPoint` and `Finish` objects into the `GameArea` hierarchy
 

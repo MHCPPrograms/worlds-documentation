@@ -32,28 +32,29 @@ When you preview the scene, you might notice that the floor appears extended but
 Next lets add some invisible walls so that the players cannot run off the game area. Add four transparent cubes to each side of the play area, I use the following Attributes:
 
 Wall North
-    - position: `hz.Vec3(-38,5,0)`
-    - rotation: `hz.Vec3(0,0,0)`
-    - scale: `hz.Vec3(4,10,80)`
-
-Wall East
     - position: `hz.Vec3(0,5,38)`
     - rotation: `hz.Vec3(0,0,0)`
     - scale: `hz.Vec3(80,10,4)`
 
-Wall South
+Wall East
     - position: `hz.Vec3(38,5,0)`
     - rotation: `hz.Vec3(0,0,0)`
     - scale: `hz.Vec3(4,10,80)`
 
-Wall West
+
+Wall South
     - position: `hz.Vec3(0,5,-38)`
     - rotation: `hz.Vec3(0,0,0)`
     - scale: `hz.Vec3(80,10,4)`
 
+Wall West
+    - position: `hz.Vec3(-38,5,0)`
+    - rotation: `hz.Vec3(0,0,0)`
+    - scale: `hz.Vec3(4,10,80)`
+
 To make transparent just set the `visible` property of the cube to disabled.
 
-![South Wall](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y81vm1z2i2bgsv6v6cni.png)
+![South Wall](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xw9yve984bipxo57wmw7.png)
 
 Your game area should now look something like this:
 
@@ -67,61 +68,62 @@ Next to tidy up our `Hierarchy` we will group the objects we have just created u
 
 Now that the game area is set up, let's create a lobby where players will spawn before the game begins or while a game is already in progress. To make the experience more engaging, position the lobby above and to the side of the play area so players have a clear view of the maze below as they wait.
 
-First lets create the lobby floor, add a new cube to the world and set the position to `hz.Vec3(50,15,0)` and scale to `hz.Vec3(16,1,16)`, optionally set the tint to a colour of your choice.
+First lets create the lobby floor, add a new cube to the world and set the position to `hz.Vec3(0,15,-50)` and scale to `hz.Vec3(16,1,16)`, optionally set the tint to a colour of your choice.
 
-![Lobby Floor](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e8uqnm3n8mt7aqgxqxw1.png)
+![Lobby Floor](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lqfhg4w1zhuzbi1iljtc.png)
 
 Then add some walls to the lobby area so that the players cannot fall. In my example I use the following attributes:
 
 Wall North:
-    - position: `hz.Vec3(42,18,0)`
+    - position: `hz.Vec3(0,18,-42)`
     - rotation: `hz.Vec3(0,0,0)`
-    - scale: `hz.Vec3(0.5,6,16.5)`
+    - scale: `hz.Vec3(16.5,6,0.5)`
 
 Wall East
-    - position: `hz.Vec3(50,18,8)`
-    - rotation: `hz.Vec3(0,0,0)`
-    - scale: `hz.Vec3(16.5,6,0.5)`
-
-Wall South
-    - position: `hz.Vec3(58,18,0)`
+    - position: `hz.Vec3(8,18,-50)`
     - rotation: `hz.Vec3(0,0,0)`
     - scale: `hz.Vec3(0.5,6,16.5)`
 
-Wall West
-    - position: `hz.Vec3(50,18,-8)`
+Wall South
+    - position: `hz.Vec3(0,18,-58)`
     - rotation: `hz.Vec3(0,0,0)`
     - scale: `hz.Vec3(16.5,6,0.5)`
 
-![Lobby Walls](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p5vwj2xpu5374p7m7m6d.png)
+Wall West
+    - position: `hz.Vec3(-8,18,-50)`
+    - rotation: `hz.Vec3(0,0,0)`
+    - scale: `hz.Vec3(0.5,6,16.5)`
+
+![Lobby Walls](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r01cbbjtjnjigaktdhmc.png)
 
 Our lobby area should now look like this:
 
 ![Preview Lobby Area](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ckmkppyfpibfqy3kpwvw.png)
 
-Next we need to move our default spawn location to be inside of our lobby area, you can either drag or just update the position attribute to `hz.Vec3(50,17,0)` and rotation to `hz.Vec3(0,270,0)`. Now when you preview your world you will spawn into the lobby.
+Next we need to move our default spawn location to be inside of our lobby area, you can either drag or just update the position attribute to `hz.Vec3(0,17,-50)` and leave the rotation `hz.Vec3(0,0,0)`. Now when you preview your world you will spawn into the lobby.
 
-![Spawn Point](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tygyypd9dcler37bab4h.png)
+![Spawn Point](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/26c15f34sc2rat79inoe.png)
 
-With the main game area and lobby set up, let's add a few more elements to prepare for building the game controller. In the lobby, place a button that players can press to start the game, a text gizmo we can use to inform the player of the game status and additionally, set up a default leaderboard to get ready for tracking player times. For the button we will use a public asset that I have made available, in the editor navigate to the `Asset Library` panel and under public assets search for `Maze Runner` you should find several assets all of which we will use in this tutorial series, for this part we only need the button assets there should be two static and moving add these into your world. Position the static asset `hz.Vec3(43,15.5,0)` and the moving asset `hz.Vec3(43,16.4,0)`.
+With the main game area and lobby set up, let's add a few more elements to prepare for building the game controller. In the lobby, place a button that players can press to start the game, a text gizmo we can use to inform the player of the game status and additionally, set up a default leaderboard to get ready for tracking player times. For the button we will use a public asset that I have made available, in the editor navigate to the `Asset Library` panel and under public assets search for `Maze Runner` you should find several assets all of which we will use in this tutorial series, for this part we only need the button assets there should be two static and moving add these into your world. Position the static asset `hz.Vec3(0,15.5,-43)` and the moving asset `hz.Vec3(0,16.4,-43)`.
 
 ![Public Assets](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zdx2b8noy5h6sxvl68kv.png)
 
-![Thing](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zm4sl7hztu9brsvzvkyk.png)
+![Button Moving](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6q2fxyosgylbxmaw6xik.png)
 
 ![Button Preview](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/drqdngauo86mm16yueld.png)
 
-With that in place we need to add a trigger that can be used to activate the button, this should be set to `Selectable in Screen mode` so that it works transparently on all devices. Position your trigger covering the moving button, I use the following position `hz.Vec3(43,16.4,0)` and scale `hz.Vec3(0.9,0.9,0.9)`.
+With that in place we need to add a trigger that can be used to activate the button, this should be set to `Selectable in Screen mode` so that it works transparently on all devices. Position your trigger covering the moving button, I use the following position `hz.Vec3(0,16.4,-43)` and scale `hz.Vec3(0.9,0.9,0.9)`.
 
 ![Search Trigger](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i977287hzqkbpaohk86b.png)
 
-![Button Trigger](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mfekdn3l7s2kfapa699o.png)
+![Button Trigger](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wv02v6gziw5c7bqc9oh7.png)
 
-Now above the button add a default text gizmo which we will later use to update from our controller to inform players in the lobby the status of our game. Open the gizmo panel and search for text, rename the object `GameInfo` and place it above the button at the position `hz.Vec3(42,18,0)` and rotation `hz.Vec3(0,90,0)`.
+Now above the button add a default text gizmo which we will later use to update from our controller to inform players in the lobby the status of our game. Open the gizmo panel and search for text, rename the object `GameInfo` and place it above the button at the position `hz.Vec3(0,18,-42)` and rotation `hz.Vec3(0,180,0)`.
 
 ![Search text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/d7r3j3ncnleambrngtma.png)
 
-![Game Info](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c5a6p4mw4b2o63rwmt7h.png)
+
+![Game Info](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/gmbxp42su8hrzpxqambg.png)
 
 To complete our basic lobby we will next add a leaderboard which we will use to track the fastest times players complete our randomly generated mazes. Under `Systems` click `Leaderboards`, then add a new leaderboard and call it `Fastest Times` and ensure you change the sort order to ascending so we get the fastest and not slowest times.
 
@@ -129,9 +131,9 @@ To complete our basic lobby we will next add a leaderboard which we will use to 
 
 ![Create leaderboard](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iiw4oan2q0cf1go1c30e.png)
 
-After add the leaderboard to your world via the gizmo panel and searching for `World leaderboards`, ensure you set the properties to link to the `Fastest Times` leaderboard you defined in the previous step and then position it to the side of the lobby and scale based on your own preference. In my example I use the `hz.Vec3(50,16,8)` as the position and `hz.Vec3(6,6,1)` as the scale.
+After add the leaderboard to your world via the gizmo panel and searching for `World leaderboards`, ensure you set the properties to link to the `Fastest Times` leaderboard you defined in the previous step and then position it to the side of the lobby and scale based on your own preference. In my example I use the `hz.Vec3(8, 16, -50)` as the position and `hz.Vec3(6,6,1)` as the scale.
 
-![leaderboard properties](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m2esx8kr8ud3g919zfmq.png)
+![Leaderboard properties](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8s4f0n7aa6fd09adprvk.png)
 
 ![leaderboard preview](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8sjll63h4k7u3qieui78.png)
 
