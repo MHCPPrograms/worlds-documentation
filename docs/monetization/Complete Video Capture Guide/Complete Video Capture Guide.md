@@ -25,7 +25,7 @@ Let’s break down when to use each one — and how.
 
 # 1. Horizon In-App Camera *(Beginner-Friendly)*
 
-![](INSERT_IMAGE_LINK_HERE)  
+![](docs/monetization/Complete Video Capture Guide/Images/Full Menu.png)  
 
 The in-app camera is built directly into Horizon Worlds and gives you lots of control over framing and stability.
 
@@ -35,7 +35,7 @@ The in-app camera is built directly into Horizon Worlds and gives you lots of co
 - Switching between selfie mode and world shots
 
 ### **Key Features**
-![](INSERT_IMAGE_LINK_HERE)  
+![](docs/monetization/Complete Video Capture Guide/Images/Camera Guide.png)  
 
 - Switch freely between portrait and landscape filming
 - Hold the camera or place it in the world
@@ -63,7 +63,7 @@ If you’re using **face and eye tracking**, look at the **center of the camera 
 - VR capture is limited to **3 minutes**
 - Mobile capture is limited to **1 minute**
 
-![](INSERT_IMAGE_LINK_HERE)  
+![](docs/monetization/Complete Video Capture Guide/Images/Mobile.png)  
 
 ---
 
@@ -74,7 +74,7 @@ All in-app captures save to your **Meta Quest Gallery** or the **Meta Horizon mo
 
 # 2. Quest OS Camera *(Best for POV Footage)*
 
-![](INSERT_IMAGE_LINK_HERE)  
+![](docs/monetization/Complete Video Capture Guide/Images/OS Cam.png)  
 
 If you want to capture the **true VR experience**, use the built-in Quest OS capture.
 
@@ -103,7 +103,7 @@ If you want to capture the **true VR experience**, use the built-in Quest OS cap
    - Repeat to **stop recording**  
 3. Adjust **resolution, orientation, and eye preference** in:  
 
-![](INSERT_IMAGE_LINK_HERE)  
+![](docs/monetization/Complete Video Capture Guide/Images/OS Cam Settings.png)  
 
 ---
 
@@ -203,3 +203,4 @@ Whether you’re a **VR cinematographer** chasing the perfect shot or a **game d
 Keep experimenting.  
 Keep creating.  
 And keep showing the Horizon community what you’ve built. 🚀
+
