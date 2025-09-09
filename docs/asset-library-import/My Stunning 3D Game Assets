@@ -30,6 +30,28 @@ Once we're in Blender, we find the image we'll use as a reference and drag it in
 
 ![](docs/asset-library-import/ImportingImageReference.png)
 
-Once we have our reference image loaded in Blender, we need to adjust our camera view so that we have our reference in orthogonal projection. Because the way it appears referenced when we move the mouse scroll button, we can lose sight of the reference image. To avoid this, we must do the following: Alt + G. Our reference image will look like this:
+Once we have our reference image loaded in Blender, we need to adjust our camera view so that we have our reference in orthogonal projection. Because the way it appears referenced when we move the mouse scroll button, we can lose sight of the reference image. To avoid this, we must do the following: **Alt + G**. Our reference image will look like this:
 
 ![](docs/asset-library-import/RelocatingImageBackground.png)
+
+Now that you have the reference image positioned, we need to put it in a two-dimensional projection view. To do this, go to the Transform panel on the right and look for the **Rotation** option. You'll notice some values ​​appear, and we'll set them to **0**.
+
+![](docs/asset-library-import/Reposition.png)
+
+![](docs/asset-library-import/RotationReference.png)
+
+Then having the previous image we press the key combination **R + X + 90** (this means that we want to rotate the image 90 degrees on the X axis) and we will obtain the following result.
+
+![](docs/asset-library-import/FinalRotationReference.png)
+
+Once we have the previous result, we press the number 1 on our numpad to center our orthographic perspective and then go to **Wireframe mode**, which allows us to change our cube that appears in the image from being visibly solid to having it in Wireframe form. To do this, we go to the top of our work window and click on the icon in the following image.
+
+![](docs/asset-library-import/WireframeMode.png)
+
+And we can see how the cube changes. This step allows us to model any 3D object from a reference image we have as a background. Then, we press **S** (to scale the cube) and then press **G** (to grab the cube) and position it as shown in the following image:
+
+![](docs/asset-library-import/ChangingCube.png)
+
+Next, press **Tab** to enter cube editing mode and move the vertices of our cube as close as possible to each part of our model. For this step, it's important to select both vertices of our cube, as shown in the following image. To select both vertices, left-click with the mouse, and the cursor will change to the following.
+
+![](docs/asset-library-import/CubeEdition.png)
