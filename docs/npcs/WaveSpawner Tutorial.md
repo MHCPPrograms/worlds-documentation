@@ -1,5 +1,8 @@
-# Goal
-This importable script creates a **spawner** in Horizon Worlds that generates enemies at a fixed interval (every second by default). Yes, I know the moral repercussions of generating more enemies in the world, but the corporation required it... 
+# Goal - Let's make a wave spawner 
+This importable script creates a **spawner** in Horizon Worlds that generates enemies at a fixed interval (every second by default). Yes, I know the moral repercussions of generating more enemies in the world, but the corporation required it...
+
+I've also put together a simple video talking through the tutorial if just reading through all of this freaks you out a little bit. 
+[![A youtube walkthrough of building a monster spawner in meta horizon worlds desktop editor.](https://i.ibb.co/9mgrK3vG/meta-horizon-worlds-wave-spawner.png)](https://www.youtube.com/watch?v=NDOmW9rAHNc_)
 
 ---
 ## 1. Understanding the Script Basics
@@ -122,7 +125,7 @@ Component.register(WaveSpawner);
 
 Here's the breakdown of the script we've been writing so far:
 ```ts
-//to recap, the import might need and ampersand '@horizon/core'
+//to recap, the import might need an at symbol '@horizon/core'
 import { Component, PropTypes, Asset } from 'horizon/core';
 
 export class WaveSpawner extends Component<typeof WaveSpawner> {
