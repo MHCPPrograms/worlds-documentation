@@ -1,4 +1,4 @@
-# In World Purchases (IWP) Start to Finish - by uRocketLife (09/08/2025)
+# In World Purchases (IWP) Start to Finish - by uRocketLife September 08, 2025
 
 Keep your hands in the car at all times because you're in for a wild ride! This break down of consumable and durable purchases shows how easy it is to add In World Purchases (IWP) to your world. So buckle up and enjoy!
 
@@ -40,6 +40,10 @@ Here's a breakdown of the steps with some 'gotchas' sprinkled in:
 - 1 Asset Pool Gizmo
 
 That's it! Are you ready? Let’s jump in!
+
+## Youtube link
+
+https://youtu.be/3boR7QOP9NA 
 
 ## Start of Tutorial
 
@@ -450,13 +454,19 @@ First, we'll want to see logs. However, we have no way of seeing logs on our mob
 
 Dun duh duh dah! **Debug Gizmo!** Go to Build (dropdown) > Gizmos and Find, Place, and Resize the Debug Gizmo. 
 
-
+<img width="314" height="231" alt="image" src="https://github.com/user-attachments/assets/fbb23de0-49b6-4b1c-a582-9424f18a0d45" />
 
 In the **Properties/ Behavior** change Visibility = In Published World
 
+<img width="302" height="59" alt="image" src="https://github.com/user-attachments/assets/905f1f6b-9678-4370-954e-4215646dd2df" />
+
 Next, go to the **three vertical dot** button next to the Play button > Preview Actions and select the middle: Send Preview build link to the Meta Horizon mobile app. 
 
+<img width="510" height="407" alt="image" src="https://github.com/user-attachments/assets/bde91308-c86b-4777-ac58-e9447c8663c7" />
+
 Open Horizon World app on your phone and test the Jump and Speed purchase!
+
+<img width="787" height="153" alt="image" src="https://github.com/user-attachments/assets/40309f05-ac1b-4638-8b7a-3f6a1f76c085" />
 
 ### Step 11 - Deleting purchases
 
@@ -464,7 +474,11 @@ To delete the **Durable** purchase we need to go to the Desktop App.
 
 Go to the **three vertical dot** button next to the Play button > Preview Actions and select the first: Open preview build in browser. 
 
+<img width="402" height="404" alt="image" src="https://github.com/user-attachments/assets/f4b4ddbc-0e32-4ae8-a972-2374de8fc8a2" />
+
 Press Tab to open the menu, find the **backpack icon** on the left window, select the **In-world Items** tab, select the **info** button, and finally use the **trash can** to delete the purchase. 
+
+<img width="752" height="455" alt="image" src="https://github.com/user-attachments/assets/1b12ae6d-ecc8-413a-b3e6-3ae3076575e9" />
 
 ## Step 12 - Create Asset and Asset Pool Gizmo
 
@@ -472,9 +486,15 @@ We're going to turn the **PlayerSkills_Local** object into an asset.
 
 **First! Disable the AutoAssignOwner toggle!**
 
+<img width="112" height="26" alt="image" src="https://github.com/user-attachments/assets/3d6c7bb2-65a6-4698-a36d-b887f6420ebc" />
+
 Then *right-click* > Create Asset. Keep the name. Remember where you save it. Then *delete* the object from the Heirarchy. 
 
+<img width="281" height="247" alt="image" src="https://github.com/user-attachments/assets/058def44-0968-46bf-b18e-d23b76f6a838" />
+
 Next, go to Build > Gizmos > Asset Pool and place one. 
+
+<img width="63" height="81" alt="image" src="https://github.com/user-attachments/assets/8e5eb535-22e8-4ed0-a582-be23aee63947" />
 
 Rename to PlayerSkills Asset Pool and then move your attention to the Properties Panel/ Behavior/ Asset Reference. 
 
@@ -494,5 +514,7 @@ OK, so it was a liiitle more than 10 steps but it was pretty close! And don't yo
 I had a lot of fun making this tutorial and I'm glad you made it the whole way!
 
 Hope it was helpful and I'll check you later! 
+
+<img width="491" height="465" alt="image" src="https://github.com/user-attachments/assets/9a943bf3-dffa-4c87-87dd-3581fa9eed45" />
 
 -uRocketLife
