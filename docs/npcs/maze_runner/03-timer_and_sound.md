@@ -142,6 +142,7 @@ Now that we have the timer working, let's add some sound to our game. Today we w
 First we will need to prepare our `GameController`, open this file in you code editor and then inside of the `propsDefinition` add definitions for our two sound assets:
 ```typescript
     static propsDefinition = {
+        countdownTimeInSeconds: { type: hz.PropTypes.Number, default: 10 },
         lobbySound: {type: hz.PropTypes.Entity},
         playingSound: {type: hz.PropTypes.Entity},
     };

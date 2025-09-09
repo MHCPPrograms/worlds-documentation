@@ -43,6 +43,12 @@ Now return to the GameController.ts file and import the necessary types and even
 ```typescript
 import { Events, GameState, OptionalPlayer } from 'GameUtils';
 ```
+We will then update the `propsDefinition` defining a property to store the time in seconds we should countdown before teleporting the playing into and out the game area.
+```typescript
+        static propsDefinition = {
+            countdownTimeInSeconds: { type: hz.PropTypes.Number, default: 10 },
+        };
+```
 Next we need to define some additional properties for our `GameController` class. These properties will help us manage the game state and player interactions more effectively. Add the following code inside the GameController class after the `propsDefinition`.
 ```typescript
     private gameState: GameState = GameState.Loading;
@@ -52,9 +58,10 @@ Next we need to define some additional properties for our `GameController` class
     private lastGameStartTime: number = 0;
     private lastGameEndTime: number = 0;
 ```
-What we have done here is defined the necessary properties to manage the game state, track the timing of the game, and identify the winner and how long it has taken them to complete the maze. Next inside of the `start` function, we need to initialise the game and set up the necessary event listener. Update that function to the following:
+What we have done here is defined the necessary properties to manage the game state, track the timing of the game, and identify the winner and how long it has taken them to complete the maze. Next inside of the `start` function, we need to initialise our countdownTimeInMS property and set up the necessary event listener. Update that function to the following:
 ```typescript
     start() {
+        this.countdownTimeInMS = this.props.countdownTimeInSeconds * 1000;
         this.connectLocalBroadcastEvent(Events.setGameState, (data: { state: GameState, winner: OptionalPlayer }) => {
             this.setGameState(data.state, data.winner);
         });
@@ -122,7 +129,7 @@ Next, let's implement the `handleNewMatchStarting` and `handleMatchEnding` funct
                         state: GameState.Playing,
                         winner: undefined
                     });
-                    this.countdownTimeInMS = 10000; // reset the initial countdown value
+                    this.countdownTimeInMS = this.props.countdownTimeInSeconds * 1000; // reset the initial countdown value
                 }
             }
         }, 1000);
@@ -131,7 +138,6 @@ Next, let's implement the `handleNewMatchStarting` and `handleMatchEnding` funct
 Now add the `handleMatchEnding` function. This function will display the game winner to all players via a global popup. After a 10 second countdown, a `setGameState` event will be broadcasted to transition the game to the `Finished` state. This function will also handle the updating of the leaderboard.
 ```typescript
     private handleMatchEnding(): void {
-        this.countdownTimeInMS = 7000;
         let text = '';
         if (this.winner) {
             text = 'Winner: ' + this.winner.name.get();
@@ -154,7 +160,7 @@ Now add the `handleMatchEnding` function. This function will display the game wi
                         state: GameState.Finished,
                         winner: undefined
                     });
-                    this.countdownTimeInMS = 10000; // reset the initial countdown value
+                    this.countdownTimeInMS = this.props.countdownTimeInSeconds * 1000; // reset the initial countdown value
                 }
             }
         }, 1000);
