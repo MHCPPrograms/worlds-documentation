@@ -28,7 +28,7 @@ Let's start by adding a dynamic light to our scene. The process is very similar 
 
 You'll notice it looks different from the static gizmo, often appearing as a wireframe sphere or cone.
 
-*[Image: The Gizmos menu showing the Dynamic Light Gizmo being added to the scene.]*
+![The Build Gizmos menu showing the Dynamic Light Gizmo.](/docs/lighting-tutorial/media/buildgizmo.jpg)
 
 ### 2. Configure the Core Properties
 In the **Properties** panel, you'll see some familiar settings under the **Light** section.
@@ -38,7 +38,7 @@ In the **Properties** panel, you'll see some familiar settings under the **Light
 
 Set these to a visible color and intensity so you can see the effects of the next steps clearly.
 
-*[Image: The Properties panel for the Dynamic Light Gizmo with Color and Intensity highlighted.]*
+![The Properties panel for the Dynamic Light Gizmo.](/docs/lighting-tutorial/media/dynamiclightproperties.jpg)
 
 ### 3. Explore the Unique Dynamic Properties
 This is where the Dynamic Light Gizmo truly differs. Let's explore its unique settings.
@@ -53,7 +53,7 @@ This is where the Dynamic Light Gizmo truly differs. Let's explore its unique se
 
 **Experiment!** Try switching between `Point` and `Spot` types. Adjust the `Falloff` and `Spread` sliders to get a feel for how they change the light's appearance.
 
-*[GIF: A screen recording showing the user adjusting the Light Type, Falloff, and Spread properties and observing the real-time changes on the cube.]*
+![A Dynamic Light Gizmo set to a spotlight, illuminating a scene.](/docs/lighting-tutorial/media/dynamicspotlight.jpg)
 
 
 ## ⚠️ A Note on Performance
