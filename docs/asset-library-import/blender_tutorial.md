@@ -2,6 +2,10 @@
 
 This guide provides a comprehensive workflow for creating a 3D model in Blender, preparing it for import, and bringing it into the Horizon Worlds desktop editor. By following these steps, you can create custom assets with specific material properties, enhancing the visual appeal and complexity of your worlds.
 
+**Watch on Youtube:**
+
+[![A video of a tutorial](https://img.youtube.com/vi/j7MumLvgPsQ/hqdefault.jpg)](https://www.youtube.com/watch?v=j7MumLvgPsQ)
+
 - - -
 
 ## Part 1: Preparing Your Asset in Blender
