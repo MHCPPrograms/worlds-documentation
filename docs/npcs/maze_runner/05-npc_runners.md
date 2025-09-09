@@ -252,7 +252,7 @@ After we will implement a while loop to continue building the path until we reac
 Inside the loop we will first need to define a scoped variable `found` that will be used to track whether a valid direction was found. We will also shuffle the directions array to ensure the NPC moves in a random direction when given the opportunity.
 ```typescript
             let found = false;
-            dirs = dirs.sort(() => Math.random());
+            dirs = dirs.sort(() => Math.random() - 0.5);
 ```
 We will then loop through each direction in the shuffled directions array.
 ```typescript
@@ -366,7 +366,7 @@ Your final `buildMazePath` function should look like this:
 
         while (path[path.length - 1].direction !== 'end') {
             let found = false;
-            dirs = dirs.sort(() => Math.random());
+            dirs = dirs.sort(() => Math.random() - 0.5);
 
             for (const dir of dirs) {
                 let nextX = x + dir[0];
