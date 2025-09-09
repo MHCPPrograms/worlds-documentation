@@ -1,5 +1,6 @@
-
 # Module 0 — Introduction to Lighting Gizmos
+
+![An atmospheric scene.](/docs/lighting-tutorial/media/hero.jpg)
 
 Welcome to the **Lighting Gizmos Tutorial Series**.  
 In this course, you’ll learn how to use **static** and **dynamic** light gizmos to enhance your worlds with atmosphere, mood, and interactivity.
