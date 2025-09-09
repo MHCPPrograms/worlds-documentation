@@ -7,7 +7,6 @@ Welcome to Module 2. Now that you understand static lighting, it's time to explo
 ## 🎯 What You'll Learn in This Module
 - How to add and configure a Dynamic Light Gizmo.
 - The meaning and use of its unique properties: **Light Type**, **Falloff Distance**, and **Spread**.
-- How to create a simple animation using the editor's built-in tools.
 - The performance implications of using dynamic lights.
 
 ---
@@ -56,22 +55,6 @@ This is where the Dynamic Light Gizmo truly differs. Let's explore its unique se
 
 *[GIF: A screen recording showing the user adjusting the Light Type, Falloff, and Spread properties and observing the real-time changes on the cube.]*
 
-### 4. Create a Simple Animation (No Scripting Needed!)
-To see the "dynamic" nature in action, we can use the Animation Editor to make the light pulse.
-
-1.  Select the **Dynamic Light Gizmo**.
-2.  Open the **Animation Editor** panel.
-3.  Create a new animation clip named "Pulse".
-4.  At frame `0`, add a keyframe for the **Intensity** property at a low value (e.g., `1`).
-5.  Move the timeline cursor to the middle (e.g., frame `30`), change the **Intensity** to a high value (e.g., `8`), and add another keyframe.
-6.  Move to the end (e.g., frame `60`), set the **Intensity** back to `1`, and add a final keyframe.
-7.  Set the animation to **Loop** and press **Play**.
-
-Your light should now be pulsing, growing brighter and dimmer on its own! This is an effect that is impossible to achieve with a static light.
-
-*[Image: The Animation Editor panel showing keyframes for the Intensity property of the Dynamic Light Gizmo.]*
-
----
 
 ## ⚠️ A Note on Performance
 Dynamic lights are powerful, but they come at a cost.
@@ -89,7 +72,6 @@ In this module, you learned how to:
 - Add a **Dynamic Light Gizmo** and configure its basic settings.
 - Differentiate between **Point** and **Spot** light types.
 - Use **Falloff Distance** and **Spread** to shape your light.
-- Create a simple lighting animation directly in the editor.
 - Understand the performance trade-offs of dynamic lighting.
 
 ---
