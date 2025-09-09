@@ -28,13 +28,13 @@ You will need:
 
 1. **Avatar Skeleton Rig**  
     This is the “base skeleton” your animation will use. Save it somewhere easy to find (e.g., `Animations/Avatar Skeleton Rig`).
-    ![Alt text](Images\Learn-AvatarSkeltonRigWMark.png)
-   ![Alt text](Images\Desktop-SkeletonRigDownloadWMaRK.png)
+    ![](Images/Learn-AvatarSkeltonRigWMark.png)
+   ![](Images/Desktop-SkeletonRigDownloadWMaRK.png)
    * The file will come in as a long string of numbers.  Rename it to `AvatarSkeltonRig`
 
 2. **fbx2anim.zip**
 
-    ![Alt text](Images\Learn-FBXexeWMark.png)
+    ![](Images/Learn-FBXexeWMark.png)
    
    * Download and unzip it.
 
@@ -53,7 +53,7 @@ You will need:
 
     Animations  
 
-   ![Alt text](Images\Desktop-FileFolders.png)
+   ![](Images/Desktop-FileFolders.png)
 
 
 ---
@@ -63,7 +63,7 @@ You will need:
 1. Go to [Mixamo](https://www.mixamo.com/) and log in.
 
    * Click **Upload Character** and choose your **Avatar Skeleton Rig** file.
-![Alt text](Images\MixamoUploadRig.png)
+![](Images/MixamoUploadRig.png)
 
    * Once it loads, search for the animation you want.
 
@@ -84,19 +84,19 @@ You will need:
 ## **Step 2 – Import the First Animation into Blender**
 
 1. Open **Blender**.
-![Alt text](Images\Blend-new.png)
+![](Images/Blend-new.png)
 
-2. Delete the default cube:![Alt text](Images\Blend-1FBX-LettersSpaces.png)
+2. Delete the default cube
+
+3. Go to **File → Import → FBX**. This will open the Blender file explorer. **(Read the next step before you click import)** ![](Images/Blend-ImportFBXWMark.png) 
+     
+     
+     
+4. Look for your first animation (the one with skin).  Find your desired animation and select it.  Before you click the Import FBX button ensure you check **Armature \-\> Automatic Bone Orientation**  ![](Images/Blend-ImportArmatureWMark.png) ![](Images/Blend-ImportArmatureCloseMark.png) ![](Images/Blend-1FBX-LettersSpaces.png)
    * **A** is the **3D Viewpoint Window**. This is where you will import the armatures (.fbx files)
    * **B** is the **Outliner Window**.  This will list all the items in the scene
    * **C** is right above the **Timeline Window**.  We will be spending a lot of time in this lower left corner
    * **D** is above the **Frame Rendering Range** input.  You will need to adjust this as you edit your animation
-
-3. Go to **File → Import → FBX**. (read the next step before you click import) ![Alt text](Images\Blend-ImportFBXWMark.png) 
-     
-     
-     
-4. Find your first animation (the one with skin)  Select your desired animation and select it.  Before you click the Import FBX button ensure you check **Armature \-\> Automatic Bone Orientation**  ![Alt text](Images\Blend-ImportArmatureWMark.png) ![Alt text](Images\Blend-ImportArmatureCloseMark.png) 
      
      
      
