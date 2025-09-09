@@ -6,7 +6,8 @@
 
 ### This workflow shows how to use the Blender Shader Editor with Horizon’s unlit blend materials to make hologram textures. You can expand on this workflow to create your own custom textures to use in your worlds.
 
-![Hologram room](/images/blender-hologram/intro.png)  
+![Glowing heart](/images/blender-hologram/final.png)
+
 
 ## What is a texture?
 
@@ -143,16 +144,16 @@ This is where the process gets more intuitive and creative. We can take our node
 - **Direction:** Y (horizontal stripes)
     - In the second dropdown, we can change the direction of the stripes. By changing this value from **X** to **Y** we will end up with horizontal stripes as shown below. This makes the texture look more like scan lines to me.
 
-![Environment gizmo](/images/blender-hologram/bandDirection.gif)
+![Band direction gif](/images/blender-hologram/bandDirection.gif)
 
 - **Scale:** 7 (lots of medium lines). If you move this up, you'll get lots of thin lines, while lower values will give a chunkier look. By default, the lines are pretty thick, so I moved this value up to 7. 
 
-![Environment gizmo](/images/blender-hologram/waveScale.gif)
+![Wave scale gif](/images/blender-hologram/waveScale.gif)
 
 - **Distortion:** 5 (medium wiggle)
     - I love this one. It adds wiggle to the lines, making them look more glitchy.
 
-![Environment gizmo](/images/blender-hologram/waveDistortion.gif)
+![wave distortion gif](/images/blender-hologram/waveDistortion.gif)
 
 ### Color Ramp:
 - **Stops**: Black at 0.7, White at 0.77
@@ -161,7 +162,7 @@ This is where the process gets more intuitive and creative. We can take our node
 - Adjusting Black Stop: Pushing the black stop higher means more of the texture reads as “transparent” (or the background shows through).
 - Adjusting White Stop: Pulling the white stop lower makes the bands more filled in and solid.
 
-![Environment gizmo](/images/blender-hologram/ramp.gif)
+![color ramp gif](/images/blender-hologram/ramp.gif)
 
 
 ### Principled BSDF
@@ -303,7 +304,7 @@ Adjust the tint value to change the color of your hologram.
 ![Glowing heart](/images/blender-hologram/litHeart.png)
 
 ### Build an **entire hologram room**. Furniture, pets, even walls can use this workflow.
-![Glowing heart](/images/blender-hologram/final.png)
+![Glowing heart](/images/blender-hologram/station.png)
 
 ### Keep learning and experimenting with the Blender Shader Editor
 - Swap the Wave Texture node for Voronoi for “techno crystal” look.
