@@ -17,7 +17,7 @@ Before we begin, make sure you have a simple scene to work in.
 2. Add a basic shape, like a **Cube**, to serve as an object for our light to shine on.
 3. For the best results, use the **Environment Gizmo** to set the sky to a night or dark setting. This will make our light's effect much more obvious.
 
- ![The scene in Build Mode, with the red gizmo visible.](/docs/lighting-tutorial/media/staticlightgame.jpg)
+ ![The scene in Build Mode, with the red gizmo visible.](/docs/lighting-tutorial/media/staticlightingame.jpg)
 
 ---
 
