@@ -58,7 +58,7 @@ Instead, let's just physically arrange some empty objects in the world to serve 
 ### "advances against the player's interests"
 The enemies are, well, enemies. Maybe they're trying to kill the player. Or maybe they're trying to destroy something they care about. In this tutorial, the robots ignore scarcesoft and go straight for his coveted Magic Crystal™. 
 
-> How to make cool animated robots that bite, punch, and fire mortars is beyond the scope of this tutorial. If you've got questions about how to script dynamic enemies / NPCs, follow scarcesoft in Horizon Worlds and DM me. 
+> How to make cool animated robots that bite, punch, and fire mortars is beyond the scope of this tutorial. I suggest following along by making a few primitive objects like cubes or spheres and adding them as asset templates. If you've got questions about how to script dynamic enemies / NPCs, follow scarcesoft in Horizon Worlds and DM me. 
 
 ## Two more questions before we leave "conceptual land"
 
