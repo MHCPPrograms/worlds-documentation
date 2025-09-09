@@ -1,0 +1,41 @@
+python
+#nader.malke
+import numpy as np
+import matplotlib.pyplot as plt
+Properties of smart materials
+d33 = 3e-12 Piezoelectric constant (C/N)
+sigma = 1e5 # Pressure (N/m^2)
+thickness = 2e-3 # Material thickness (m)
+Calculate the generated voltage
+voltage = d33 * sigma * thickness
+print(f"Generated voltage: {voltage:.6f} V")
+# Calculate the current in the circuit
+resistance = 1e3 # Resistance (Ohm)
+current = voltage / resistance
+print(f"Generated current: {current:.6f} A")
+# Spring-damper model for material deformation
+def spring_damper(F, k, c, x0, v0, t):
+dt = t[1] - t[0]
+x = np.zeros(len(t))
+v = np.zeros(len(t))
+x[0], v[0] = x0, v0
+for i in range(1, len(t)):
+a = (F - k * x[i-1] - c * v[i-1]) / k
+v[i] = v[i-1] + a * dt
+x[i] = x[i-1] + v[i] * dt
+return x
+Spring-damper parameters
+F = 10 # Force applied (N)
+k = 1000 # Spring constant (N/m)
+c = 10 # Damper coefficient (Ns/m)
+t = np.linspace(0, 1, 100) # Time (s)
+Simulate material deformation
+x = spring_damper(F, k, c, x0=0, v0=0, t=t)
+# Display results
+plt.plot(t, x)
+plt.title("Smart material deformation")
+plt.xlabel("Time (s)")
+plt.ylabel("Deformation (m)")
+plt.grid()
+plt.show()
+``
