@@ -32,9 +32,11 @@ Next we will plan our `propsDefinition` for the `Maze` component. This will incl
         wallRotateOn: { type: hz.PropTypes.String, default: 'Z' },
         wallWidth: { type: hz.PropTypes.Number, default: 4 },
         wallHeight: { type: hz.PropTypes.Number, default: 10 },
+        wallDropOffset: { type: hz.PropTypes.Number, default: 0 },
         width: { type: hz.PropTypes.Number, default: 19 },
         height: { type: hz.PropTypes.Number, default: 19 },
         startPosition: { type: hz.PropTypes.Entity, required: true },
+        startPositionY: { type: hz.PropTypes.Number, default: 1 },
         finishPosition: { type: hz.PropTypes.Entity, required: true },
     };
 ```
@@ -52,7 +54,7 @@ Then with both assets saved you can delete the original wall objects from your s
 
 ![Wall Simpler](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wrk1zed9822q7ndwa13y.png)
 
-![Maze Script Props](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/x0m4inegfwee2zdayf7a.png)
+![Maze Script Props](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zpj95wtjqbnhg96a98l2.png)
 
 Now with the relevant properties set we in the desktop editor you can return to your code editor, and open `Maze.ts`. Next we will add a private property which we will use to store our maze grid. Beneath the `propsDefinition` add a line to define a private attribute that is an array of arrays of hashes. In typescript you need to explicitly define the hash that will be stored for type checking, in our hash we will have keys for the `wall` asset, grid `type` and `x`, `y`, and `z` positions.
 ```typescript
@@ -74,11 +76,11 @@ Then to implement the `generateMazeGrid` function, we will first need to calcula
 
     }
 ```
-Next we will need to calculate the start x, y and z positions for our grid, the y will always be half our wall height for our assets. The x will be half the full width of the maze and the z will be zero minus half the full height of the maze. This will ensure we start drawing the grid from the south west corner as our game is designed.
+Next we will need to calculate the start x, y and z positions for our grid, the y will always be half our wall height for our assets. The x will be half the full width of the maze minus half the asset width and the z will be zero minus half the full height of the maze minus half the asset width. This will ensure we start drawing the grid from the south east corner and end on the north west as our game is designed.
 ```typescript
-        let x = width / 2;
+        let x = (width / 2) - (this.props.wallWidth / 2);
         let y = this.props.wallHeight / 2;
-        let z = 0 - (height / 2);
+        let z = 0 - ((height / 2) - (this.props.wallWidth / 2));
 ```
 Now we are going to iterate over the height and width of the maze to create the wall entities. We will need to recurse either the X or Z so we must store the start position for atleast one, in this example we will keep track of x, so next declare a `startX` variable.
 ```typescript
@@ -170,9 +172,9 @@ Your current `generateMazeGrid` function should look like this:
     private generateMazeGrid() {
         let width = this.props.width * this.props.wallWidth;
         let height = this.props.height * this.props.wallWidth;
-        let x = width / 2;
+        let x = (width / 2) - (this.props.wallWidth / 2);
         let y = this.props.wallHeight / 2;
-        let z = 0 - (height / 2);
+        let z = 0 - ((height / 2) - (this.props.wallWidth / 2));
         let startX = x;
         let simpleRotation = hz.Quaternion.fromEuler(this.props.wallDefaultRotation);
         let walls: { wall: hz.Entity | undefined, type: string, x: number, y: number, z: number }[][] = [];
@@ -266,6 +268,10 @@ Now we need to define some variables, first height and width which we can get fr
         let width = this.props.width;
         let maze = this.walls;
 ```
+After a variable to define the drop on the y axis for the path.
+```typescript
+        let drop = this.props.wallHeight - this.props.wallDropOffset;
+```
 Then the `visited` variable if it is not defined.
 ```typescript
         if (!visited) visited = new Set<string>();
@@ -291,12 +297,12 @@ Then we need to randomize the order of the directions to ensure that the maze is
             dirs[j][1] = tmp1;
         }
 ```
-After we mark the current cell as part of the path.
+After we mark the current cell as part of the path and ensure we move the wall asset to be the floor.
 ```typescript
         if (maze[z] && maze[z][x]) {
             if (maze[z][x].type === 'W') {
                 maze[z][x].type = 'P';
-                maze[z][x].wall?.position.set(new hz.Vec3(maze[z][x].x, maze[z][x].y - this.props.wallHeight, maze[z][x].z));
+                maze[z][x].wall?.position.set(new hz.Vec3(maze[z][x].x, maze[z][x].y - drop, maze[z][x].z));
             }
         }
 ```
@@ -308,7 +314,7 @@ Then we are ready to explore the neighbouring cells. We will use the randomised 
             if (nx > 0 && nx < width-1 && nz > 0 && nz < height-1) {
                 if (maze[nz] && maze[nz][nx] && maze[nz][nx].type === 'W') {
                     maze[z+dz][x+dx].type = 'P';
-                    maze[z+dz][x+dx].wall?.position.set(new hz.Vec3(maze[z+dz][x+dx].x, maze[z+dz][x+dx].y - this.props.wallHeight, maze[z+dz][x+dx].z));
+                    maze[z+dz][x+dx].wall?.position.set(new hz.Vec3(maze[z+dz][x+dx].x, maze[z+dz][x+dx].y - drop, maze[z+dz][x+dx].z));
                     this.carve(nx, nz, visited);
                 }
             }
@@ -320,7 +326,7 @@ Your final implementation of the carve function should look like this:
         let height = this.props.height;
         let width = this.props.width;
         let maze = this.walls;
-
+        let drop = this.props.wallHeight - this.props.wallDropOffset;
         if (!visited) visited = new Set<string>();
         const key = `${x},${z}`;
         if (visited.has(key)) return;
@@ -339,7 +345,7 @@ Your final implementation of the carve function should look like this:
         if (maze[z] && maze[z][x]) {
             if (maze[z][x].type === 'W') {
                 maze[z][x].type = 'P';
-                maze[z][x].wall?.position.set(new hz.Vec3(maze[z][x].x, maze[z][x].y - this.props.wallHeight, maze[z][x].z));
+                maze[z][x].wall?.position.set(new hz.Vec3(maze[z][x].x, maze[z][x].y - drop, maze[z][x].z));
             }
         }
 
@@ -349,7 +355,7 @@ Your final implementation of the carve function should look like this:
             if (nx > 0 && nx < width-1 && nz > 0 && nz < height-1) {
                 if (maze[nz] && maze[nz][nx] && maze[nz][nx].type === 'W') {
                     maze[z+dz][x+dx].type = 'P';
-                    maze[z+dz][x+dx].wall?.position.set(new hz.Vec3(maze[z+dz][x+dx].x, maze[z+dz][x+dx].y - this.props.wallHeight, maze[z+dz][x+dx].z));
+                    maze[z+dz][x+dx].wall?.position.set(new hz.Vec3(maze[z+dz][x+dx].x, maze[z+dz][x+dx].y - drop, maze[z+dz][x+dx].z));
                     this.carve(nx, nz, visited);
                 }
             }
@@ -378,7 +384,7 @@ To ensure the players spawn into the maze correctly and the finish line is acces
         racer = this.async.setInterval(() => {
             if (at_the_races === 0) {
                 this.walls = walls;
-                this.props.startPosition?.position.set(new hz.Vec3(this.walls[1][1].x, 0, this.walls[1][1].z));
+                this.props.startPosition?.position.set(new hz.Vec3(this.walls[1][1].x, this.props.startPositionY, this.walls[1][1].z));
                 this.props.finishPosition?.position.set(new hz.Vec3(this.walls[this.walls.length - 2][this.walls[0].length - 2].x, this.props.wallHeight / 2, this.walls[this.walls.length - 2][this.walls[0].length - 2].z));
                 this.sendLocalBroadcastEvent(Events.setGameState, { state: GameState.Ready, winner: undefined });
                 this.async.clearInterval(racer);
@@ -398,6 +404,6 @@ Before we finish for this instalment, lets now tidy up our game world. We no lon
 
 In the end your game world should now look something like this:
 
-![Final Preview](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2wlz23cv9fuje5k8r6m4.png)
+![Final Preview](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ia12xem5w4rgkp306pq0.png)
 
 This concludes this part of the tutorial. You now have a fully functional maze game with a randomly generated maze each time you play. In the final instalment of this series, we'll look at adding NPCs to race against within your maze.

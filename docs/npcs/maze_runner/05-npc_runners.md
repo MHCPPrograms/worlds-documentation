@@ -42,9 +42,9 @@ As usual we will import our `GameState` and `Events` types to help us manage the
 ```typescript
 import { GameState, Events } from 'GameUtils';
 ```
-This time, we'll also import the `AvatarAIAgent` class. This allows us to cast the NPC asset to the appropriate type so we have access to the functions required to control its behavior programmatically.
+This time, we'll also import the `Npc` and 'NpcPlayer' classes. This allows us to cast the NPC asset to the appropriate type so we have access to the functions required to control its behaviour programmatically.
 ```typescript
-import { AvatarAIAgent } from 'horizon/avatar_ai_agent';
+import { Npc, NpcPlayer } from 'horizon/npc';
 ```
 Next we will define our `propsDefinition` to include the customisable properties we will need to control the NPC's behavior. We will need a property to define the max and min speed the NPC can move at, as well as properties to define the teleport location into the maze and back to the lobby. Finally we will add an offset to ensure the NPCs do not all run in a straight line centered to the center of the maze path.
 ```typescript
@@ -56,11 +56,11 @@ Next we will define our `propsDefinition` to include the customisable properties
         offset: { type: hz.PropTypes.Number, default: 0 }
     };
 ```
-Now return to your desktop editor and you will see the script is failing to compile because it cannot find the `horizon/avatar_ai_agent` module. To fix this, we need to add the Avatar AI Agent package to our project. Open the scripts panel, and click on the `settings` icon. Navigate to the `API` panel and then enable `avatar ai agent`.
+Now return to your desktop editor and you will see the script is failing to compile because it cannot find the `horizon/npc` module. To fix this, we need to add the NPC package to our project. Open the scripts panel, and click on the `settings` icon. Navigate to the `API` panel and then enable `horizon/npc`.
 
 ![Script Settings](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dcxbx5e2cr68vglpv9p0.png)
 
-![Enable](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qfj5g2r93vih6dur79h5.png)
+![NPC](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y273pv2bxoxs031q0b3d.png)
 
 Click save and allow for the scripts to recompile. Once that is done you should see the script properties appear. Set the gameSpawnPoint and lobbySpawnPoint properties to the appropriate entities in your scene. Set the offset to 0.5.
 
@@ -136,18 +136,18 @@ Your final `broadcastCarve` function should look like this:
 ```
 We now have a global event being broadcast with the maze path coordinates once the maze has been generated. We can now return to our `RandomNPCRunner.ts` script and extend our class to implement the NPC logic. The first thing we will do is define some private properties to hold the casted `AvatarAIAgent`, the maze data, and a boolean if the game round is finished or not. Add the following below the `propsDefinition`:
 ```typescript
-    private npc: AvatarAIAgent | undefined;
+    private npc: NpcPlayer | undefined;
     private maze: ({ x: number, y: number, z: number, type: string } | undefined)[][] = [];
     private finished: boolean = false;
 ```
-So to setup our `start` function to cast our NPC to the correc type. We attached the script to the NPC object so we can use `this.entity` to get a reference to the entity the script is attached to. We will then cast this to an `AvatarAIAgent` and store it in our private `npc` property.
+So to setup our `start` function to cast our NPC to the correct type. We attached the script to the NPC object so we can use `this.entity` to get a reference to the entity the script is attached to. We will then cast this to an `Npc` object and then use the `tryGetPlayer` promise to retrieve a reference to the `NpcPlayer` object, which we can use to move the NPC.
 ```typescript
     start() {
-        this.npc = this.entity.as(AvatarAIAgent);
+        this.entity.as(Npc).tryGetPlayer().then(player => this.npc = player);
 
     }
 ```
-Then within the same function we will setup the listener for the `mazeCarved` event we created earlier. When this event is received we will store the maze data in our private `maze` property.
+Within the same function we will setup the listener for the `mazeCarved` event we created earlier. When this event is received we will store the maze data in our private `maze` property.
 ```typescript
         this.connectLocalBroadcastEvent(
             Events.mazeCarved,
@@ -193,7 +193,7 @@ Next to create the `handleGameStateChanged` function referenced in the listener.
 Now to implement the two functions referenced in the switch statement. First we will implement the `moveNPCToMatch` function. This function will teleport the NPC to the maze spawn point, and then call another function `setNPCPath` to start moving the NPC randomly through the maze at a random speed. Add the following function below the `handleGameStateChanged` function:
 ```typescript
     private moveNPCToMatch(): void {
-        let player = this.npc?.agentPlayer.get();
+        let player = this.npc;
         if (player) {
             this.props.gameSpawnPoint?.as(hz.SpawnPointGizmo)?.teleportPlayer(player);
             this.async.setTimeout(() => {
@@ -433,13 +433,13 @@ This filter will remove consecutive steps in the same direction, keeping only th
 
 Next we will create a new variable `dir` to hold the current direction the NPC is facing.
 ```typescript
-        let dir: hz.Vec3 = this.npc.agentPlayer.get()!.forward.get();
+        let dir: hz.Vec3 = this.npc!.forward.get();
 ```
 Then we will chain promises to rotate and move to each position in the path sequentially. We will start by rotating the NPC to face the initial direction, then for each position in the path we will rotate to face the new direction and then move to that position at a random speed between the min and max speed defined in our props. We will also check if the `finished` property is true before each action, if it is we will throw an error to break out of the promise chain.
 
 First lets define the promise variable, we will start the chain by rotating the NPC to face the initial direction, this shouldn't actually change the rotation as the NPC should already be facing this direction, but it ensures the promise chain starts correctly.
 ```typescript
-        let promise = this.npc!.locomotion.rotateTo(dir);
+        let promise = this.npc!.rotateTo(dir);
 ```
 Then we will loop through each position in the path array.
 ```typescript
@@ -457,8 +457,8 @@ Chain the promises to first rotate to face the new direction
                     else if (pos.direction === 'down') dir = new hz.Vec3(1, 0, 0);
                     else if (pos.direction === 'left') dir = new hz.Vec3(0, 0, -1);
                     else if (pos.direction === 'right') dir = new hz.Vec3(0, 0, 1);
-                    else dir = this.npc!.agentPlayer.get()!.forward.get(); // End
-                    return this.npc!.locomotion.rotateTo(dir);
+                    else dir = this.npc!.forward.get(); // End
+                    return this.npc!.rotateTo(dir);
                 })
 ```
 Then move to the new position at a random speed between the min and max speed defined in our props. We will also adjust the position by the offset defined in our props to ensure the NPC does not run directly in line with the center of the maze path.
@@ -471,7 +471,7 @@ Then move to the new position at a random speed between the min and max speed de
                     };
                     pos.position.z += this.props.offset; // Adjust height based on offset
                     pos.position.x += this.props.offset;
-                    return this.npc!.locomotion.moveToPosition(pos.position, options);
+                    return this.npc!.moveToPosition(pos.position, options);
                 });
 ```
 Your final `setNPCPath` function should look like this:
@@ -489,9 +489,9 @@ Your final `setNPCPath` function should look like this:
             );
         });
 
-        let dir: hz.Vec3 = this.npc.agentPlayer.get()!.forward.get();
+        let dir: hz.Vec3 = this.npc.forward.get();
 
-        let promise = this.npc!.locomotion.rotateTo(dir);
+        let promise = this.npc!.rotateTo(dir);
 
         for (const pos of path) {
             promise = promise
@@ -502,8 +502,8 @@ Your final `setNPCPath` function should look like this:
                     else if (pos.direction === 'down') dir = new hz.Vec3(1, 0, 0);
                     else if (pos.direction === 'left') dir = new hz.Vec3(0, 0, -1);
                     else if (pos.direction === 'right') dir = new hz.Vec3(0, 0, 1);
-                    else dir = this.npc!.agentPlayer.get()!.forward.get(); // End
-                    return this.npc!.locomotion.rotateTo(dir);
+                    else dir = this.npc!.forward.get(); // End
+                    return this.npc!.rotateTo(dir);
                 })
                 .then(() => {
                     if (this.finished) throw new Error('Maze run has finished.');
@@ -513,7 +513,7 @@ Your final `setNPCPath` function should look like this:
                     };
                     pos.position.z += this.props.offset; // Adjust height based on offset
                     pos.position.x += this.props.offset;
-                    return this.npc!.locomotion.moveToPosition(pos.position, options);
+                    return this.npc!.moveToPosition(pos.position, options);
                 });
         }
     }
@@ -521,14 +521,14 @@ Your final `setNPCPath` function should look like this:
 The final function we need to implement is `moveNPCToLobby`. This function will teleport the NPC back to the lobby spawn point.
 ```typescript
     private moveNPCToLobby(): void {
-        let player = this.npc?.agentPlayer.get();
+        let player = this.npc;
         if (player) {
             this.props.lobbySpawnPoint?.as(hz.SpawnPointGizmo)?.teleportPlayer(player);
             this.async.setTimeout(() => {
                 let pos = this.props.lobbySpawnPoint?.position.get();
                 let rot = this.props.lobbySpawnPoint?.forward.get();
-                this.npc?.locomotion.moveToPosition(pos!, { movementSpeed: 2 }).then(() => {
-                    this.npc?.locomotion.rotateTo(rot!);
+                this.npc?.moveToPosition(pos!, { movementSpeed: 2 }).then(() => {
+                    this.npc.rotateTo(rot!);
                 });
             }, 1000);
         }
@@ -698,3 +698,4 @@ Now save the script file, return to the desktop editor and allow the scripts to 
 With both random and direct NPC runners now implemented, your maze game features two distinct challenges for players to compete against.
 
 This concludes the this tutorial series I hope you have enjoyed it and do not stop here, there are plenty of opportunities to expand and refine your maze game further. I’m excited to see how you build on these foundations!
+
