@@ -81,7 +81,7 @@ MHTG is a simple desktop tool that automates channel packing with a drag-and-dro
 
 For Windows users who prefer a standalone application without needing to install Python.
 
-*   **Download:** Go to the Releases Page and download the latest MHTG Standalone folder as a zip file.
+*   **Download:** Look for the MHTG Standalone zip file and download it.
 *   **Run:** Extract and find the .exe file and double-click it to start the application.
 *   **Note:** The first time you run the app, Windows Defender may show a warning because it's an unrecognized application. If this happens, click "More info" and then "Run anyway".
 
