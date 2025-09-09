@@ -17,7 +17,7 @@ Before we begin, make sure you have a simple scene to work in.
 2. Add a basic shape, like a **Cube**, to serve as an object for our light to shine on.
 3. For the best results, use the **Environment Gizmo** to set the sky to a night or dark setting. This will make our light's effect much more obvious.
 
-*[Image: A dark scene with a single cube on a plane, ready to be lit.]*
+ ![The scene in Build Mode, with the red gizmo visible.](/docs/lighting-tutorial/media/staticlightgame.jpg)
 
 ---
 
@@ -51,7 +51,7 @@ With your Static Light Gizmo selected, look at the **Properties** panel. You'll 
 
 Experiment with these settings until you achieve a look you like.
 
-*[Image: The Properties panel is shown with the Shape, Color, and Intensity fields highlighted.]*
+![The Static Light Gizmo properties panel, showing Shape, Color, and Intensity.](/docs/lighting-tutorial/media/staticlightproperties.jpg)
 
 ### 4. Preview Your Scene
 The red cube that represents the gizmo is only visible in **Build Mode**. To see the final result as a player would, you need to enter **Preview Mode**.
@@ -60,9 +60,7 @@ The red cube that represents the gizmo is only visible in **Build Mode**. To see
 
 Notice that the gizmo's red cube is now hidden, but its light remains, creating a much more immersive effect. This is the true appearance of your lighting.
 
-| Build Mode | Preview Mode |
-| :--- | :--- |
-| *[Image: The scene in Build Mode, showing the red Static Light Gizmo lighting the cube.]* | *[Image: The same scene in Preview Mode. The red gizmo is gone, but its light remains.]* |
+ ![The scene in Preview Mode, with the gizmo hidden.](/docs/lighting-tutorial/media/staticlightproperties2.jpg) |
 
 ---
 
