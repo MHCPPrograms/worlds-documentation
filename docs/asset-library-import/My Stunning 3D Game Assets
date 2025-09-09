@@ -25,3 +25,11 @@ Blender’s default startup shows the “Layout” workspace in the main area. T
 * Timeline on bottom left.
 
 ![](docs/asset-library-import/Blender Interface.png)
+
+Once we're in Blender, we find the image we'll use as a reference and drag it into Blender's workspace. It will look like this:
+
+![](docs/asset-library-import/ImportingImageReference.png)
+
+Once we have our reference image loaded in Blender, we need to adjust our camera view so that we have our reference in orthogonal projection. Because the way it appears referenced when we move the mouse scroll button, we can lose sight of the reference image. To avoid this, we must do the following: Alt + G. Our reference image will look like this:
+
+![](docs/asset-library-import/RelocatingImageBackground.png)
