@@ -104,6 +104,7 @@ Every other setting like Hue, Falloff, and Spread follows this exact same patter
 3.  Select the parent `InteractiveLamp` object in your scene.
 4.  In the Properties panel, click **Add Component** and add the `lamp` script.
 
+![Attach Gizmo and Script](/docs/lighting-tutoria/media/lampproperties.jpg)
 ### 3. Connect the Properties in the Editor
 This is the most important step! Our script needs to know which objects in the scene it should control.
 
