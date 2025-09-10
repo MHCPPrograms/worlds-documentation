@@ -106,13 +106,14 @@ You will need:
 6. In the top-right panel (Labeled Scene Collection), click **Armature** to select it.
 
 7. On the bottom left, to the left of “Playback” click the Dropdown menu of Editor Type.
-8. Change the panel from “Timeline” to **Dope Sheet**. ![](Images/Blend-Timeline-menu-wMark.png)
+8. Change the panel from “Timeline” to **Dope Sheet**. ![](Images/Blend-Timeline-menu-wMark.png) ![](Images/Blend-DopeSheet.png)
 
-9. In the Dope Sheet, change the mode from “Dope Sheet” to **Action Editor**.
+9. In the Dope Sheet, change the mode from “Dope Sheet” to **Action Editor**. ![](Images/Blend-ActionEditor.png)
 
-10. Ensure the armature is selected.  At the bottom, you will see a name like `Armature|Mixamo.com|Layer0`. Rename it to something short, like `Idle`.
+10. Ensure the armature is selected in the **Outliner Window**.
+11. At the bottom of the screen, you will see a name like `Armature|Mixamo.com|Layer0`. Rename it to something short, like `Idle`. ![](Images/Blend-PushDown.png)
 
-11. Press the **Push Down** button (small arrow icon) to send this animation into the **NLA Editor** (Non-Linear Animation).
+12. Press the **Push Down** button (small arrow icon) to send this animation into the **NLA Editor** (Non-Linear Animation).
 
 ---
 
@@ -144,14 +145,7 @@ You will need:
 
 1. Change the bottom-left panel to **Non-Linear Animation**.
 
-2. By default, the animation length is 250 frames.  You may need to lengthen or shorten your animation window:
-
-   *   
-   * On the right panel, open **Scene → View Layer → Simulation**.
-
-   * Change `250` frames to your desired number.
-
-3. Click your Idle strip (orange bar).
+3. Click your Idle strip (orange bar). ![](Images/Blend-ImportFBXWMark.png)
 
 4. In the menu above the strip select **Add → Action → \[Choose Second Animation\]**.  
 5. The next animation strip will appear above the original and at the location of the blue frame position marker
@@ -159,13 +153,13 @@ You will need:
 6. Click the second animation and move it so it starts **slightly after** Idle ends — let them overlap just a little.  
 7. Select the second animation strip:
 
-   * On the right, set **Extrapolation** to `Hold Forward`.
+   * On the right, set **Extrapolation** to `Nothing`.  ![](Images/Blend-ImportFBXWMark.png)
 
    * Set **Blend In** to `7`.
 
 8. Select the Idle strip:
 
-   * Set **Extrapolation** to `Hold Forward`.
+   * Set **Extrapolation** to `Nothing`.
 
    * Set **Blend Out** to `7`.  
        
@@ -174,7 +168,7 @@ You will need:
     * Click the top animation  
     * In the menu above the strip select **Add → Action → \[Choose Next Animation\]**.  
     * Click the newest animation and move it to desired location  
-    * Change Extrapolation to **Hold Forward**  
+    * Change Extrapolation to **Nothing**  
     * Change the **blend in, blend out** for every overlap of animations as needed  
       
 
