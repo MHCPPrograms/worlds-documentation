@@ -3,7 +3,7 @@
 # **Mixamo → Blender → Worlds Desktop Editor**
 
 ## **Step-by-Step Beginner Guide for Animation Import and Editing**
-NPCs are a powerful storyteller tool to invite and retain users to your world.  An empty world feels unwelcoming. An active NPC who is a part of your world - a blacksmith hammering or a waitress serving coffee - can start telling the story by just being there.  This document will allow you to create a customized animation series for NPCs in your world.  It assumes some basic knowledge of Blender, Worlds Desktop Editor and 
+NPCs are a powerful storyteller tool to invite and retain users to your world.  An empty world feels unwelcoming. An active NPC who is a part of your world - a blacksmith hammering or a waitress serving coffee - can start telling the story by just being there.  This document will allow you to create a customized animation series for NPCs in your world.  It assumes some basic knowledge of Blender and Worlds Desktop Editor 
 
 ---
 
