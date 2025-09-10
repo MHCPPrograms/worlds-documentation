@@ -187,7 +187,7 @@ You will need:
 
 3. Go to **Strip Menu → Bake Action**.
 
-4. In the pop-up:
+4. In the pop-up:   IMAGE IMAGE
 
    * **Uncheck** “Only Selected Bones”.
 
@@ -206,19 +206,40 @@ You will need:
 
 ## **Step 6 – Export for Horizon Worlds**
 
-1. Save your Blender file.
+1. Select the new combined animation in Action Editor and the skinned avator using the **Outliner Window**
 
-2. Export as FBX.  
+2. Export as FBX.  IMAGE
    1. Select **Armature**  
       1. Change Primary Bones to **X Axis**  
       2. Change Secondary Bones to **Y Axis**  
       3. Ensure you select **Add Leaf Bones**
+      4. Select your file folder you previously created named **Export**
+      5. Click **OK**
 
    
 
-3. Open Horizon Worlds Desktop Editor and import.
+3. Open Horizon Worlds Desktop Editor and import as shown in this learn guide.  Look for the Heading **Import The Animation Into Horizon Worlds** [https://developers.meta.com/horizon-worlds/learn/documentation/full-bodied-avatars/creating-avatar-animations#import-the-animation-into-horizon-worlds]
 
-4. The program will automatically use `fbx2anim.exe` from `C:/bin` to convert your file.
+4. The Worlds Destop Editor will automatically use `fbx2anim.exe` from `C:/bin` to convert your file.
+
+5. Troubleshooting
+   1. If you get the error **unexpected error occurred during processing** try closing **Worlds Desktop Editor** (WDE) and opening it with  **Run as Administrator**  IMAGE
+   2. If you find that you are unable to open it as **Administrator**, try to Right click the app...go to properties (or ALT + Enter), go to security.  You may find **Run as Administrator** there
+   3. If you still do not have **Run as Administrator**,
+   		1. Find the WDE shortcut
+     	2. Go to file location
+      	3. Right click to properties
+      	4. Click the security tab
+      	5. Clicked EVERYONE
+      	6. Edit
+      	7. Click Full Control
+      	8. Click Okay
+      	9. Power Cycle the PC, then you should have **Run as Administrator** available.  But it appears to be temporary so you may have to do this the next time you want to import
+
+## **Step 7 – Create a NPC to Test Your Animation**
+
+1.  Create your NPC using this learn guide  [https://developers.meta.com/horizon-worlds/learn/documentation/desktop-editor/npcs/scripted-avatar-npcs/create-scripted-avatar-npc] 
+2.  
 
 ---
 
