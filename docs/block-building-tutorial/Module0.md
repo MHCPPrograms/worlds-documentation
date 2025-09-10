@@ -1,6 +1,6 @@
 # Module 1 - Setup
 
-![A player in Meta Horizon Worlds holds abuild tool](imgheader.png)
+![A player in Meta Horizon Worlds holds a build tool](/docs/block-building-tutorial/media/imgheader.jpg)
 
 ### Important
 This content is intended as a companion to the tutorial world Block Building Remixable, which you can access through the desktop editor. When you open the tutorial world, a copy is created for you to explore, and this page is opened so that you can follow along and better understand how to use the assets.
@@ -78,4 +78,4 @@ In the desktop editor, you can access the systems in the following ways:
 2.  Navigate the **Hierarchy** panel.
 
 
-![Screenshot of two empty reference objects named "BlockAssetManager" and "PlayerIdAssigner" in the Horizon Worlds editor. The inspector panel shows the corresponding TypeScript components attached.](worldseditor1.png)
+![Screenshot of two empty reference objects named "BlockAssetManager" and "PlayerIdAssigner" in the Horizon Worlds editor. The inspector panel shows the corresponding TypeScript components attached.](/docs/block-building-tutorial/media/worldseditor1.jpg)
