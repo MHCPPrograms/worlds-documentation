@@ -288,14 +288,7 @@ Now we need to explore the neighboring cells. We will use a randomized depth-fir
 ```
 Then we need to randomize the order of the directions to ensure that the maze is carved in a random pattern.
 ```typescript
-        for (let i = 0; i < 4; ++i) {
-            let j = Math.floor(Math.random() * 4);
-            let tmp0 = dirs[i][0], tmp1 = dirs[i][1];
-            dirs[i][0] = dirs[j][0];
-            dirs[i][1] = dirs[j][1];
-            dirs[j][0] = tmp0;
-            dirs[j][1] = tmp1;
-        }
+        dirs.sort(() => Math.random() - 0.5);
 ```
 After we mark the current cell as part of the path and ensure we move the wall asset to be the floor.
 ```typescript
@@ -333,14 +326,7 @@ Your final implementation of the carve function should look like this:
         visited.add(key);
 
         let dirs = [[0, -1], [1, 0], [0, 1], [-1, 0]];
-        for (let i = 0; i < 4; ++i) {
-            let j = Math.floor(Math.random() * 4);
-            let tmp0 = dirs[i][0], tmp1 = dirs[i][1];
-            dirs[i][0] = dirs[j][0];
-            dirs[i][1] = dirs[j][1];
-            dirs[j][0] = tmp0;
-            dirs[j][1] = tmp1;
-        }
+        dirs.sort(() => Math.random() - 0.5);
 
         if (maze[z] && maze[z][x]) {
             if (maze[z][x].type === 'W') {
