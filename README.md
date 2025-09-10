@@ -10,7 +10,7 @@ Monetization - is the process of earning money from a business. In this tutorial
 There are in two different types of items or purchases:
 - Consumable and - Durable.
 
-###📌 Consumable 
+### 📌 Consumable 
 - These items are one use items that are used immediately or saved for different time. 
 Examples: 
 ‣ Buying tickets to ride the rides in the world, this is one time use meaning consumable and to use it again to have to buy again.
@@ -18,7 +18,7 @@ Examples:
 ‣ Power ups 
 ‣ and so on.
 
-###📌 Durables
+### 📌 Durables
 - These items are purchased once only and added to the visitors inventory to use it now or for later. These items serve as an add up to physical power or can be an access to something.
 Examples:
 ‣ Special VIP passes
@@ -27,11 +27,11 @@ Examples:
 ‣ Accessories or utensils
 ‣ Access to a specific level
 
-###📌 Types of items:
+### 📌 Types of items:
 - Consumable items can be purchased in bigger amounts.
 - The owner does that for giving discounts or for better managment of paymnets avoiding small and frequent pays.
 
-###🧪 Testing your IWP or item:
+### 🧪 Testing your IWP or item:
 There are different ways to test if your item is good for being purchased. This will also help when putting down the prices.
 - It is new ? Up-to-date prodcuts matter for their suficency and looking. Try to make new products or items every 2 times a week.
 - Is it unique ? Uniquness of the product brigns the attention to the players. Try to experiment with products, remake the design and try adding new items to your world like maybe add a sweet ingreident to the bakery full of savory and see if people like it.
@@ -42,7 +42,7 @@ There are different ways to test if your item is good for being purchased. This 
 - Usefull. Price your item based on the usefullness of the product.
 - New - member friendly. Make your prices lower for the new joining members and can add prices up.
 
-###⏰ Tracking your items:
+### ⏰ Tracking your items:
 To check your items and sells yoru can do the following:
 1. Go to the "Horizon Creator Portal"
 2. Navigate to "Creator Program" under "My assets"
