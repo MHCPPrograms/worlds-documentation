@@ -65,3 +65,30 @@ As you can see, we need more vertices to complete our entire model. So, we'll us
 ### TIPS: If after pressing **Ctrl + R** you move the mouse scroll you can add more cuts automatically without doing the procedure manually.
 
 ![](docs/asset-library-import/AddingMoreVertices.png)
+
+Next, we need to reposition the new vertices created in the previous step. To do this, while still in edit mode, press the **Tab key** to select each of the new vertices (both vertices must be selected for each new cut) and reposition them by pressing the **G key**, using our image background as a reference. The result should be as follows.
+
+![](docs/asset-library-import/RepositionVertices.png)
+
+### TIP: To reposition our working view if we've moved our model with the mouse's scroll key, simply press the 1 key on the numpad to return to our working position.
+
+Now we'll proceed to cover the entire piece. To do this, we'll switch to solid mode and, while in edit mode, select the front face. Once we have it selected, press the **E key** (which means we're extruding outwards in this case) and then press **G** to reposition the vertices on the model. We'll repeat this step three times, and the result should be as follows.
+
+### TIP: If you want to reposition vertices without adding new ones to the model, select the vertices first, then press G twice to place them where you think they'll fit over your model. Finally, press Enter again. You'll see how the cursor changes in Blender.
+
+Now we need to adjust how wide we want our model to be. To make it smaller, we'll scale it by pressing **S + Y** (scale along the Y axis only). The result should be as follows. Then, we'll press 1 again on the numpad to add new meshes to cover other parts of the model.
+
+![](docs/asset-library-import/PerspectiveYAxis.png)
+
+If you've made it this far into the tutorial, Congratulations...!!! The way we've worked in this first part is how we'll cover the rest of the tutorial.
+Now, let's add more graphic primitives to model the rest of the parts. In this second part, we'll add cylinders to cover the top of our 3D model. Press Tab to enter object mode, then press 1 on our numpad to change the view. Press **Shift + A** to go to the **Mesh option**, then look for **Cylinder**.
+
+![](docs/asset-library-import/MoreElements.png)
+
+Now we need to change the number of vertices our cylinder will have. To do this, go to the **Add Cylinder** tab (located in the lower left corner of our workspace) and change the number **from 32 vertices to 12 vertices**. As shown in the following image.
+
+![](docs/asset-library-import/AddCylinder.png)
+
+And then we scale it by pressing the **S key** and then we rotate it on the Y axis using the key combination **R + Y + 90** and then we scale it using **S + X** (scale on the X axis) until it covers the entire cylindrical part of our model. The result should be the following.
+
+![](docs/asset-library-import/RotatingCylinder.png)
