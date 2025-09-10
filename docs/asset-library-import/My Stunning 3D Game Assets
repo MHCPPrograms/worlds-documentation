@@ -223,3 +223,67 @@ Now we'll proceed to create a new material for our texture. To do so, we'll ente
 
 ![](docs/asset-library-import/NewTextureMaterial.png)
 
+Next, we add an Image Texture to our editor at the top of our UV window, and make sure to select the image we previously created. In our case, we named it stylizedweapon. The result will be as follows.
+
+![](docs/asset-library-import/ImageTexture.png)
+
+Then, at the top of our menu, select **Texture Paint**. A new window will open, and we'll always keep the Shader Editor option at the top.
+
+![](docs/asset-library-import/TexturePaint.png)
+
+Then, in Edit Mode, we make sure to select the entire front of our model. Then, we switch to Texture Paint and select the icon next to the name called Paint Mask. We select the Fill option and choose a color (in our case, red). We'll notice that the front part we selected previously is the only one that appears with the selected color.
+
+![](docs/asset-library-import/PaintMask.png)
+
+But to add details like those shown in our reference image, we must separate the pieces of our model that have the same color. That's why we switch to Layout view and then select the areas that share the same color. Once we have them selected, we press the P key and choose the Separate by selection option.
+
+![](docs/asset-library-import/SeparationPart.png)
+
+And so we do with the rest of the pieces in our model, separating all those that have the same color according to our reference image. Once we have all our pieces separated, we proceed to paint each one. To do this, we go to the Texture Paint option and proceed to implement the colors by selecting each of the pieces. It's important to mention that for each piece we're going to paint, we have to deselect the Paint Mask option. We add the selected color by going to the Color Palette option, which is located below our chosen color.
+
+![](docs/asset-library-import/ColorPalette.png)
+
+Then, for each of the pieces we repeat the process, keeping in mind that we must keep in mind which pieces have the same colors in common.
+
+![](docs/asset-library-import/MoreColorPalette.png)
+
+To select each piece and apply color, use the Ctrl + Tab key combination, and a menu will appear. Then, we switch from object mode to texture paint mode and can begin applying the colors we want. It's important to mention that before applying the color we choose, or if we want to select it from the color palette we already have saved, we must disable the Paint Mask option. Otherwise, the color won't be applied.
+
+![](docs/asset-library-import/MenuOption.png)
+
+Repeat the previous step and apply the desired color to each piece until the entire model is completely covered. It's important to note that if you save the model, the image will not be saved with the texture color you're applying. To prevent this from happening, you must also save the image separately. To confirm that the image has not been saved, an asterisk appears next to the image name (as indicated by the arrow in the following image). Therefore, we must save the image.
+
+![](docs/asset-library-import/SavingTextureandFile.png)
+
+Next, we select all the components of our model, right-click, and select Shade Smooth. We'll notice how the surface of our model has become a little more stylized.
+
+![](docs/asset-library-import/ShadeSmooth.png)
+
+To start painting, simply switch to Texture Paint mode, select the **Draw** option, and choose a few colors. Then, begin drawing several horizontal lines over the first piece of wood. Keep in mind that the brush size can be changed by pressing the F key, and you'll end up with something like this.
+
+![](docs/asset-library-import/DrawOption.png)
+
+Now let's add some shading where the models meet. We'll change our Brush mode in the **Brush Settings** panel and choose the Multiply option. Then, you can start implementing different brush styles and adding the different effects you want for your 3D model.
+
+![](docs/asset-library-import/BrushSettings.png)
+
+Now we're going to proceed to paint the rest of the parts of our 3D model. This time, we're going to join the three parts that have the same color in common (in our case, it would be yellow). To do this, we have to be in Object Mode. Then, we press Crtl + J to join them. In this last part, it basically involves applying the different types of Brushes that Blender has available. And when we're satisfied with the final results, we proceed to join all the parts of our model. In our case, we left it as follows.
+
+![](docs/asset-library-import/FinalResult.png)
+
+Finally, we need to export our model in .fbx format and then import it into Horizon World Desktop Editor. To do this, go to File, select Export, and then select FBX. Choose the path where you want to save it and click OK.
+
+![](docs/asset-library-import/ExportModel.png)
+
+## Importing our model into Horizon World Desktop Editor
+
+In this new section, we'll cover how to import our model created in Blender into Horizon World Editor. First, we launch the Horizon World Desktop Editor program. Then, we have the option to create a new world or enter a previously created world. Once we're in our world, under the Asset Library tab, we select the option that says My Assets. Then, we choose the folder where we want to upload our model and then click where it says Add New. We choose the 3D Model option and search for the model that we exported in the previous step from Blender. Once we have located the model, we click on the option that says Import. And we will be able to see our model imported successfully into our folder. Now, we repeat the previous step in the option that says Add New, but this time we select the option that says Texture. We locate where we have the file saved on our computer and proceed to import it. Both the model and the texture should be imported successfully.
+
+Now we just drag and drop our model into the scene of the world we're designing. Once we have the model incorporated into the scene, we select it and, using the Properties panel, we search for the Texture Asset option. We look for the one we previously imported and we'll notice that our model will be applied with its respective texture. Yay! We've managed to create our model, starting from "From Concept Art to Stunning 3D Game Assets."
+
+![](docs/asset-library-import/ImportingModelandTextureHWDE.png)
+
+![](docs/asset-library-import/ImportingIntoHWDE.png)
+
+![](docs/asset-library-import/BlendervsHWDE.png)
+
