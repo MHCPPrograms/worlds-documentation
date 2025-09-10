@@ -135,3 +135,30 @@ For the area where the trigger is, we'll add two cubes to cover the entire area.
 
 ![](docs/asset-library-import/Trigger.png)
 
+Now for the hammer part that activates once the trigger is pressed, we'll use another cube. The procedure for this piece is basically the same as the one we used previously. So the final result would be as follows.
+
+![](docs/asset-library-import/Hammer.png)
+
+If we review our model after completing all these steps, we can see that we will have something like the following.
+
+![](docs/asset-library-import/ReviewofModel.png)
+
+Now we're going to refine the model a little further. To do this, we're going to use a modifier called Mirror. Basically, what it does is copy everything modified on one side of the model exactly to the other side, providing a kind of symmetry that allows us to have a uniform model. We select the first piece we modeled at the beginning of this tutorial and apply the Mirror modifier to it by selecting the Y axis. Next, we need to implement a cut along the model because we're going to remove one side so the modifier can work without any problems.
+
+![](docs/asset-library-import/MirrorModifier.png)
+
+The side we have selected is the one left after removing the other faces. What you see next to it is the Mirror modifier implemented. **Don't forget to select the "Clipping" option within the modifier so that when you move the vertices, they don't separate**.
+
+![](docs/asset-library-import/Clipping.png)
+
+For the backend, we're going to implement a different method than the one we used previously. So, we'll go to the Edit option, then go to Preferences and the Add-ons tab. Enter the word Auto in the search bar and select the Mesh Auto Mirror option with a check mark. This will help us speed up the process of applying the Mirror modification. Then, we'll position ourselves between the two windows where the primitives we're adding to our project are located and the window of our work area until we get the vertical menu. We'll look for the Edit option and enter the values ​​that appear in the image. Finally, we'll click on the AutoMirror option. To enable this side menu, we can press the N key on the keyboard.
+
+![](docs/asset-library-import/Addon.png)
+
+And to check the changes in our model, something like this should appear.
+
+![](docs/asset-library-import/CheckAddon.png)
+
+Now we're going to avoid overlapping vertices in our model. To do this, we'll need to remove certain parts that aren't necessary or visible. The **Knife tool** (pressing the K key) will help us with this. For example, we'll remove the faces of the part that houses the trigger guard and another element of the trigger, as shown in the following image:
+
+![](docs/asset-library-import/KnifeTool.png)
