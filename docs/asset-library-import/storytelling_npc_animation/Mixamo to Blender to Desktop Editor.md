@@ -3,6 +3,7 @@
 # **Mixamo → Blender → Worlds Desktop Editor**
 
 ## **Step-by-Step Beginner Guide for Animation Import and Editing**
+NPCs are a powerful storyteller tool to invite and retain users to your world.  An empty world feels unwelcoming. An active NPC who is a part of your world - a blacksmith hammering or a waitress serving coffee - can start telling the story by just being there.  This document will allow you to create a customized animation series for NPCs in your world.  It assumes some basic knowledge of Blender, Worlds Desktop Editor and 
 
 ---
 
@@ -104,36 +105,38 @@ You will need:
 
 6. In the top-right panel (Labeled Scene Collection), click **Armature** to select it.
 
-7. On the bottom left, to the left of “Playback” click the Dropdown menu of Editor Type.  Change the panel from “Timeline” to **Dope Sheet**.
+7. On the bottom left, to the left of “Playback” click the Dropdown menu of Editor Type.
+8. Change the panel from “Timeline” to **Dope Sheet**. ![](Images/Blend-Timeline-menu-wMark.png)
 
-8. In the Dope Sheet, change the mode from “Dope Sheet” to **Action Editor**.
+9. In the Dope Sheet, change the mode from “Dope Sheet” to **Action Editor**.
 
-9. Ensure the armature is selected.  At the bottom, you will see a name like `Armature|Mixamo.com|Layer0`. Rename it to something short, like `Idle`.
+10. Ensure the armature is selected.  At the bottom, you will see a name like `Armature|Mixamo.com|Layer0`. Rename it to something short, like `Idle`.
 
-10. Press the **Push Down** button (small arrow icon) to send this animation into the **NLA Editor** (Non-Linear Animation).
+11. Press the **Push Down** button (small arrow icon) to send this animation into the **NLA Editor** (Non-Linear Animation).
 
 ---
 
 ## **Step 3 – Add a Second Animation**
 
-1. **File → Import → FBX** → choose your second animation (without skin).  In the picture below I have imported 3 animations without skin. ![](Images/Blend-ImportFBXWMark.png) You can see the original armature and the three new ones listed in the scene editor on the top right ![](Images/Blend-ImportFBXWMark.png) 
+1. **File → Import → FBX** → choose your second animation (without skin).![](Images/Blend-ImportFBXWMark.png)
+2. In the picture below I have imported 3 animations without skin. ![](Images/blend-PlaybackwMark.png) You can see the original armature and the three new ones listed in the scene editor on the top right 
 
-2. In the Outliner Window under Scene Collection, click on one of the new **Armature** (it will probably be called something like `Armature.001`).  ![](Images/blend-anim2select.png) 
-3. If it is too confusing to have the armatures stacked on top of one another, select one armature in the upper right screen capture, move your cursor to hover over the figure in the middle of the screen, then press ‘G’ then ‘X’ and then move the armature to the side along the X axis.    
-4. To see each armature move, press the space bar to play animations.  Press the space bar again to stop animations.
+3. If it is too confusing to have the armatures stacked on top of one another, select one armature in the upper right screen capture, move your cursor to hover over the figure in the middle of the screen, then press ‘G’ then ‘X’ and then move the armature to the side along the X axis. 
+4. In the Outliner Window under Scene Collection, click on one of the new **Armature** (it will probably be called something like `Armature.001`).  ![](Images/blend-anim2select.png)     
+5. To see each armature move, press the space bar to play animations.  Press the space bar again to stop animations.
 
-5. In the Action Editor, rename this animation (e.g., `FallBack`).
+6. In the Action Editor, rename this animation (e.g., `FallBack`).
 
-6. Press the **Push Down** button again to send it into the NLA Editor.
+7. Press the **Push Down** button again to send it into the NLA Editor.
 
-7. Now delete this second armature:
+8. Now delete this second armature:
 
    * Select it in Scene Collection.
 
    * Press `Delete`.
 
    * **Why?** Because the animation is already stored in the NLA for your main armature — you don’t need the extra skeleton.  
-8. Repeat for each armature that you add.  You need to keep the original armature with skin.
+9. Repeat for each armature that you add.  You need to keep the original armature with skin.
 
 ---
 
