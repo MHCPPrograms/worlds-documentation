@@ -71,6 +71,8 @@ Once we have positioned all our vertices, we will have the following result.
 
 As you can see, we need more vertices to complete our entire model. So, we'll use the **Ctrl + R** key combination and position ourselves over our cube. We'll notice a new cut has been added, which we can place wherever we see fit to help us cover our entire model. We repeat this step three times, and the final result will be as follows.
 
+![](docs/asset-library-import/Addingmorevertices.gif)
+
 ### TIPS: If after pressing Ctrl + R you move the mouse scroll you can add more cuts automatically without doing the procedure manually.
 
 ![](docs/asset-library-import/AddingMoreVertices.png)
