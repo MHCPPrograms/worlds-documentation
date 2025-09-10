@@ -162,3 +162,64 @@ And to check the changes in our model, something like this should appear.
 Now we're going to avoid overlapping vertices in our model. To do this, we'll need to remove certain parts that aren't necessary or visible. The **Knife tool** (pressing the K key) will help us with this. For example, we'll remove the faces of the part that houses the trigger guard and another element of the trigger, as shown in the following image:
 
 ![](docs/asset-library-import/KnifeTool.png)
+
+Before proceeding with **joining all of our model pieces**, we need to finalize by confirming that we want to apply the **Mirror modifier to our pieces**. We select the piece of our model and apply the modifier. After confirming the application of our modifier, we now proceed to join all of our pieces. To do this, we first select them and then apply the keyboard combination **Ctrl + J. Notice which pieces are highlighted in red in the following figure and how a uniform orange line is then placed**.
+
+![](docs/asset-library-import/ConfirmingMirrorModifier.png)
+
+Now we'll apply AutoMirror to all the pieces we joined in the previous step. This will help us copy the UV textures from one side of the model to the other and achieve a more uniform look. The final result of applying AutoMirror is as follows.
+
+![](docs/asset-library-import/AutoMirror.png)
+
+Next, we'll use a term called Retopology to get a better silhouette of the model. Using the Knife (pressing the K key in edit mode), we'll draw new vertices along the contour of our model. This will help us eliminate all the areas we don't need for our model.
+
+![](docs/asset-library-import/Retopology.png)
+
+Now if we **left click + L** in edit mode on our longest piece we will get the following:
+
+![](docs/asset-library-import/MainBody.png)
+
+Then we press **Shift + H** (to temporarily hide all the pieces we don't want to be displayed in our workspace) and **Alt + H** (to display the pieces we previously hid). We then proceed to select all the faces we created previously when we used the Knife tool. This gives us the following result:
+
+![](docs/asset-library-import/RemovingFaces.png)
+
+Now we're going to repeat the process to cut out another piece of our model. To do this, we'll use the Knife tool again (pressing the K key in edit mode). Press L to select the entire piece we're working on, then Shift + H (to hide the rest of the pieces we don't need at the moment) and proceed to select all the faces that won't be visible or necessary for our model.
+
+![](docs/asset-library-import/RemovingMoreFaces.png)
+
+Now we can view the hidden pieces with **Alt + H**, and we'll notice a space between the two models we've been working on. To join the vertices of both models, we have to activate the **Snap (Magnet Icon) + Vertex** option. Then, we select one of the vertices and, using the G key, join the vertices between the two models.
+
+![](docs/asset-library-import/SnapOption.png)
+
+We then repeat the same process with the rear, removing anything that can't be seen and is therefore unnecessary for our model. This also includes the mounts for our telescopic sight.
+
+![](docs/asset-library-import/BackFaces.png)
+
+After finishing the process of removing all the faces we don't need from our model, we'll move on to the Unwrapping part in Blender to apply Texture Painting. Before applying the texture, we need to make sure that our model has uniform Scale values. Therefore, we press **Ctrl + A** and then apply Scale and we'll notice how the values ​​change in the menu going from **0.061 to 1.000** for the **X, Y, and Z axes**. We repeat this process also for the 3 elements that are not yet attached to the rest of the model.
+
+![](docs/asset-library-import/ScaleAdjustment.png)
+
+![](docs/asset-library-import/ScaleAdjustment1.png)
+
+Next, we need to adjust the vertices to prevent them from overlapping. If we're in edit mode, we select all the vertices, and we'll get the following result. To correct this, we press **U (Unwrap)** and then select the **Smart UV Project** option. For **Island Margin**, we set the value to **0.010**, and the result will be as follows.
+
+![](docs/asset-library-import/UVProject.png)
+
+Now we'll proceed to mark our model to segment the areas where we want to apply different colors or textures. To do this, we mark only the edge area as shown in the image. Press **Ctrl + E** and select the option that says **Mark Sim**. The result of doing this is a red outlined line.
+
+![](docs/asset-library-import/MarkSim.png)
+
+In this third part of our tutorial, after we've finished marking our model, we'll proceed to see how to add the texture. To do this, in the UV Editing window, we add a new color and select the Color Grid option.
+
+![](docs/asset-library-import/UVEditing.png)
+
+In the top window, we switch to **Shader Editor mode** and, using the **Ctrl + A** combination, look for the option that says Image Texture. Then, we select the option that says **Untitledxxx** and connect the connector to see the final result.
+
+![](docs/asset-library-import/ImageTextureandColorGrid.png)
+
+![](docs/asset-library-import/ImageTextureandColorGrid1.png)
+
+Now we'll proceed to create a new material for our texture. To do so, we'll enter the following values, as shown in the image.
+
+![](docs/asset-library-import/NewTextureMaterial.png)
+
