@@ -143,17 +143,17 @@ You will need:
 
 ## **Step 4 – Arrange Animations in the NLA**
 
-1. Change the bottom-left panel to **Non-Linear Animation**.
+1. Change the bottom-left panel to **Non-Linear Animation**. ![](Images/Blend-NLA.png)
 
 3. Click your Idle strip (orange bar). ![](Images/Blend-ImportFBXWMark.png)
 
-4. In the menu above the strip select **Add → Action → \[Choose Second Animation\]**.  
+4. In the menu above the strip select **Add → Action → \[Choose Second Animation\]**.  ![](Images/Blend-AddAction.png) 
 5. The next animation strip will appear above the original and at the location of the blue frame position marker
 
 6. Click the second animation and move it so it starts **slightly after** Idle ends — let them overlap just a little.  
 7. Select the second animation strip:
 
-   * On the right, set **Extrapolation** to `Nothing`.  ![](Images/Blend-ImportFBXWMark.png)
+   * On the right, set **Extrapolation** to `Nothing`.  
 
    * Set **Blend In** to `7`.
 
