@@ -92,3 +92,46 @@ Now we need to change the number of vertices our cylinder will have. To do this,
 And then we scale it by pressing the **S key** and then we rotate it on the Y axis using the key combination **R + Y + 90** and then we scale it using **S + X** (scale on the X axis) until it covers the entire cylindrical part of our model. The result should be the following.
 
 ![](docs/asset-library-import/RotatingCylinder.png)
+
+Now we're going to change the view so we can adjust the cylinder to our reference image. To do this, we'll press the **Toggle X-ray option**, which basically allows us to see our reference for better repositioning of our cylinder.
+
+![](docs/asset-library-import/ToggleXRay.png)
+
+Once we have it activated, we then add a new cut with the combination **Crtl + R** twice in our cylinder and the result would be the following.
+
+![](docs/asset-library-import/AddingCut.png)
+
+As we can see in the image, we have two "rings" that are part of the piece we're modeling. So, let's add four more new cuts using the Ctrl + R combination, and the final result will be as follows:
+
+![](docs/asset-library-import/AddingMoreCutCylinder.png)
+
+Now we will proceed to create the front part of our 3D model. First we will select all the end vertices of our cylinder that are located on the right. Then, we will repeat the **E + S** combination several times to cover each one of the front part. First we select **E** to extrude and then press **S** to scale the vertices and with the mouse we move the cursor outwards. Then we press **E + X** again (we extrude and move along the X axis) until we reach the end of the first shape in the reference image. Then we repeat the previous step again to cover the second shape. And when we are at the end, we just press **E + X** we reach the end and then with the **S key** we locate the vertices. And finally we just apply **E + X** to have the final edge of our model. The final result will be the following:
+
+![](docs/asset-library-import/ExtrudingParts.png)
+
+Great that you've finished this second part of the modeling. Now let's move on to the telescopic sight for our weapon. And the best part is that we can repeat some of the steps we used earlier. Next, let's place a cylinder (**Shift + A, select the Mesh option, then select Cylinder**) and rotate it 90 degrees along the Y axis. Then, scale the model and apply some cuts. The first result we'll get is the following:
+
+![](docs/asset-library-import/Telescopic.png)
+
+For the rear of the scope, we'll select all the vertices at the end. Then we'll proceed with the I combination to move the vertices inwards. Then we press **E** to extrude along the **X** axis, then we press **E + S** again until we reach the end of our scope.
+
+![](docs/asset-library-import/MoreTelescopic.png)
+
+Now we're going to model the back of our reference image. We need to move the cursor to the center of our workspace. To do this, we'll use the **Shift + Right Click** key combination in the area where we want to add a new cube. Then, we'll use the **Shift + A** key combination, select Mesh, and look for the Cube option. Next, we'll locate the cube and scale it so that it covers the back. To do this, we'll need to extrude it again with E and then move it over our reference image.
+
+![](docs/asset-library-import/BackPiece.png)
+
+### TIP: To select multiple vertices of the same face without selecting other vertices, you can press the C key and when you have all the vertices selected, just press the Esc key.
+
+Then we proceed to finish fine-tuning the details of our telescopic sight that is in the model. For this, we will select the first cut with the key combination **Shift + Left Click** and observe how the entire area is selected. Then we apply **E + S + Shift + X** (this allows us to extrude and scale only on the X axis so that other parts of the model are not altered). We repeat this step for the other cut of our model that we have present in the reference image. It is important to note that we have to be in Edit Mode. Then for the part of the lens that is in the sight, we select all the vertices then press **I** (Insert), then extrude outwards and then apply **I** (Insert) again. We also repeat the process for the final part of the telescopic sight. With the peculiarity that we have to extrude inwards
+
+![](docs/asset-library-import/FinishingSeveralPieces.png)
+
+Now we'll complete the rest of our model's piece above the trigger. To do this, we'll select the last vertices located to the right of the piece we were working on previously and repeat the extrusion, scaling, and positioning processes on our reference image. The result will be as follows:
+
+![](docs/asset-library-import/BackPieceandBody.png)
+
+For the area where the trigger is, we'll add two cubes to cover the entire area. The final result will be as follows.
+
+![](docs/asset-library-import/Trigger.png)
+
