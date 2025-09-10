@@ -1,12 +1,18 @@
-# From Concept Art to Stunning 3D Game Assets
+# From Concept Art 🎨 to Stunning 3D Game Assets 🎮.
 
-# Introduction
+> [!IMPORTANT]  
+> The final FBX file shown in this tutorial and the PNG texture are available in this repository in case you want to import them into Horizon World. Both files are named **stylizedweapon.fbx** and **stylizedweaponcolor.png**.
+
+> [!NOTE]
+> If you want to paint the model using your creativity, it is available in the repository under the name **stylizedweapon ready for painting.blend**
+
+# Introduction.
 
 In the realm of game development and digital content creation, transforming a creative idea into a functional and visually striking 3D asset is a critical skill that can elevate your projects to a professional level. This tutorial will guide you step-by-step through the entire process of creating a 3D weapon, starting from a simple concept sketch to its final integration into a Horizon World Desktop Editor. Whether you're a beginner in 3D modeling or an experienced creator looking to streamline your workflow, you'll learn practical techniques and accessible tools to bring your visions to life. We’ll use industry-standard software like Blender for modeling, texturing and paiting and finally import the result into the Horizon World Desktop Editor, Meta’s platform for building immersive metaverse experiences. Get ready to unleash your creativity and craft assets that not only look stunning but are also optimized for games and virtual environments.
 
 This repository was created to show a tutorial on how to create a 3D model in Blender from a reference image, to which texture painting is applied manually. It can then be imported into the Horizon World Desktop Editor in FBX format to be used as part of any virtual world you want to develop. 
 
-# Requirements
+# ⚙️ Requirements.
 * Blender 2.93
 * Horizon World Desktop Editor
 * Reference image that will be used to create our 3D model.
@@ -20,11 +26,11 @@ This repository was created to show a tutorial on how to create a 3D model in Bl
 * Use the different brushes included in Blender using the Texture Paint option.
 * Export our 3D model from Blender and import it into Horizon Word to see the final result of our work.
 
-# TIPS
+### 💡 TIPS.
 
 Consider that working with Blender can be a challenging task, however, let me tell you a trick to help you progress more quickly in creating your own 3D model: one hand on the keyboard and one hand on the mouse. This is because Blender works with keyboard shortcuts to implement different techniques that will be used extensively throughout this tutorial. You'll find that some shortcuts are applied repeatedly, allowing you to gradually memorize them and feel more comfortable with the work environment.
 
-## Default Workspaces
+## Default Workspaces.
 
 Blender’s default startup shows the “Layout” workspace in the main area. This workspace is a general workspace to preview your scene and contains the following Editors:
 
@@ -34,6 +40,8 @@ Blender’s default startup shows the “Layout” workspace in the main area. T
 * Timeline on bottom left.
 
 ![](docs/asset-library-import/Blender Interface.png)
+
+# 📖 First Part.
 
 Once we're in Blender, we find the image we'll use as a reference and drag it into Blender's workspace. It will look like this:
 
@@ -73,7 +81,7 @@ As you can see, we need more vertices to complete our entire model. So, we'll us
 
 ![](docs/asset-library-import/Addingmorevertices.gif)
 
-### TIPS: If after pressing Ctrl + R you move the mouse scroll you can add more cuts automatically without doing the procedure manually.
+### 💡 TIPS: If after pressing Ctrl + R you move the mouse scroll you can add more cuts automatically without doing the procedure manually.
 
 ![](docs/asset-library-import/AddingMoreVertices.png)
 
@@ -81,15 +89,17 @@ Next, we need to reposition the new vertices created in the previous step. To do
 
 ![](docs/asset-library-import/RepositionVertices.png)
 
-### TIPS: To reposition our working view if we've moved our model with the mouse's scroll key, simply press the 1 key on the numpad to return to our working position.
+### 💡 TIPS: To reposition our working view if we've moved our model with the mouse's scroll key, simply press the 1 key on the numpad to return to our working position.
 
 Now we'll proceed to cover the entire piece. To do this, we'll switch to solid mode and, while in edit mode, select the front face. Once we have it selected, press the **E key** (which means we're extruding outwards in this case) and then press **G** to reposition the vertices on the model. We'll repeat this step three times, and the result should be as follows.
 
-### TIPS: If you want to reposition vertices without adding new ones to the model, select the vertices first, then press G twice to place them where you think they'll fit over your model. Finally, press Enter again. You'll see how the cursor changes in Blender.
+### 💡 TIPS: If you want to reposition vertices without adding new ones to the model, select the vertices first, then press G twice to place them where you think they'll fit over your model. Finally, press Enter again. You'll see how the cursor changes in Blender.
 
 Now we need to adjust how wide we want our model to be. To make it smaller, we'll scale it by pressing **S + Y** (scale along the Y axis only). The result should be as follows. Then, we'll press 1 again on the numpad to add new meshes to cover other parts of the model.
 
 ![](docs/asset-library-import/PerspectiveYAxis.png)
+
+# 📖 Second Part.
 
 If you've made it this far into the tutorial, Congratulations...!!! The way we've worked in this first part is how we'll cover the rest of the tutorial.
 Now, let's add more graphic primitives to model the rest of the parts. In this second part, we'll add cylinders to cover the top of our 3D model. Press Tab to enter object mode, then press 1 on our numpad to change the view. Press **Shift + A** to go to the **Mesh option**, then look for **Cylinder**.
@@ -132,7 +142,7 @@ Now we're going to model the back of our reference image. We need to move the cu
 
 ![](docs/asset-library-import/BackPiece.png)
 
-### TIPS: To select multiple vertices of the same face without selecting other vertices, you can press the C key and when you have all the vertices selected, just press the Esc key.
+### 💡 TIPS: To select multiple vertices of the same face without selecting other vertices, you can press the C key and when you have all the vertices selected, just press the Esc key.
 
 Then we proceed to finish fine-tuning the details of our telescopic sight that is in the model. For this, we will select the first cut with the key combination **Shift + Left Click** and observe how the entire area is selected. Then we apply **E + S + Shift + X** (this allows us to extrude and scale only on the X axis so that other parts of the model are not altered). We repeat this step for the other cut of our model that we have present in the reference image. It is important to note that we have to be in Edit Mode. Then for the part of the lens that is in the sight, we select all the vertices then press **I** (Insert), then extrude outwards and then apply **I** (Insert) again. We also repeat the process for the final part of the telescopic sight. With the peculiarity that we have to extrude inwards
 
@@ -220,6 +230,8 @@ Now we'll proceed to mark our model to segment the areas where we want to apply 
 
 ![](docs/asset-library-import/MarkSim.png)
 
+# 📖 Third Part.
+
 In this third part of our tutorial, after we've finished marking our model, we'll proceed to see how to add the texture. To do this, in the UV Editing window, we add a new color and select the Color Grid option.
 
 ![](docs/asset-library-import/UVEditing.png)
@@ -286,7 +298,9 @@ Finally, we need to export our model in .fbx format and then import it into Hori
 
 ![](docs/asset-library-import/ExportModel.png)
 
-## Importing our model into Horizon World Desktop Editor
+# 📖 Fourth Part.
+
+## 💪 Importing our model into Horizon World Desktop Editor
 
 In this new section, we'll cover how to import our model created in Blender into Horizon World Editor. First, we launch the Horizon World Desktop Editor program. Then, we have the option to create a new world or enter a previously created world. Once we're in our world, under the Asset Library tab, we select the option that says My Assets. Then, we choose the folder where we want to upload our model and then click where it says Add New. We choose the 3D Model option and search for the model that we exported in the previous step from Blender. Once we have located the model, we click on the option that says Import. And we will be able to see our model imported successfully into our folder. Now, we repeat the previous step in the option that says Add New, but this time we select the option that says Texture. We locate where we have the file saved on our computer and proceed to import it. Both the model and the texture should be imported successfully.
 
@@ -297,6 +311,10 @@ Now we just drag and drop our model into the scene of the world we're designing.
 ![](docs/asset-library-import/ImportingIntoHWDE.png)
 
 ![](docs/asset-library-import/BlendervsHWDE.png)
+
+# 👏 Conclusion
+
+As we have observed, a reference image was used to create a 3D model without prior knowledge. The possibilities with Blender are endless, as its graphics engine offers a wide range of tools that can be applied to various use cases, such as video games, animations, cinematics, modeling, sculpting, and more. On the other hand, the progress made in Horizon World is fascinating, with new tools continuously integrated into the platform, enabling the creation of stunning applications. These advancements allow users from different parts of the world to actively and concurrently participate in virtual worlds of various genres. By following this tutorial, you can unlock your creative potential and bring your ideas to life in Horizon World. Dive in, experiment, and join a global community of creators building immersive experiences that push the boundaries of imagination. Start creating today and shape the future of virtual worlds!
 
 ### Contributors
 
