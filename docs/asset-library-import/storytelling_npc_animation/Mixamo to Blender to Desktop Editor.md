@@ -1,9 +1,12 @@
 ---
 
+# **NPC StoryTelling with Animations**
 # **Mixamo → Blender → Worlds Desktop Editor**
 
 ## **Step-by-Step Beginner Guide for Animation Import and Editing**
-NPCs are a powerful storyteller tool to invite and retain users to your world.  An empty world feels unwelcoming. An active NPC who is a part of your world - a blacksmith hammering or a waitress serving coffee - can start telling the story by just being there.  This document will allow you to create a customized animation series for NPCs in your world.  It assumes some basic knowledge of Blender and Worlds Desktop Editor 
+NPCs are a powerful storyteller tool to invite and retain users to your world.  An empty world feels unwelcoming. An active NPC who is a part of your world - a blacksmith hammering or a waitress serving coffee - can start telling the story by just being there.  This document will allow you to create a customized animation series for NPCs in your world by combining animations.  It assumes some basic knowledge of Blender and Worlds Desktop Editor.  This guide is beginner friendly and it has a lot of steps, but it will work.  Ensure that you read and follow each step carefully. Please share and tag me in your successes!  I want to see what you make!
+
+*UtterlyOtter 10 Sep 2025*
 
 ---
 
@@ -148,9 +151,9 @@ You will need:
 3. Click your Idle strip (orange bar). ![](Images/Blend-NLA-idle.png)
 
 4. In the menu above the strip select **Add → Action → \[Choose Second Animation\]**.  ![](Images/Blend-AddAction.png) 
-5. The next animation strip will appear above the original and at the location of the blue frame position marker
+5. The next animation strip will appear above the original and at the location of the blue frame position marker ![](Images/bLEND-nla-ADDaCTION.png) 
 
-6. Click the second animation and move it so it starts **slightly after** Idle ends — let them overlap just a little.  
+6. Click the second animation and move it so it starts **slightly before** Idle ends — let them overlap just a little.  
 7. Select the second animation strip:
 
    * On the right, set **Extrapolation** to `Nothing`.  
@@ -176,15 +179,15 @@ You will need:
 
 ## **Step 5 – Bake the Final Animation**
 
-		Read carefully \- there are a lot of steps
+		Read carefully - there are a lot of steps
 
-1. Select **all strips** in the NLA.
+1. Select **all strips** in the NLA.![](Images/Blend-SelectAllStrips.png) 
 
-2. In the Scene Collection, also select the **Armature**.
+2. In the Scene Collection, also select the **Armature**.![](Images/Blend-SelectArmature.png) 
 
-3. Go to **Strip Menu → Bake Action**.
+3. Go to **Strip Menu → Bake Action**. ![](Images/Blend-BakeAction.png) 
 
-4. In the pop-up:   IMAGE IMAGE
+4. In the pop-up:   ![](Images/Blend-BakeAFTER.png)  
 
    * **Uncheck** “Only Selected Bones”.
 
@@ -195,9 +198,9 @@ You will need:
 
 5. Click OK.
 
-6. You will see a new combined animation in the Action Editor.
+6. You will see a new combined animation in the Action Editor. ![](Images/bLEND-NewBakedAction.png) 
 
-7. Delete the older tracks — keep only the baked one.
+7. Delete the older tracks — keep only the baked one.![](Images/Blend-DeleteTtracks.png)   
 
 ---
 
@@ -205,8 +208,8 @@ You will need:
 
 1. Select the new combined animation in Action Editor and the skinned avator using the **Outliner Window**
 
-2. Export as FBX.  IMAGE
-   1. Select **Armature**  
+2. Export as FBX.  ![](Images/Blend-ExportFBX.png)
+   1. Select **Armature**  ![](Images/Blend-ExportMenuwMark.png)
       1. Change Primary Bones to **X Axis**  
       2. Change Secondary Bones to **Y Axis**  
       3. Ensure you select **Add Leaf Bones**
