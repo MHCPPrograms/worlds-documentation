@@ -3,7 +3,7 @@
 This section provides overviews of the manager systems. These are singleton, server-controlled scripts that act as the "brains" of the Voxel Builder. They manage the world state, handle object creation and destruction, and assign tools to players, ensuring a consistent and synchronized experience for everyone.
 
 
-![A diagram showing a "Player Tool"](gameui.png)
+![A diagram showing a "Player Tool"](/docs/block-building-tutorial/media/gameui.jpg)
 
 ### BlockAssetManager.ts
 This is the most critical manager. It controls the state of every block in the world. It is responsible for spawning new blocks when a player places one and destroying blocks when a player mines one. It acts as the central authority and database for the voxel world, ensuring no two blocks can occupy the same space and keeping track of the total block count.
