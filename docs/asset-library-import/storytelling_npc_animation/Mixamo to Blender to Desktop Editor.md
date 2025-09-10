@@ -145,7 +145,7 @@ You will need:
 
 1. Change the bottom-left panel to **Non-Linear Animation**. ![](Images/Blend-NLA.png)
 
-3. Click your Idle strip (orange bar). ![](Images/Blend-ImportFBXWMark.png)
+3. Click your Idle strip (orange bar). ![](Images/Blend-NLA-idle.png)
 
 4. In the menu above the strip select **Add → Action → \[Choose Second Animation\]**.  ![](Images/Blend-AddAction.png) 
 5. The next animation strip will appear above the original and at the location of the blue frame position marker
