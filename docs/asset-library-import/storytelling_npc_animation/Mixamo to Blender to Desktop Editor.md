@@ -116,9 +116,9 @@ You will need:
 
 ## **Step 3 – Add a Second Animation**
 
-1. **File → Import → FBX** → choose your second animation (without skin).  In the picture below I have imported 3 animations without skin.  You can see the original armature and the three new ones listed in the scene editor on the top right
+1. **File → Import → FBX** → choose your second animation (without skin).  In the picture below I have imported 3 animations without skin. ![](Images/Blend-ImportFBXWMark.png) You can see the original armature and the three new ones listed in the scene editor on the top right ![](Images/Blend-ImportFBXWMark.png) 
 
-2. In the Scene Collection, click on one of the new **Armature** (it will probably be called something like `Armature.001`).  
+2. In the Outliner Window under Scene Collection, click on one of the new **Armature** (it will probably be called something like `Armature.001`).  ![](Images/blend-anim2select.png) 
 3. If it is too confusing to have the armatures stacked on top of one another, select one armature in the upper right screen capture, move your cursor to hover over the figure in the middle of the screen, then press ‘G’ then ‘X’ and then move the armature to the side along the X axis.    
 4. To see each armature move, press the space bar to play animations.  Press the space bar again to stop animations.
 
@@ -223,7 +223,7 @@ You will need:
 4. The Worlds Destop Editor will automatically use `fbx2anim.exe` from `C:/bin` to convert your file.
 
 5. Troubleshooting
-   1. If you get the error **unexpected error occurred during processing** try closing **Worlds Desktop Editor** (WDE) and opening it with  **Run as Administrator**  IMAGE
+   1. If you get the error **unexpected error occurred during processing** try closing **Worlds Desktop Editor** (WDE) and opening it with  **Run as Administrator**  ![](Images/WorldsImportError.png)
    2. If you find that you are unable to open it as **Administrator**, try to Right click the app...go to properties (or ALT + Enter), go to security.  You may find **Run as Administrator** there
    3. If you still do not have **Run as Administrator**,
    		1. Find the WDE shortcut
@@ -239,11 +239,10 @@ You will need:
 ## **Step 7 – Create a NPC to Test Your Animation**
 
 1.  Create your NPC using this learn guide  [https://developers.meta.com/horizon-worlds/learn/documentation/desktop-editor/npcs/scripted-avatar-npcs/create-scripted-avatar-npc] 
-2.  
+2.  Search the Asset library on WDE and get the **Dance Manager** asset by Vidyuu to test out your animation.  note: the ai API has been deprecated but the animation is still working
 
 ---
-
-Helpful videos  
+Some Helpful videos to do more fun animation
 	[https://www.youtube.com/watch?v=yFURoPlZJxs](https://www.youtube.com/watch?v=yFURoPlZJxs)  
 	[https://www.youtube.com/watch?v=XEzbonBtTtE](https://www.youtube.com/watch?v=XEzbonBtTtE)  
 To extend the animation  
