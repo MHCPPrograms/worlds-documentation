@@ -49,7 +49,7 @@ Creative principles such as three-point lighting, color harmony, and soft/hard l
 | **Static Light**  | Cuboid, Ellipsoid, Disk, Rectangle | Shape, Color, Intensity, Enabled                                       | Most world lighting              |
 | **Dynamic Light** | Point, Spot                        | Type (Point/Spot), Intensity, Spread, Falloff Distance, Color, Enabled | Moving or scripted light effects |
 
-![Static vs Dynamic Light Comparison](./assets/DynamicAndStaticLights.png)
+![Static vs Dynamic Light Comparison](/images/DynamicAndStaticLights.png)
 
 **Static Light Gizmo:**
 
@@ -57,7 +57,7 @@ Creative principles such as three-point lighting, color harmony, and soft/hard l
 - **Shapes:** Cuboid (omnidirectional), Ellipsoid (omnidirectional), Disk (directional), Rectangle (directional)
 - **Properties:** Shape, Color, Intensity, Enabled toggle
 
-![Static Light Shapes](./assets/StaticImageTypes.png)
+![Static Light Shapes](/images/StaticImageTypes.png)
 
 **Dynamic Light Gizmo:**
 
@@ -66,7 +66,7 @@ Creative principles such as three-point lighting, color harmony, and soft/hard l
 - **Properties:** enabled (on/off), falloffDistance (0-100), intensity (0-10), spread (spot cone, 0-100), color, type (set in editor, not scripts)
 - **Limit:** Maximum 20 dynamic lights per world. Consider performance.
 
-![Dynamic Light Types](./assets/DynamicTypes.png)
+![Dynamic Light Types](/images/DynamicTypes.png)
 
 ### Environment Gizmo Setup
 
@@ -79,7 +79,7 @@ The Environment Gizmo controls the overall world lighting, fog, and atmosphere.
 - **Custom Gradient**: Create custom sky colors
 - **Grid Visibility**: Show/hide floor grid
 
-![Environment Gizmo](./assets/EnvirontmentGizmo.png)
+![Environment Gizmo](/images/EnvirontmentGizmo.png)
 
 **Environment Presets Available:**
 
@@ -92,10 +92,11 @@ The Environment Gizmo controls the overall world lighting, fog, and atmosphere.
 
 - **0.0**: Crystal clear visibility
 - **0.01-0.05**: Subtle depth enhancement
-- **0.1**: Noticeable atmospheric effect
-- **0.2+**: Heavy fog (use sparingly)
+- **0.07+**: Noticeable atmospheric effect (use sparingly)
 
-**Important**: Fog density is extremely sensitive. Values above 0.1 can make building difficult as it affects visibility in build mode.
+![Dynamic Light Types](/images/lighting-fog.png)
+
+**Important**: Fog density is extremely sensitive. Values above 0.7 can make building difficult as it affects visibility in build mode.
 
 ## Topic Two: Adding Interactivity to your Lights
 
@@ -103,7 +104,7 @@ The Environment Gizmo controls the overall world lighting, fog, and atmosphere.
 
 Proximity-based lighting creates immersive experiences by responding to player movement and interaction.
 
-![Proximity-Based Lighting Setup](./assets/DynamicGizmo.png)
+![Proximity-Based Lighting Setup](/images/DynamicGizmo.png)
 
 **Implementation Steps:**
 
@@ -201,6 +202,8 @@ Component.register(TriggerBroadcaster);
 
 The LightChanger component receives network events and modifies lighting properties accordingly.
 
+<iframe width="1852" height="826" src="https://www.youtube.com/embed/S3rJowdG9nw" title="Toggle Light" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ```typescript
 import {
   Component,
@@ -276,7 +279,9 @@ Component.register(LightChanger);
 
 ### Color Cycling System
 
-Create dynamic color transitions for atmospheric effects:
+Create dynamic color transitions effects:
+
+<iframe width="1852" height="826" src="https://www.youtube.com/embed/-7tQPS9mtKw" title="Color Cycle" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ```typescript
 import {
@@ -436,7 +441,7 @@ Component.register(IntensityPulser);
 
 ### Three-Point Lighting Principle
 
-![Three Point Lighting Diagram](./assets/3PointLight.png)
+![Three Point Lighting Diagram](/images/3PointLight.png)
 
 The three-point lighting system is a fundamental technique used in photography, film, and 3D rendering to create depth and dimension in your scenes.
 
@@ -460,17 +465,21 @@ The three-point lighting system is a fundamental technique used in photography, 
    - Creates edge definition
    - Adds depth and dimension
 
+You can also use this lighting techniques to implement global environment lights. Here is an example for a Sky island, look at how we are using the Three lights to create a good emmersive environment for player to experience.
+
+<iframe width="1852" height="826" src="https://www.youtube.com/embed/HkMY0Ce8wgA" title="Three point light" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 **Implementation in Horizon Worlds:**
 
 Can be approximated with static and dynamic lights:
 
 - **Key**: Directional Disk or Rectangle (static) or Spot (dynamic)
 - **Fill**: Cuboid or Ellipsoid (static) or Point (dynamic)
-- **Rim**: Use spot/point strategically (dynamic only if movement needed)
+- **Rim**: Use spot/point strategically (dynamic only if movement needed otherwise static)
 
 ### Color Temperature and Mood
 
-![Color Temperature Chart](./assets/ColorTemperature.jpg)
+![Color Temperature Chart](/images/ColorTemperature.jpg)
 
 Color temperature is measured in Kelvin (K) and affects the mood and atmosphere of your scene.
 
@@ -487,7 +496,7 @@ Color temperature is measured in Kelvin (K) and affects the mood and atmosphere 
 | Feature      | Static Light Gizmo                          | Dynamic Light Gizmo                            |
 | ------------ | ------------------------------------------- | ---------------------------------------------- |
 | Movement     | Fixed (cannot move/change)                  | Movable and scriptable                         |
-| Properties   | Shape, Color, Intensity                     | enabled, falloffDistance, intensity, spread    |
+| Properties   | Toggle, Shape, Color, Intensity                     | Toggle, falloff Distance, intensity, color, spread    |
 | Typing/Shape | 4 shapes, no "types" property               | 2 types (Point/Spot)                           |
 | Scripting    | Can only toggle enabled state               | Can modify intensity, falloff, spread, enabled |
 | Performance  | Lower impact, preferred                     | Higher cost, performance limits                |
@@ -495,7 +504,7 @@ Color temperature is measured in Kelvin (K) and affects the mood and atmosphere 
 
 **Important:**
 
-- **Light type and color for dynamic lights are set ONLY in the editor, not via script.**
+- **Light type and default color for dynamic lights are set ONLY in the editor, not via script.**
 - **Static lights offer better runtime performance due to pre-baked rendering.**
 - **Dynamic lights do NOT obey entity visibility settings; control through 'enabled' property.**
 
@@ -503,7 +512,7 @@ Color temperature is measured in Kelvin (K) and affects the mood and atmosphere 
 
 #### Basic World Lighting (Recommended Workflow)
 
-![Static Light Setup Workflow](./assets/StaticWorkflow.png)
+![Static Light Setup Workflow](/images/StaticWorkflow.png)
 
 1. **Open Build mode.** Add Static Light Gizmo from Gizmos.
 2. **Choose Shape:** Cuboid or Ellipsoid for fill/general light; Disk/Rectangle for directional light.
@@ -513,7 +522,7 @@ Color temperature is measured in Kelvin (K) and affects the mood and atmosphere 
 
 #### Using Dynamic Lights (Advanced/interactive effects only)
 
-![Dynamic Light Setup Workflow](./assets/DynamicWorkflow.png)
+![Dynamic Light Setup Workflow](/images/DynamicWorkflow.png)
 
 1. **Add Dynamic Light Gizmo (Point/Spot).**
 2. **Set properties in editor:** Type, color, initial intensity, falloff.
@@ -521,7 +530,7 @@ Color temperature is measured in Kelvin (K) and affects the mood and atmosphere 
 
 ```typescript
 const dlight = entity.as(DynamicLightGizmo);
-dlight.intensity.set(8);
+dlight.intensity.set(1);
 dlight.enabled.set(true);
 ```
 
@@ -599,10 +608,13 @@ Bloom creates a glowing effect around bright areas, simulating how bright light 
 
 **Bloom Settings:**
 
-- **Intensity**: Controls the strength of the glow effect (0.0-2.0)
-- **Threshold**: Minimum brightness value that triggers bloom (0.0-1.0)
-- **Radius**: Size of the glow effect (0.0-10.0)
-- **Quality**: Performance vs quality trade-off
+- Dynamic Light for creating falloff and intensity controll
+- Static Light for masking the origin and dispersing light in the fog
+- Use a very high-intensity spot light with a wide Spread and light fog enabled → this creates a visible glowing aura.
+- Combine with Exposure settings (in your first panel) to exaggerate brightness.
+- **Quality**: Performance vs quality trade-off as creating the bloom effect needs Dynamic lights with are CPU intensive and should be used only when needed.
+
+![Bloom](/images/Bloom.png)
 
 **Best Practices:**
 
@@ -617,156 +629,22 @@ Exposure controls the overall brightness of your scene, similar to camera exposu
 
 **Exposure Settings:**
 
-- **Exposure Value**: Overall scene brightness (-5.0 to +5.0)
-- **Auto Exposure**: Automatically adjusts based on scene content
-- **Key Value**: Target brightness for auto exposure (0.0-1.0)
+- **Exposure Value**: Overall scene brightness (0.0 to 2.0)
+- Depending on the mood of the Scene.
 
 **Usage Guidelines:**
 
 - Positive values brighten the scene
 - Negative values darken the scene
-- Use auto exposure for dynamic lighting scenarios
 - Manual exposure for consistent artistic control
 
-### Brightness
-
-Brightness is a simple multiplier that affects all pixels uniformly.
-
-**Brightness Settings:**
-
-- **Brightness**: Multiplier for all pixel values (0.0-2.0)
-- **Contrast**: Controls the difference between light and dark areas
-
-**Implementation:**
-
-- 1.0 = no change
-- > 1.0 = brighter
-- <1.0 = darker
-- Use sparingly to avoid clipping
-
-### Contrast
-
-Contrast controls the difference between light and dark areas in your scene.
-
-**Contrast Settings:**
-
-- **Contrast**: Difference between light and dark areas (0.0-2.0)
-- **Midpoint**: Center point for contrast adjustment (0.0-1.0)
-
-**Creative Applications:**
-
-- High contrast for dramatic, cinematic looks
-- Low contrast for soft, dreamy atmospheres
-- Adjust midpoint to preserve specific brightness levels
-
-### Saturation
-
-Saturation controls the intensity of colors in your scene.
-
-**Saturation Settings:**
-
-- **Saturation**: Color intensity multiplier (0.0-2.0)
-- **Vibrance**: Selective saturation boost for less saturated colors
-
-**Color Theory Applications:**
-
-- 0.0 = grayscale
-- 1.0 = normal saturation
-- > 1.0 = oversaturated (use carefully)
-- Vibrance preserves skin tones and natural colors
-
-### Color Grading
-
-Color grading allows you to adjust the color balance and create specific moods.
-
-**Color Grading Controls:**
-
-- **Temperature**: Warm/cool color balance (-100 to +100)
-- **Tint**: Magenta/green color balance (-100 to +100)
-- **Hue Shift**: Rotate all colors around the color wheel
-- **Color Curves**: Fine-tune specific color ranges
-
-**Mood Creation:**
-
-- Warm temperature for cozy, intimate scenes
-- Cool temperature for mysterious, dramatic atmospheres
-- Tint adjustments for fantasy or sci-fi looks
-
-### Tone Mapping
-
-Tone mapping converts high dynamic range (HDR) values to display range.
-
-**Tone Mapping Methods:**
-
-- **ACES**: Film industry standard, natural look
-- **Reinhard**: Good for most scenarios
-- **Uncharted 2**: Balanced approach
-- **Custom**: Manual curve adjustment
-
-**Best Practices:**
-
-- ACES for realistic, film-like appearance
-- Reinhard for general use
-- Test different methods for your specific scene
-
-### Anti-Aliasing
-
-Anti-aliasing reduces jagged edges and improves visual quality.
-
-**Anti-Aliasing Types:**
-
-- **FXAA**: Fast, good quality, low performance cost
-- **TAA**: Temporal anti-aliasing, better quality
-- **MSAA**: Multi-sample anti-aliasing, higher performance cost
-
-**Performance Considerations:**
-
-- FXAA recommended for most scenarios
-- TAA for high-quality requirements
-- MSAA only when performance allows
-
-### Depth of Field
-
-Depth of field creates focus effects, blurring distant or near objects.
-
-**Depth of Field Settings:**
-
-- **Focus Distance**: Distance where objects are sharp
-- **Aperture**: Size of the focus area
-- **Blur Radius**: Amount of blur for out-of-focus areas
-
-**Creative Applications:**
-
-- Cinematic focus effects
-- Draw attention to specific objects
-- Create depth and dimension
-- Use sparingly to avoid motion sickness in VR
-
-### Motion Blur
-
-Motion blur simulates the effect of camera movement or fast object motion.
-
-**Motion Blur Settings:**
-
-- **Intensity**: Amount of blur effect (0.0-1.0)
-- **Sample Count**: Quality vs performance trade-off
-- **Velocity Scale**: Multiplier for motion detection
+![Exposure](/images/Exposure.png)
 
 **VR Considerations:**
 
-- Use very subtle motion blur in VR
-- High motion blur can cause discomfort
+- Use very subtle fog in VR
+- Dont put many flashing lights in small space it make user experience and performace worse.
 - Test thoroughly with target audience
-
-### Vignette
-
-Vignette darkens the edges of the screen to draw focus to the center.
-
-**Vignette Settings:**
-
-- **Intensity**: Strength of the darkening effect (0.0-1.0)
-- **Smoothness**: Transition from center to edges
-- **Roundness**: Shape of the vignette effect
 
 **Creative Uses:**
 
@@ -774,15 +652,6 @@ Vignette darkens the edges of the screen to draw focus to the center.
 - Focus attention on center of screen
 - Create tunnel vision effects
 - Subtle use for atmospheric depth
-
-### Chromatic Aberration
-
-Chromatic aberration simulates lens distortion, creating color separation at edges.
-
-**Chromatic Aberration Settings:**
-
-- **Intensity**: Amount of color separation (0.0-1.0)
-- **Spectral Shift**: Direction and amount of color shift
 
 **Artistic Applications:**
 
@@ -896,7 +765,7 @@ Horizon Worlds provides a built-in Real-time Metrics panel to monitor your world
 1. **Light Culling:**
 
    - Disable lights for distant objects
-   - Use LOD systems for lighting
+   - Use [LOD systems](https://developers.meta.com/horizon-worlds/learn/documentation/desktop-editor/help-and-reference/manual-level-of-detail-overview) for lighting
    - Implement light pooling for dynamic scenes
 
 2. **Shadow Optimization:**
@@ -909,6 +778,12 @@ Horizon Worlds provides a built-in Real-time Metrics panel to monitor your world
    - Use efficient shaders
    - Minimize texture sizes
    - Implement material instancing
+
+#### Life Hack for lighting optimization
+
+You should Texture baked lighting and shadows, instead of rendering lights with Gizmos you can directly paint the light and shadow onto the texture of the object and acchieve a similar experience.
+
+![Baked Lights](/images/Baked%20Textures.png)
 
 ### Common Performance Issues
 
