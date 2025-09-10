@@ -1,6 +1,3 @@
-## Nav Logo
-Learn | Programs | API reference | My Creations
-
 # Module 1 - Setup
 
 ![A player in Meta Horizon Worlds holds abuild tool](imgheader.png)
@@ -81,4 +78,4 @@ In the desktop editor, you can access the systems in the following ways:
 2.  Navigate the **Hierarchy** panel.
 
 
-![Screenshot of two empty reference objects named "BlockAssetManager" and "PlayerIdAssigner" in the Horizon Worlds editor. The inspector panel shows the corresponding TypeScript components attached.](placeholder_image_2.png)
+![Screenshot of two empty reference objects named "BlockAssetManager" and "PlayerIdAssigner" in the Horizon Worlds editor. The inspector panel shows the corresponding TypeScript components attached.](worldseditor1.png)
