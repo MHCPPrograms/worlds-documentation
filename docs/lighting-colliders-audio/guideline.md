@@ -1,6 +1,6 @@
 # **Master the Light: A Creator's Guide to Visually Stunning Horizon Worlds**
 
-Welcome, fellow creators! Light is one of the most powerful tools in our world-building arsenal. It dictates mood, guides the eye, and transforms a simple collection of shapes into a breathtaking, immersive experience. This guide is designed to empower you with the knowledge to master lighting in the Worlds desktop editor, from the fundamental gizmos to advanced, scripted effects that will make your worlds truly shine.
+Welcome, fellow creators! Light is one of the most powerful tools in our world-building arsenal. It dictates mood, guides the eye, and transforms a simple collection of shapes into a breathtaking, immersive experience. This guide is designed to empower you with the knowledge to master lighting in the Worlds desktop editor, from the fundamental gizmos to advanced, scripted effects that will make your worlds truly shine. 
 
 Below is the overview of core components
 ```mermaid
