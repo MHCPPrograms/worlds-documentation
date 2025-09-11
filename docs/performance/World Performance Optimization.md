@@ -2,7 +2,7 @@
 
 Creating compelling art and smooth mechanics is what makes a Horizon World memorable. But even the most beautiful scene can lose its magic if performance lags. A single hiccup can break immersion, frustrate players, and reduce the chances of your world being revisited.
 
-Performance optimization isn’t just technical—it’s emotional. It’s the difference between a magical experience and a forgettable one.
+Performance optimization is the difference between a magical experience and a forgettable one.
 
 ---
 
