@@ -292,7 +292,7 @@ In addition to adhering to the established limitations, users are encouraged to 
 * Bake lighting into geometry (using vertex colors) instead of using additional lighting textures or normal maps, which aren’t supported.
 * Break your assets into smaller, reusable pieces. This helps with remixing and reduces memory usage.
 * Set pivot points correctly in your 3D software before exporting.
-
+---
 ## 4. Exporting to FBX Format
 When exporting, it's important to follow the following file name criteria:
 * Avoid using these characters in your filenames -, ., , /, *, $, &
