@@ -1,8 +1,7 @@
 # 🌟 Lighting in Horizon Worlds
 
 🎥 **Watch the full tutorial on YouTube:**  
-[![Watch on YouTube](https://img.youtube.com/vi/5sge-purmn4/0.jpg)](https://www.youtube.com/watch?v=5sge-purmn4)
-
+[![Watch on YouTube](https://img.youtube.com/vi/GLjV1DSwu9M/0.jpg)](https://www.youtube.com/watch?v=GLjV1DSwu9M)
 
 Hey, I’m RJ — game developer for 7+ years and 3D animator for over a decade.  
 For the past three and a half years, I’ve been building in Horizon Worlds, and one thing that really sets my work apart is lighting.
@@ -11,6 +10,8 @@ The way you use light can completely transform a scene — it’s the difference
 
 In this tutorial, I’ll show you how to think about and use lighting in Horizon Worlds to create **mood, focus, and atmosphere**.  
 We’ll break it down into three simple layers:
+
+<img width="1920" height="1080" alt="Artboard 2" src="https://github.com/user-attachments/assets/96edc2c2-cc8e-4429-9530-ff0a1fcc000d" />
 
 - 💡 **Tools** — the lights and gizmos you’ll use  
 - 🧠 **Concepts** — the principles that guide them  
@@ -54,6 +55,14 @@ For now, let’s focus on the logic of lighting.
 
 Lighting in Horizon Worlds is controlled through several key tools, each with its own purpose and strengths.
 
+
+
+<img width="1920" height="1080" alt="Artboard 4" src="https://github.com/user-attachments/assets/58f36bf1-5e26-4166-b469-2a084c2ffcdc" />
+
+
+
+
+
 ### 1. 🔦 Dynamic Light Gizmo
 
 <img width="1021" height="547" alt="dynamic-light" src="https://github.com/user-attachments/assets/9e85050b-0430-4fb7-b28b-06dba8e889de" />
@@ -88,6 +97,7 @@ Lighting in Horizon Worlds is controlled through several key tools, each with it
 
 
 - Performance-friendly: baked into the world, doesn’t move or update.  
+<img width="1920" height="1080" alt="Artboard 5" src="https://github.com/user-attachments/assets/0f46fd8a-2bc6-4e12-9218-1be276e8018e" />
 
 **Great for:**
 - Ambient lighting  
@@ -99,6 +109,7 @@ Lighting in Horizon Worlds is controlled through several key tools, each with it
 👉 Think of static lights as the **foundation** → consistent base layer. Add dynamics on top for drama.
 
 ---
+<img width="1920" height="1080" alt="Artboard 6" src="https://github.com/user-attachments/assets/03015d3c-bb1e-43d4-840c-f65eb5716aeb" />
 
 ### 3. 🌍 Environment Gizmo
 <img width="1021" height="547" alt="dynamic-light" src="https://github.com/user-attachments/assets/a3474d0e-b81b-43b1-afca-fc864db54369" />
@@ -220,4 +231,5 @@ Don’t worry about memorizing names — focus on the **emotion you want to crea
 Use tools + concepts as a guide, but experiment and break rules.  
 
 For me, lighting is the most fun part — it’s how I take a lifeless build and bring it alive with **color and atmosphere**.
+<img width="1920" height="1080" alt="Artboard 7" src="https://github.com/user-attachments/assets/2fed880a-77d7-4a23-b84f-12043f6121d1" />
 
