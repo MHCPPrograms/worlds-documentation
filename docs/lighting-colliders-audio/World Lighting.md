@@ -227,7 +227,8 @@ hz.Component.register(flashlight);
 
 ---
 
-## ✅ Summary
+## Summary
 
 Lighting is one of the easiest ways to make your Horizon World feel special. Start with the **Environment Gizmo** to set the mood, use **Static Lights** for steady glow, and add **Dynamic Lights** for fun effects and interaction.
+
 
