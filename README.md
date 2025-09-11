@@ -5,7 +5,7 @@
 ## 📖 Definition:
 Monetization - is the process of earning money from a business. In this tutorial it will be about earning from in-world purchases.
 
-# 🧾 What is In - world purchase ?
+## 🧾 What is In - world purchase ?
 
 - In world purchase lets the visitors of your world to buy and use items that you have designed in your world for better play.
 There are in two different types of items or purchases:
