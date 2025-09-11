@@ -23,7 +23,7 @@ Examples:
 - These items are purchased once only and added to the visitors inventory to use it now or for later. These items serve as an add up to physical power or can be an access to something.
 Examples:
 ‣ Special VIP passes
-‣ Cars that cna be used forever during the play 
+‣ Cars that can be used forever during the play 
 ‣ Titles and badges that are yours forever
 ‣ Accessories or utensils
 ‣ Access to a specific level
@@ -36,7 +36,7 @@ Examples:
 There are different ways to test if your item is good for being purchased. This will also help when putting down the prices.
 - It is new ? Up-to-date prodcuts matter for their suficency and looking. Try to make new products or items every 2 times a week.
 - Is it unique ? Uniquness of the product brigns the attention to the players. Try to experiment with products, remake the design and try adding new items to your world like maybe add a sweet ingreident to the bakery full of savory and see if people like it.
-- Is it relevant ? Not everything can be your product or the item that your sell. Your item has to be usefull for the game and make the experince smoother and better.
+- Is it relevant ? Not everything can be your product or the item that you sell. Your item has to be usefull for the game and make the experince smoother and better.
 ----
 ## 🏷️ Pricing:
 - Range yoru prices from the lowest to the highest across items to see which price suits your users
@@ -83,8 +83,8 @@ To check your items and sells yoru can do the following:
 
 📌 **Consumable Items**  
 - Single ride tickets (one-time use).  
-- Food that is eaten after getting.
-- If there is could be a movie ticket
+- Food.
+- Movie ticket.
   
 
 ---
@@ -99,10 +99,10 @@ To check your items and sells yoru can do the following:
 ---
 
 ## 🎯 Conclusion
-**Monetization** is all about bringing benefits for both users and owners. It is the oppirtunity for owners to expand their worlds and improve. 
+**Monetization** is all about bringing benefits for both users and owners. It is the opportunity for owners to expand their worlds and improve. 
 
 In this lesson we covered topics such as:
-- What is monitzation and its usage
+- What is monetization and its usage
 - How to track your items
 - Difference between types of items
 - And example of world that uses monetization
