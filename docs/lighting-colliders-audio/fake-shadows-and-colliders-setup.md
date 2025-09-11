@@ -124,7 +124,17 @@ export class ISelectable extends hz.Component<typeof ISelectable> {
   }
 
   start() {
-    if (!Utils.ChangeOwnershipToLocal(this)) return; 
+  
+    component.connectCodeBlockEvent(
+        component.entity,
+        CodeBlockEvents.OnPlayerEnterWorld,
+           (player) => {
+               component.entity.owner.set(player); // setting this object's ownership
+           }
+    );
+    const localPlayer = component.world.getLocalPlayer();
+    if (localPlayer === component.world.getServerPlayer()) return;
+    
     var outline = this.props.outline?.as(Entity);
     FakeShadows.Register(this);
     outline?.visible.set(false);
@@ -167,7 +177,17 @@ export class FakeShadows extends hz.Component<typeof FakeShadows> {
   }
 
   preStart() {
-    if (!Utils.ChangeOwnershipToLocal(this)) return;
+  
+    component.connectCodeBlockEvent(
+        component.entity,
+        CodeBlockEvents.OnPlayerEnterWorld,
+           (player) => {
+               component.entity.owner.set(player); // setting this object's ownership
+           }
+    );
+    const localPlayer = component.world.getLocalPlayer();
+    if (localPlayer === component.world.getServerPlayer()) return;
+    
     this.connectLocalBroadcastEvent(World.onUpdate, () => {
       FakeShadows.selectables.forEach(element => {
         this.update(element.entity, element.ShadowPlane(), element.DeltaRotation());
@@ -225,13 +245,17 @@ ISelectable
 
 ---
 ### Scene Colliders Overview
-That is how scene looks like in terms of overall structure. As you can see, all cubes are locked between
-colliders prevent them ovefrlow game field. 
+
+This is how the scene looks in terms of overall structure. All cubes are locked between **colliders** that prevent them from overflowing outside the game field.
+
 <img src="Content/Image8.png" alt="Multiple Cubes" width="1000">
 
-The question is how they go through colliders when they go to platform ?
+---
+
+#### How do cubes pass through colliders when moving to the platform?
+
+The answer is simple: at the moment they start moving via animation, we **turn off simulation** on `CubeView`.
 
 ```ts
-  let physical = selectable.entity!.as(PhysicalEntity);
-  physical.simulated.set(false);
-```
+let physical = selectable.entity!.as(PhysicalEntity);
+physical.simulated.set(false);
