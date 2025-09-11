@@ -14,10 +14,13 @@ September 10th, 2025
 
 This tutorial guides you through the workflow for creating and updating an interactive asset template. To cover the widest possible range of use cases, we will work with an asset that includes multiple scripts, including a “SharedEvents” script that is not attached to any entities.
 
+<img width="1642" height="794" alt="interactive ladder asset" src="https://github.com/user-attachments/assets/21c806e5-284b-4283-869d-a4a9e039b597" />
+
+
 ## Why use an Asset Template?
 The primary advantage of using an asset template is the ability to efficiently update instances of an asset across multiple worlds. Rather than modifying the same asset individually in each affected world, you can update the asset definition once and then approve the changes in all impacted worlds.
 
-![2d coutous assets can be used in horizon worlds](https://github.com/user-attachments/assets/86ac85c3-f296-4e6c-9199-f48c3091a026)
+<img width="612" height="148" alt="asset template" src="https://github.com/user-attachments/assets/8f8d4b58-bc08-4325-bbf7-451741dc1b2c" />
 
 
 ### Prerequisites and Expectations
@@ -42,94 +45,72 @@ This document has six main parts covering asset prep, creating an asset template
 - [Topic Four - Editing the Template Definition](#topic-four---editing-the-template-definition)  
 - [Topic Five - Accepting Asset Updates in Affected Worlds](#topic-five---accepting-asset-updates-in-affected-worlds)  
 - [Topic Six - Unlinking an Asset from the Asset Template](#topic-six---unlinking-an-asset-from-the-asset-template)  
-- [Advanced Concepts: Blend vs Transparent vs Masked](#advanced-concepts--blend-vs-transparent-vs-masked)  
 - [References](#references)  
 
 ## Topic One - Preparing Your Asset’s Elements Before Converting to an Asset Template 
 Make sure that you work with FBS (File-Backed-Scripts).  Full funtionality of Asset Templates is not guaranteed if you don't use File Backed Scripts. Create a parent object containing all elements of the asset. To keep your project organized and easily manageable, we recommend placing all elements of your asset within a single parent object.
 
-[PHOTO]
+<img width="1128" height="848" alt="create parent object" src="https://github.com/user-attachments/assets/36d35114-471f-49eb-891c-8d10ca4d3cd6" />
+
  Connect scripts that are not attached to any entities. If your asset includes scripts that are not linked to any entities, such as a “SharedEvents” script, you must ensure the script is connected to an object. In this case, we recommend creating a “SharedEvents” empty object and attaching the script to it.
 
-[PHOTO]
-
-<img width="2778" height="1284" alt="why use 2d cutout assets" src="https://github.com/user-attachments/assets/5eefda17-08bb-47b8-8b94-ed4e634b6f42" />
+<img width="1712" height="924" alt="connect your shared events script to an empty object" src="https://github.com/user-attachments/assets/ce07e87e-d920-42c1-a534-ab1430d70e0a" />
 
 
 ## Topic Two - Creating an Asset Template
 
 Select the parent object and choose “Create Asset” from the menu.
-[PHOTO]
+
+<img width="942" height="818" alt="select create asset in the menu" src="https://github.com/user-attachments/assets/b19a7c17-ff5a-4a55-8178-f8b6362decfd" />
+
 
 Fill out the Asset Name and Description and decide on the location of your asset.  Make sure to select Asset Template in the drop down box.
-[PHOTO]
+<img width="1228" height="940" alt="select asset template in the menu" src="https://github.com/user-attachments/assets/16dbace8-879c-4ce5-87b8-6e1f168fe6da" />
+
 
 Click on Create.
-[PHOTO]
+
 
 Note that the SQUARE indicating a parent object turned into an icon indicating an asset.  Also, the letters turned from while to blue.
-[PHOTO]
+<img width="1500" height="758" alt="parented object turns into an asset" src="https://github.com/user-attachments/assets/8e8ee9c5-d41e-47c4-a4d3-e3530f457e90" />
 
 
 
 ## Topic Three - Importing an Asset Template
- Bringing an asset into your world is a simple drag-and-drop operation. Drag the asset from your folder in the Asset Library and drop it into your world.
+ Bringing an asset into your world is a simple drag-and-drop operation. Drag the asset from your folder in the Asset Library and drop it into your world. You may want to double-check whether the asset’s scripts depend on any specific script APIs, or if Custom Player Movement needs to be enabled in the Player Settings. Make adjustments as necessary.
 
-[PHOTO]
-
-You may want to double-check whether the asset’s scripts depend on any specific script APIs, or if Custom Player Movement needs to be enabled in the Player Settings. Make adjustments as necessary.
-
+<img width="1736" height="1024" alt="drag the asset into the window" src="https://github.com/user-attachments/assets/35670756-b82f-41b2-b058-1fdcbf004e85" />
 
 
 ## Topic Four - Editing the Template Definition
 
 In order to edit the template definition, select the asset in your Asset library, and choose the “Edit Template Definition” option.
 
-[PHOTO]
+<img width="1190" height="514" alt="edit template definition" src="https://github.com/user-attachments/assets/79224899-c45e-45dd-9c7d-dfc34c0e1caa" />
+
 
 You will now be able to make changes to the asset definition.  Once you finish, click on the Save button.
 
-[PHOTO]
+<img width="1786" height="768" alt="save changes to template definition" src="https://github.com/user-attachments/assets/c0bba16c-4924-49c9-bd7f-963adb99cde4" />
 
 Describe your changes and click on “Save & Publish”
+
+<img width="1380" height="638" alt="save and publish button" src="https://github.com/user-attachments/assets/06d88862-afc4-4030-a0d6-d68508a3092d" />
 
 
 ## Topic Five - Accepting Asset Updates in Affected Worlds
 
 Once you change the asset definition, the instances of that asset will NOT be automatically applied in the affected worlds.  You will need to visit each affected world, and accept changes there.  You can do so by clicking on the “View Available Asset Updates” button.
 
-[PHOTO]
+
+<img width="1704" height="200" alt="view available asset updates" src="https://github.com/user-attachments/assets/686fa669-af09-4ee4-a708-07f3709c81f7" />
 
 
 ## Topic Six - Unlinking an Asset from the Asset Template
 You may decide that you no longer want an asset in your world to remain linked to its Asset Template Definition. Unlinking the asset is simple: select the asset in the Hierarchy window and choose “Unlink Instance Root” from the menu.
 
 
-[PHOTO]
-
-
-
-## ADVANCED CONCEPTS:  Blend vs Transparent vs Masked
-
-It’s worth noting that Horizon supports multiple methods of handling transparency, each with its own advantages and limitations:
-
-### Blended (Unlit) Materials
-	•	Do not receive or cast lighting or shading.
-	•	Have no specular or reflection properties.
-	•	The material name in the FBX must end with _Blend.
-
-### Transparent Materials
-	•	Allow light to pass through.
-	•	Use a specular channel to control both specular and reflection levels.
-	•	Support two textures, which provide finer control over PBR properties.
-	•	The material name in the FBX must end with _Transparent.
-
-### Masked Materials
-	•	Control how two textures mix together.
-	•	Respond to specular and roughness, but are always fully rough (roughness = 1).
-	•	The alpha channel of the texture defines opacity (white = opaque, black = transparent).
-	•	Alpha cutout occurs at 0.5, consistent with GLTF 2.0 and Unity defaults.
-	•	The material name in the FBX must end with _Masked.
+<img width="1382" height="864" alt="unlink instance root" src="https://github.com/user-attachments/assets/e1cf36c1-0a9c-4ca7-a11a-9f12214d0df4" />
 
 
 ## References
