@@ -1,10 +1,34 @@
 # Turn ANYTHING into a Hologram with Blender Nodes
 
+#### Tutorial created by Lauren Schroeder (virtualpebble)
+
+#### **Last Updated**: September 10th 2025
+---
 ### What if you could quickly transform any 3D object into a sci-fi hologram, without painting textures by hand?
 
 ### Today I’ll show you how I built the ⚡ **BLENDER HOLOGRAM ZAPPER 3000** ⚡
 
 ### This workflow shows how to use the Blender Shader Editor with Horizon’s unlit blend materials to make hologram textures. You can expand on this workflow to create your own custom textures to use in your worlds.
+# Contents
+
+- [What is a Texture?](#what-is-a-texture)
+- [Why Procedural Textures?](#why-procedural-textures)
+- [Materials in Horizon](#materials-in-horizon)
+- [Prerequisites](#prerequisites)
+- [Power Up System](#power-up)
+- [Exporting a Horizon Worlds Asset](#exporting-a-horizon-worlds-asset)
+  - [Bring Your Asset out of Horizon Worlds](#1-bring-your-asset-out-of-horizon-worlds)
+  - [Import Your Asset to Blender](#2-import-your-asset-to-blender)
+- [Getting Creative](#getting-creative)
+  - [Prepare the Shader](#3-prepare-the-shader)
+  - [Set up Nodes for a Hologram](#4-set-up-nodes-for-a-hologram)
+  - [Tune the Style](#5-tune-the-style)
+- [Bake the Texture](#6-bake-the-texture)
+  - [File Name Requirements](#file-name-requirements)
+- [Exporting the FBX](#exporting-the-fbx)
+- [Zap your Hologram into Horizon Worlds](#zap-your-hologram-into-horizon-worlds)
+  - [Color Adjustment](#color)
+- [Other Fun Ideas](#other-fun-ideas)
 
 ![Glowing heart](/images/blender-hologram/final.png)
 
@@ -159,8 +183,8 @@ This is where the process gets more intuitive and creative. We can take our node
 - **Stops**: Black at 0.7, White at 0.77
 - Think of the Color Ramp like a dimmer switch for light. A dimmer lets you fade smoothly from dark to bright. But when you push the sliders really close together, it’s like turning that dimmer into an on/off switch. The smooth fade suddenly becomes crisp, alternating bands.
 - By setting the black stop to 0.7 and the white stop to 0.77, we squeeze the gradient into a very narrow range. This sharpens the stripes into clean, solid lines.
-- Adjusting Black Stop: Pushing the black stop higher means more of the texture reads as “transparent” (or the background shows through).
-- Adjusting White Stop: Pulling the white stop lower makes the bands more filled in and solid.
+- Adjusting black stop: Pushing the black stop higher means more of the texture reads as “transparent” (or the background shows through).
+- Adjusting white stop: Pulling the white stop lower makes the bands more filled in and solid.
 
 ![color ramp gif](/images/blender-hologram/ramp.gif)
 
@@ -218,7 +242,7 @@ First we add an (unconnected) Image Texture node to set up the parameters of the
 ![Save Image Texture](/images/blender-hologram/imageViewer.png)
 
 #### Troubleshooting Tips
-- If you image looks black, make sure your object is selected (highlighted in the viewport) and try to Bake again. 
+- If your image looks black, make sure your object is selected (highlighted in the viewport) and try to Bake again. 
 - If your image output looks different than mine, double check your node setups and connections.
 - Keep an eye out for error popups at the bottom of your screen.
 
@@ -255,7 +279,7 @@ First we add an (unconnected) Image Texture node to set up the parameters of the
 
 Charge is rising..
 
-### ⚡ Model with Named Material Finished, Bolt Collected! (7/10)
+### ⚡ All Files Exported, Bolt Collected! (7/10)
 
 ---
 
