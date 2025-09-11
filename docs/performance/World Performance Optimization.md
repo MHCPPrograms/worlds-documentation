@@ -69,6 +69,93 @@ Here are simple ways to reduce workload and improve performance:
 
 ---
 
+Absolutely, Patrick. Here's a new section you can seamlessly add to your **World Performance Optimization** tutorial. It uses the Horizon Worlds API to show how to toggle visibility of a room based on player proximity—perfect for secret areas, memory-saving tricks, or immersive storytelling.
+
+---
+
+## 🕵️‍♂Reveal a Room When a Player Enters
+
+Sometimes, you want a room or object to stay hidden until a player reaches a specific point—like a secret lab, a boss arena, or a cozy lounge. This technique helps optimize performance by hiding unused assets.
+
+---
+
+### Setup Steps
+
+1. **Create the Room Entity**
+   - In the Horizon Worlds editor, group the objects that make up your room into a single entity.
+   - Name it something like `SecretRoom`.
+
+2. **Add a Trigger Gizmo**
+   - Place a trigger where you want the room to be revealed.
+   - Set the trigger to detect **player entry and exit**.
+
+3. **Attach the Script**
+   - Create a new script using the format below.
+   - Assign the `roomEntity` and `triggerEntity` in the script’s properties.
+
+---
+
+### Script: Toggle Room Visibility
+
+```typescript
+import {
+  Component,
+  PropTypes,
+  CodeBlockEvents,
+  Entity
+} from 'horizon/core';
+
+class RoomVisibilityController extends Component<typeof RoomVisibilityController> {
+  static propsDefinition = {
+    roomEntity: { type: PropTypes.Entity },      // The room to show/hide
+    triggerEntity: { type: PropTypes.Entity },   // The trigger zone
+  };
+
+  start() {
+    // Hide the room initially
+    if (this.props.roomEntity) {
+      this.props.roomEntity.visible.set(false);
+    }
+
+    // Show room when player enters trigger
+    this.connectCodeBlockEvent(
+      this.props.triggerEntity,
+      CodeBlockEvents.OnPlayerEnterTrigger,
+      () => {
+        if (this.props.roomEntity) {
+          this.props.roomEntity.visible.set(true);
+        }
+      }
+    );
+
+    // Hide room when player exits trigger
+    this.connectCodeBlockEvent(
+      this.props.triggerEntity,
+      CodeBlockEvents.OnPlayerExitTrigger,
+      () => {
+        if (this.props.roomEntity) {
+          this.props.roomEntity.visible.set(false);
+        }
+      }
+    );
+  }
+}
+
+Component.register(RoomVisibilityController);
+```
+
+---
+
+### How It Works
+
+- The script listens for player entry and exit events on the trigger.
+- When a player enters, it sets the room’s `visible` property to `true`.
+- When the player leaves, it sets it back to `false`.
+
+This keeps your world lightweight and reactive—only rendering what’s needed when it’s needed.
+
+---
+
 ## Summary: Treat Workload Like Currency
 
 Think of performance like a budget. Every object you add costs something.
