@@ -59,7 +59,7 @@ Once enabled, you’ll see live metrics while exploring your world—perfect for
 
 ---
 
-## 🛠️ Optimizing World Content
+## Optimizing World Content
 
 Here are simple ways to reduce workload and improve performance:
 
@@ -73,7 +73,7 @@ Absolutely, Patrick. Here's a new section you can seamlessly add to your **World
 
 ---
 
-## 🕵️‍♂Reveal a Room When a Player Enters
+## Reveal a Room When a Player Enters
 
 Sometimes, you want a room or object to stay hidden until a player reaches a specific point—like a secret lab, a boss arena, or a cozy lounge. This technique helps optimize performance by hiding unused assets.
 
