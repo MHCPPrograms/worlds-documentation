@@ -1,6 +1,12 @@
 # How to Capture High-Quality Videos in Meta Horizon Worlds
 *By Gungangoose*
 
+*September 2025*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BymCYIuQhNE?si=9Z4FDqyVqS4KaHeE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
 So you just made your first world in Meta Horizon — congratulations! 🎉  
 Now what? It’s time to show off your creation. Whether you want to:
 
@@ -63,7 +69,7 @@ If you’re using **face and eye tracking**, look at the **center of the camera 
 - VR capture is limited to **3 minutes**
 - Mobile capture is limited to **1 minute**
 
-![](Images/Mobile.png)  
+![](Images/Mobile.png) 
 
 ---
 
@@ -101,7 +107,7 @@ If you want to capture the **true VR experience**, use the built-in Quest OS cap
    - Hold the **Meta / Oculus button** on the right controller  
    - While holding, **press and hold the right trigger** to start recording  
    - Repeat to **stop recording**  
-3. Adjust **resolution, orientation, and eye preference** in:  
+3. Adjust **resolution, orientation, and eye preference** in the OS Settings  
 
 ![](Images/OSCamSettings.png)  
 
@@ -170,14 +176,14 @@ Want an **optimized filming setup** without doing all the camera configuration y
 - Ready-to-go settings for **trailers** & **shorts**
 
 **Remix it, drop in your builds, and start capturing instantly.**  
-[Link coming soon — check back here!]
+https://horizon.meta.com/world/10172145192510634/?target=release&hwsh=BbLAkm2b5R
 
 ---
 
 # Tips & Tricks for Smooth Footage
 
 ### **1. Turn Off Comfort Assistance for VR POV Capture**
-Go to:  
+Go to:  **Settings**→ **Safety and Comfort**
 Set **Comfort Assistance** to **Off** *(default is “Low”)*.  
 Otherwise, a **black vignette** will appear in OS or casting captures.  
 You may need to **restart Meta Horizon Worlds** for settings to take effect.
@@ -203,5 +209,6 @@ Whether you’re a **VR cinematographer** chasing the perfect shot or a **game d
 Keep experimenting.  
 Keep creating.  
 And keep showing the Horizon community what you’ve built. 🚀
+
 
 
