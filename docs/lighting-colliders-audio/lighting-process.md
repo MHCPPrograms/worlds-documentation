@@ -1,5 +1,9 @@
 # Lighting Your World Like a Pro - A Step-by-Step Process
 
+### Tutorial created by Lauren Schroeder (virtualpebble)
+
+#### **Last Updated**: September 10th 2025
+
 World lighting is often treated as an afterthought, but it’s one of the most powerful tools you have to shape mood, guide players, and add realism to your world.
 
 Lighting is like background music at a party. If it’s good, nobody notices, but if it’s bad, *everyone notices*. Visitors won’t always clock each specific lamp or glow, but they’ll feel its influence.  
@@ -7,6 +11,10 @@ Lighting is like background music at a party. If it’s good, nobody notices, bu
 Good lighting quietly influences how players move, explore, and experience your world. Using the Environment Gizmo can give you a good baseline for nice ambient lighting, but we can get more control with additional methods.
 
 In this tutorial, you’ll learn a step-by-step process for lighting your worlds. It’s the same approach professional lighting designers use in animation, games, and theatre [(see the References if you want to nerd out)](#references), but adapted here for Horizon Worlds.
+
+You can follow along with the process by watching the video here:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ezQdoJHgrQg?si=P9A673c346UrQ7H9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Prerequisites
 - You should have the Horizon desktop editor installed
