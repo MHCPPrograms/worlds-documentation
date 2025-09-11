@@ -9,8 +9,6 @@ This tutorial will walk you through the process of exporting 3D models from Sket
 
 **Download Latest Release:** [Releases Page](https://github.com/ChrisLally/sketchup-to-horizon-worlds-exporter/releases)
 
-An important note about Blender exporting -- 
-
 ---
 
 ## Video Walkthrough
