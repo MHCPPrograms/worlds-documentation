@@ -72,7 +72,7 @@ To check your items and sells yoru can do the following:
  - Buying photos
  - Photo booth
  - Rides ( both free, one time, number of times )
- - 
+   
 ### Let's break down everything into Durable and Consumable items:
 
 📌 **Durable Items**  
