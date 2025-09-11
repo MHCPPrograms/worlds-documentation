@@ -10,6 +10,9 @@ Here’s a demo of the final outcome. You can also explore it as a **remixable w
 
 <img src="Content/intro.gif" alt="Demo" width="600">
 
+Full **remixable world** available at the [link](https://horizon.meta.com/world/24409713532013437) for in-depth look at the implementation 
+
+
 ---
 
 ## Step 1: Asset Setup
