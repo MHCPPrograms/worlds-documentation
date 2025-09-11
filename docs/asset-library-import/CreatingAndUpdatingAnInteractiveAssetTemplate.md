@@ -46,7 +46,7 @@ This document has six main parts covering asset prep, creating an asset template
 - [References](#references)  
 
 ## Topic One - Preparing Your Asset’s Elements Before Converting to an Asset Template 
-Create a parent object containing all elements of the asset. To keep your project organized and easily manageable, we recommend placing all elements of your asset within a single parent object.
+Make sure that you work with FBS (File-Backed-Scripts).  Full funtionality of Asset Templates is not guaranteed if you don't use File Backed Scripts. Create a parent object containing all elements of the asset. To keep your project organized and easily manageable, we recommend placing all elements of your asset within a single parent object.
 
 [PHOTO]
  Connect scripts that are not attached to any entities. If your asset includes scripts that are not linked to any entities, such as a “SharedEvents” script, you must ensure the script is connected to an object. In this case, we recommend creating a “SharedEvents” empty object and attaching the script to it.
@@ -136,5 +136,5 @@ It’s worth noting that Horizon supports multiple methods of handling transpare
 
 <!-- this is the place to put useful supplementary information, such as references to other websites or documents in the github repo that are relevant to your topic -->
 
-- https://developers.meta.com/horizon-worlds/learn/documentation/custom-model-import/creating-custom-models-for-horizon-worlds/materials-guidance-and-reference-for-custom-models
+- https://developers.meta.com/horizon-worlds/learn/documentation/desktop-editor/assets/asset-templates
 - Meta's Documentation Explaining Materials Guidance
