@@ -57,9 +57,7 @@ Horizon Worlds offers a **Real-Time Metrics Panel** to help you monitor frame ti
 
 Once enabled, you’ll see live metrics while exploring your world—perfect for spotting bottlenecks.
 
-<video src="https://raw.githubusercontent.com/PatMekury/worlds-documentation/main/docs/performance/assets/performance.mp4" autoplay muted loop playsinline width="100%">
-  Your browser does not support the video tag.
-</video>
+![Demo of Performance](./assets/performance.gif)
 
 ---
 
