@@ -1,168 +1,224 @@
-This is a breakdown hot to make fake shadow for animated objects since Meta Horizon engine doesn't support
-dynamic shadows for non-static object.
+# Creating Fake Shadows for Animated Objects in Meta Horizon Worlds
+
+Since the **Meta Horizon engine** doesn’t support dynamic shadows for non-static objects, we can create a **fake shadow system** instead. This guide walks you through the full setup and scripting required.
+
+---
+
+## Final Result
+
+Here’s a demo of the final outcome. You can also explore it as a **remixable world**.
 
 <img src="Content/intro.gif" alt="Demo" width="600">
 
-Here is example the final result which is available as remixable world 
+---
 
+## Step 1: Asset Setup
 
-First of all we need to setup our Asset Template that going to be spawned in the world.
-The asset hierarchy is non-trivial to set-up because we need the object to be physical and unfortunatly 
-current vesrion of the engine doesn't handle well transformations of child objects in the hierarchy. That
-why we need special structure in order to do that.
+We need to create an **Asset Template** that will be spawned in the world.  
+The hierarchy setup is important because:
 
-Lets start to do that. We are going to make it on simple cube.
+- The object must be **physical**.
+- The engine currently struggles with transformations of child objects.
+- To make it work, we’ll use a **special structure**.
 
-First of all spawn place a cube. And call it CubeMesh
+We’ll start with a simple **cube**.
+
+---
+
+### 1. Create the Cube Mesh
+Spawn a cube and name it **`CubeMesh`**.
 
 <img src="Content/image1.png" alt="Step 1" width="500">
 
-For the outline mesh we use custom created mesh in any DCC app like Maya or blender with inverted
-normals. We import this mesh in MHW with unlit material, you can read more here how to do that
-https://developers.meta.com/horizon-worlds/learn/documentation/custom-model-import/creating-custom-models-for-horizon-worlds/materials-guidance-and-reference-for-custom-models
+---
 
+### 2. Add an Outline Mesh
+For the outline, use a **custom mesh** created in a DCC app (Maya, Blender, etc.) with **inverted normals**.
 
+- Import the mesh into Horizon Worlds with an **Unlit material**.
+- More details: [Custom Models Import Documentation](https://developers.meta.com/horizon-worlds/learn/documentation/custom-model-import/creating-custom-models-for-horizon-worlds/materials-guidance-and-reference-for-custom-models)
 
-for the shadow we use simple texture with alpha, important note that in order to apply this texture
-you should have plane model with Unlit Blend Material set up. You can get this texture in Content folder 
-of this tutorial
+---
 
-<img src="Content/ShadowPlane_BA.png" alt="Step 1" width="256">
+### 3. Add the Shadow Plane
+For the shadow, we’ll use a simple **alpha texture**.  
+To apply this texture, you need a **plane model** with an **Unlit Blend Material**.
 
-place this plane together with created cube, and outline mesh
+You can find the shadow texture in the tutorial’s **Content folder**:
 
-<img src="Content/image2.png" alt="Step 1" width="1000">
+<img src="Content/ShadowPlane_BA.png" alt="Shadow Texture" width="256">
 
-your initial setup will look like this:'
-CubeMesh, Outline, ShadowPlane stacked one after another.
+Place this plane together with the cube and outline mesh:
 
-the next step is to start creating right hierarchy. Lets create parent object for CubeMesh and Outline and call it
-CubeView
+<img src="Content/image2.png" alt="Step 2" width="1000">
 
-<img src="Content/image3.png" alt="Step 1" width="500">
+Your setup should now include:
 
-Now lets create another parent object of View and ShadowPlane.  So eventually hierarchy of object
-will look like this
+- `CubeMesh`
+- `Outline`
+- `ShadowPlane`
 
-<img src="Content/image5.png" alt="Step 1" width="500">
+---
 
-Now the most important step is to setup correct behaviour of each object in the hierarchy
+## Step 2: Hierarchy Setup
 
-<img src="Content/image6.png" alt="Step 1" width="1000">
+Now let’s organize the hierarchy properly.
 
-- Root object Cube0 left unchanged
-- CubeView that hold CubeMesh and Outline motion parameter should be set to Interactive
-- CubeMesh and Outline Motion type should be Animated
-- ShadowPlane Motion type should also be Animated but Collidable option should be turned off
+1. Create a parent object for **CubeMesh** and **Outline**, call it **`CubeView`**.
 
-Here is how my 3 cubes eventualy looks like
+<img src="Content/image3.png" alt="Step 3" width="500">
 
-<img src="Content/image7.png" alt="Step 1" width="1000">
+2. Create another parent object for **CubeView** and **ShadowPlane**.
 
+Your final hierarchy should look like this:
 
-OK lets move forward to scripts that controls shadows.
-All system basically consists of 2 scripts ISelectable and FakeShadows
-ISelectable is attached to each cube and pritty straight forward. Its just hold 
-all data we need for outline and fake shadows to work
+<img src="Content/image5.png" alt="Hierarchy" width="500">
 
-Each cube has script called ISelectable attached, since my objects can be selected by user
-and moved
+---
+
+## Step 3: Motion Setup
+
+Set the **motion parameters** for each object:
+
+<img src="Content/image6.png" alt="Motion Setup" width="1000">
+
+- `Cube0` (root object): unchanged
+- `CubeView`: **Interactive**
+- `CubeMesh` + `Outline`: **Animated**
+- `ShadowPlane`: **Animated** (disable **Collidable**)
+
+Here’s how it looks with **3 cubes**:
+
+<img src="Content/image7.png" alt="Multiple Cubes" width="1000">
+
+---
+
+## Step 4: Scripts
+
+The system uses **two scripts**:
+
+1. **`ISelectable`** – attached to each cube. Stores data for outlines & fake shadows.
+2. **`FakeShadows`** – performs the math and updates shadow positions.
+
+---
+
+### ISelectable Script
 
 ```ts
 import { FakeShadows } from 'FakeShadows';
 import * as hz from 'horizon/core';
-import { PropTypes, Entity, Quaternion} from 'horizon/core';
+import { PropTypes, Entity, Quaternion } from 'horizon/core';
 import { Utils } from 'Utils';
 
 export class ISelectable extends hz.Component<typeof ISelectable> {
-static propsDefinition = {
-outline: { type: PropTypes.Entity },
-shadow: { type: PropTypes.Entity },
-id: { type: PropTypes.Number }
-};
+  static propsDefinition = {
+    outline: { type: PropTypes.Entity },
+    shadow: { type: PropTypes.Entity },
+    id: { type: PropTypes.Number }
+  };
 
-    private deltaRotation: Quaternion = Quaternion.zero;
+  private deltaRotation: Quaternion = Quaternion.zero;
 
-    GetId(): number {
-        return this.props.id;
-    }
+  GetId(): number {
+    return this.props.id;
+  }
 
-    start() {
-        if (!Utils.ChangeOwnershipToLocal(this)) return; 
-        var outline = this.props.outline?.as(Entity);
-        FakeShadows.Register(this);
-        outline?.visible.set(false);
-    }
-    
-    ShadowPlane(): Entity {
-        if (this.props.shadow)
-            return this.props.shadow;
-        return this.entity;
-    }
+  start() {
+    if (!Utils.ChangeOwnershipToLocal(this)) return; 
+    var outline = this.props.outline?.as(Entity);
+    FakeShadows.Register(this);
+    outline?.visible.set(false);
+  }
+  
+  ShadowPlane(): Entity {
+    return this.props.shadow ?? this.entity;
+  }
 
-    DeltaRotation(): Quaternion {
-        return this.deltaRotation;
-    }
+  DeltaRotation(): Quaternion {
+    return this.deltaRotation;
+  }
 
-    ShowOutline() {
-        var outline = this.props.outline?.as(Entity);
-        outline?.visible.set(true);
-    }
+  ShowOutline() {
+    this.props.outline?.as(Entity)?.visible.set(true);
+  }
 
-    HideOutline() {
-        var outline = this.props.outline?.as(Entity);
-        outline?.visible.set(false);
-    }
-
+  HideOutline() {
+    this.props.outline?.as(Entity)?.visible.set(false);
+  }
 }
 hz.Component.register(ISelectable);
-``` 
+```
 
-The second one is FakeShadow where the all math done
-
+FakeShadows Script
 ```ts
+Copy code
 import * as hz from 'horizon/core';
-import { Entity, Quaternion, World, EventSubscription } from 'horizon/core';
+import { Entity, Quaternion, World } from 'horizon/core';
 import { ISelectable } from 'ISelectable';
 import { Utils } from 'Utils';
 
 export class FakeShadows extends hz.Component<typeof FakeShadows> {
+  private static selectables: ISelectable[] = [];
 
-    private static selectables: ISelectable[] = [];
+  start(): void {}
 
-    start(): void 
-    {
+  public static Register(selectable: ISelectable): void {
+    this.selectables.push(selectable);
+  }
+
+  preStart() {
+    if (!Utils.ChangeOwnershipToLocal(this)) return;
+    this.connectLocalBroadcastEvent(World.onUpdate, () => {
+      FakeShadows.selectables.forEach(element => {
+        this.update(element.entity, element.ShadowPlane(), element.DeltaRotation());
+      });
+    });
+  }
+
+  private GetYaw(q: Quaternion): Quaternion {
+    const yaw = Math.atan2(
+      2 * (q.y * q.w + q.x * q.z),
+      1 - 2 * (q.y * q.y + q.z * q.z)
+    );
+    return new Quaternion(0, Math.sin(yaw / 2), 0, Math.cos(yaw / 2));
+  }
+
+  private update(parent: Entity, shadowPlane: Entity, deltaRotation: Quaternion): void {
+    if (shadowPlane) {
+      const position = parent.position.get();
+      position.y = 0.1;
+      shadowPlane.rotation.set(
+        this.GetYaw(parent.rotation.get()).mul(this.GetYaw(deltaRotation))
+      );
+      shadowPlane.position.set(position);
     }
-
-    public static Register(selectable: ISelectable): void {
-        this.selectables[this.selectables.length] = selectable;
-    }
-
-    preStart() {
-        if (!Utils.ChangeOwnershipToLocal(this)) return;
-        this.connectLocalBroadcastEvent(World.onUpdate, (deltaTime) => {
-            FakeShadows.selectables.forEach(element => {
-                this.update(element.entity, element.ShadowPlane(), element.DeltaRotation());
-            });
-        });
-    }
-
-    private GetYaw(q: Quaternion): Quaternion {
-        var yaw = Math.atan2(
-            2 * (q.y * q.w + q.x * q.z),
-            1 - 2 * (q.y * q.y + q.z * q.z)
-        );
-        return new Quaternion(0, Math.sin(yaw / 2), 0, Math.cos(yaw / 2));
-    }
-
-    private update(parent: Entity, shadowPlane: Entity, deltaRotation: Quaternion): void {
-        if (shadowPlane) {
-            var position = parent.position.get();
-            position.y = 0.1;
-            shadowPlane.rotation.set(this.GetYaw(parent.rotation.get()).mul(this.GetYaw(deltaRotation)));
-            shadowPlane.position.set(position);
-        }
-    }
+  }
 }
 hz.Component.register(FakeShadows);
 ```
+
+What the Scripts Do (Quick Explanation)
+ISelectable
+
+## What the Scripts Do (Quick Explanation)
+
+### ISelectable
+- Attached to each cube.
+- Keeps references to the **outline** and **shadow plane**.
+- Registers itself in the **FakeShadows** system.
+- Can **show/hide outlines** when cubes are selected.
+
+### FakeShadows
+- Runs in the background.
+- Keeps a list of all registered **ISelectable** objects.
+- On every frame (`World.onUpdate`), it:
+    - Reads each cube’s **position & rotation**.
+    - Calculates a flat **yaw-only rotation** (so the shadow doesn’t tilt).
+    - Moves the shadow plane slightly above the ground (`y = 0.1`).
+    - Rotates and positions the shadow plane under the cube.
+
+---
+
+**In short:**  
+`ISelectable` = data holder per cube.  
+`FakeShadows` = central system that makes shadows follow their cubes.  
