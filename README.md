@@ -63,7 +63,18 @@ To check your items and sells yoru can do the following:
   
 5. On the right you will see the graph and grow of your purchases.
 <img width="1465" height="582" alt="Screenshot 2025-09-10 at 17 11 56" src="https://github.com/user-attachments/assets/2d08cb4f-4529-47d3-8e79-00337fdd7280" />
-
+ # Example case 🎢 Rollecoster Park:
+ ## This world will include:
+ - Buying food
+ - Buying tickets
+ - Buying photos
+ - Photo booth
+ - Rides ( both free, one time, number of times )
+### Let's break down all thing into Durable and Consumable items:
+📌Durable Items:
+- Rides that can be used for a specific amount of time not once
+- Photos that are purchased after taking them
+- 
 
 
 ###❗️Reminder: Must be a MHCP member to access in-world purcahses, make worlds and so-on.
