@@ -73,9 +73,6 @@ Here are simple ways to reduce workload and improve performance:
 
 ---
 
-Absolutely, Patrick. Here's a new section you can seamlessly add to your **World Performance Optimization** tutorial. It uses the Horizon Worlds API to show how to toggle visibility of a room based on player proximity—perfect for secret areas, memory-saving tricks, or immersive storytelling.
-
----
 
 ## Reveal a Room When a Player Enters
 
