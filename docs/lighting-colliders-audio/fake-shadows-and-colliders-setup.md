@@ -28,7 +28,7 @@ We’ll start with a simple **cube**.
 ### 1. Create the Cube Mesh
 Spawn a cube and name it **`CubeMesh`**.
 
-<img src="Content/image1.png" alt="Step 1" width="500">
+<img src="Content/Image1.png" alt="Step 1" width="500">
 
 ---
 
@@ -50,7 +50,7 @@ You can find the shadow texture in the tutorial’s **Content folder**:
 
 Place this plane together with the cube and outline mesh:
 
-<img src="Content/image2.png" alt="Step 2" width="1000">
+<img src="Content/Image2.png" alt="Step 2" width="1000">
 
 Your setup should now include:
 
@@ -66,13 +66,13 @@ Now let’s organize the hierarchy properly.
 
 1. Create a parent object for **CubeMesh** and **Outline**, call it **`CubeView`**.
 
-<img src="Content/image3.png" alt="Step 3" width="500">
+<img src="Content/Image3.png" alt="Step 3" width="500">
 
 2. Create another parent object for **CubeView** and **ShadowPlane**.
 
 Your final hierarchy should look like this:
 
-<img src="Content/image5.png" alt="Hierarchy" width="500">
+<img src="Content/Image5.png" alt="Hierarchy" width="500">
 
 ---
 
@@ -80,7 +80,7 @@ Your final hierarchy should look like this:
 
 Set the **motion parameters** for each object:
 
-<img src="Content/image6.png" alt="Motion Setup" width="1000">
+<img src="Content/Image6.png" alt="Motion Setup" width="1000">
 
 - `Cube0` (root object): unchanged
 - `CubeView`: **Interactive**
@@ -89,7 +89,7 @@ Set the **motion parameters** for each object:
 
 Here’s how it looks with **3 cubes**:
 
-<img src="Content/image7.png" alt="Multiple Cubes" width="1000">
+<img src="Content/Image7.png" alt="Multiple Cubes" width="1000">
 
 ---
 
