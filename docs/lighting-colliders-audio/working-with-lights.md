@@ -465,7 +465,7 @@ The three-point lighting system is a fundamental technique used in photography, 
    - Creates edge definition
    - Adds depth and dimension
 
-You can also use this lighting techniques to implement global environment lights. Here is an example for a Sky island, look at how we are using the Three lights to create a good emmersive environment for player to experience.
+You can also use this lighting techniques to implement global environment lights. Here is an example for a Sky island, look at how we are using the three lights, and some smart techniques to create a good emmersive environment for player to experience.
 
 <iframe width="1852" height="826" src="https://www.youtube.com/embed/HkMY0Ce8wgA" title="Three point light" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -493,14 +493,14 @@ Color temperature is measured in Kelvin (K) and affects the mood and atmosphere 
 
 ### Static Versus Dynamic Lighting Fundamentals
 
-| Feature      | Static Light Gizmo                          | Dynamic Light Gizmo                            |
-| ------------ | ------------------------------------------- | ---------------------------------------------- |
-| Movement     | Fixed (cannot move/change)                  | Movable and scriptable                         |
-| Properties   | Toggle, Shape, Color, Intensity                     | Toggle, falloff Distance, intensity, color, spread    |
-| Typing/Shape | 4 shapes, no "types" property               | 2 types (Point/Spot)                           |
-| Scripting    | Can only toggle enabled state               | Can modify intensity, falloff, spread, enabled |
-| Performance  | Lower impact, preferred                     | Higher cost, performance limits                |
-| Editing      | All properties editable in Properties panel | Only some properties editable via script       |
+| Feature      | Static Light Gizmo                          | Dynamic Light Gizmo                                |
+| ------------ | ------------------------------------------- | -------------------------------------------------- |
+| Movement     | Fixed (cannot move/change)                  | Movable and scriptable                             |
+| Properties   | Toggle, Shape, Color, Intensity             | Toggle, falloff Distance, intensity, color, spread |
+| Typing/Shape | 4 shapes, no "types" property               | 2 types (Point/Spot)                               |
+| Scripting    | Can only toggle enabled state               | Can modify intensity, falloff, spread, enabled     |
+| Performance  | Lower impact, preferred                     | Higher cost, performance limits                    |
+| Editing      | All properties editable in Properties panel | Only some properties editable via script           |
 
 **Important:**
 
