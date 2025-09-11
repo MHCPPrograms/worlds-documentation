@@ -6,6 +6,7 @@
 Monetization - is the process of earning money from a business. In this tutorial it will be about earning from in-world purchases.
 
 ### 🧾 What is In - world purchase ?
+
 - In world purchase lets the visitors of your world to buy and use items that you have designed in your world for better play.
 There are in two different types of items or purchases:
 - Consumable and - Durable.
@@ -45,6 +46,7 @@ There are different ways to test if your item is good for being purchased. This 
 ### ⏰ Tracking your items:
 To check your items and sells yoru can do the following:
 1. Go to the "Horizon Creator Portal"
+<img width="553" height="296" alt="Screenshot 2025-09-10 at 16 56 07" src="https://github.com/user-attachments/assets/6d148cd1-2722-430b-98f3-b44f6a914c74" />
 2. Navigate to "Creator Program" under "My assets"
 3. Click on "In-world Purchases"
 4. On the right you will see the graph and grow of your purchases.
