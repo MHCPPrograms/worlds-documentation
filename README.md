@@ -5,7 +5,7 @@
 ## 📖 Definition:
 Monetization - is the process of earning money from a business. In this tutorial it will be about earning from in-world purchases.
 
-### 🧾 What is In - world purchase ?
+# 🧾 What is In - world purchase ?
 
 - In world purchase lets the visitors of your world to buy and use items that you have designed in your world for better play.
 There are in two different types of items or purchases:
@@ -43,7 +43,7 @@ There are different ways to test if your item is good for being purchased. This 
 - Usefull. Price your item based on the usefullness of the product.
 - New - member friendly. Make your prices lower for the new joining members and can add prices up.
 
-### ⏰ Tracking your items:
+# ⏰ Tracking your items:
 To check your items and sells yoru can do the following:
 1. Go to the Meta Horizon
 2. Click on the "My creations" button next your profile at the top
