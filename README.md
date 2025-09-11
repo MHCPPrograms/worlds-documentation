@@ -72,10 +72,41 @@ To check your items and sells yoru can do the following:
  - Photo booth
  - Rides ( both free, one time, number of times )
 ### Let's break down all thing into Durable and Consumable items:
-📌Durable Items:
-- Rides that can be used for a specific amount of time not once
-- Photos that are purchased after taking them
-- 
+### Let's break down everything into Durable and Consumable items:
 
+📌 **Durable Items**  
+- Season pass for unlimited rides.  
+- VIP access to skip lines on rides.  
+- Souvenir photos that stay in your inventory forever.  
+- Special accessories (hat, balloon, badge).  
 
-###❗️Reminder: Must be a MHCP member to access in-world purcahses, make worlds and so-on.
+📌 **Consumable Items**  
+- Single ride tickets (one-time use).  
+- Popcorn, cotton candy, and other snacks.  
+- Temporary power-ups for arcade games.  
+- Discount packs (buy 10 tickets, get 1 free).  
+
+---
+
+# ✅ Best Practices for Monetization
+
+- **Balance free & paid** → Always keep some rides or activities free so new visitors don’t feel excluded.  
+- **Encourage repeat spending** → Use consumables like tickets or food to keep purchases flowing.  
+- **Reward loyalty** → Offer bundles or discounts for frequent buyers.  
+- **Stay relevant** → Don’t add random items that don’t connect to your world theme.  
+- **Test often** → Update your world with new purchasable items weekly or bi-weekly to see what works.  
+
+---
+
+# 🎯 Conclusion
+
+Monetization isn’t just about selling—it’s about **enhancing the experience**.  
+- Consumables (tickets, food, power-ups) drive repeat visits.  
+- Durables (VIP passes, photos, badges) build loyalty and identity.  
+- Pricing, testing, and tracking ensure you’re improving over time.  
+
+With these strategies, your world becomes **fun, fair, and profitable**—a place players enjoy while you sustain your creativity.  
+
+---
+
+⚠️ **Note**: You must be a **Meta Horizon Creator Program (MHCP)** member to access in-world purchases, track sales, and monetize.  
