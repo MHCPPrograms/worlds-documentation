@@ -1,4 +1,4 @@
-Draft Blender Exporter to Meta Horizon Guide
+<iframe width="560" height="315" src="https://www.youtube.com/embed/74jpsePM7uA?si=Kbt5H4JC_PRQXxhp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Title: **Importing 3D model using the Blender to Meta Horizon Exporter**
 
@@ -158,10 +158,11 @@ e.  To open or close the add-on's tab in the 3D Viewport, press **N** on
 incorrect.](media/image12.png)
 
 ![](media/image13.png)
+
 For adjustments of materials and mesh use the following sections.
 **(IMAGE 11)**
 
-**Sections1 (Scene Analysis)** is for scene analysis. Once the material
+**Sections 1 (Scene Analysis)** is for scene analysis. Once the material
 names are fixed with the correct suffix proceed to bake and export as
 outlined in section 3.
 
@@ -174,18 +175,14 @@ exporting
 ![A screenshot of a computer AI-generated content may be
 incorrect.](media/image14.png)
 
-Meta Horizon asset specifications and materials requirements (briefly
-explain)
 
-!!!!
 
 Materials guidelines: refer to meta guide (Link at the start of
 tutorial)
 
 https://developers.meta.com/horizon-worlds/learn/documentation/custom-model-import/creating-custom-models-for-horizon-worlds/materials-guidance-and-reference-for-custom-models
 
-## 3 . Analysing Materials (Setting up materials for different texture
-types)
+## 3 . Analysing Materials (Setting up materials for different texture types)
 
 1.  **Single-Texture PBR**
 
@@ -211,8 +208,9 @@ which includes Base Color and Roughness. ADD IMAGE for edit type
     Materials (IMAGE 13)**
 
 ![](media/image17.png)
-4.  The bake settings window will open. To bake the textures **click
-    OK**. (IMAGE 14)
+
+4.  The bake settings window will open. To bake the textures **click OK**. (IMAGE 14)
+
 
 ![](media/image18.png)
 
@@ -232,6 +230,7 @@ which includes Base Color and Roughness. ADD IMAGE for edit type
 
 A Baked \_Textures folder and an Exports folder will be created inside
 of the folder we created at the start of the tutorial. IMAGE 17 
+
 ![](media/image21.png)
 
 ## 4.  Importing into Meta Horizon
@@ -501,17 +500,20 @@ without needing multiple textures.
 Make sure the viewport shading is on solid view. This will enable you to
 see the vertex paint. IMAGE
 25
+
 ![](media/image41.png)
 
 Go to the data properties ( the upside down green triangle) under the
 Color Attribute click the plus to add an attribute. Name this attribute.
 IMAGE 26
+
 ![A screenshot of a computer AI-generated content may be
 incorrect.](media/image42.png)
 
 Go to the Shading workspace IMAGE 27
 
 ![](media/image43.png)
+
 Add a Colour Attributes node (Add-Input) and from its dropdown menu
 select the colour attribute you created earlier.
 
@@ -587,10 +589,12 @@ incorrect.](media/image46.png)
 5.  Right click on object name
 
 6.  Click 'select hierarchy **IMAGE
-    29.1**![](media/image48.png)
+    29.1**
+    ![](media/image48.png)
 
 7.  Open the addon **IMAGES 9,
-    10**![](media/image13.png)![](media/image12.png)
+    10**
+    ![](media/image13.png)![](media/image12.png)
 
 8.  Click Analyze Materials. You will need to Edit Material Type for
     your desired look.
@@ -605,7 +609,8 @@ incorrect.](media/image46.png)
 
 12. Return to the Horizon desktop editor and import your files.
 
-**IMAGE 17.3**![](media/image49.png)
+**IMAGE 17.3**
+![](media/image49.png)
 
 ## 7 . Using the Wizard tool for simple 3D models
 
