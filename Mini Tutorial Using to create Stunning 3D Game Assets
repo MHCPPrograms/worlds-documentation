@@ -1,21 +1,36 @@
-# From Concept Art to Stunning 3D Game Assets
+# From Concept Art 🎨 to Stunning 3D Game Assets 🎮.
 
-# Introduction
+> [!IMPORTANT]  
+> The final FBX file shown in this tutorial and the PNG texture are available in this repository in case you want to import them into Horizon World. Both files are named **stylizedweapon.fbx** and **stylizedweaponcolor.png**.
+
+> [!NOTE]
+> If you want to paint the model using your creativity, it is available in the repository under the name **stylizedweapon ready for painting.blend**
+
+# Introduction.
 
 In the realm of game development and digital content creation, transforming a creative idea into a functional and visually striking 3D asset is a critical skill that can elevate your projects to a professional level. This tutorial will guide you step-by-step through the entire process of creating a 3D weapon, starting from a simple concept sketch to its final integration into a Horizon World Desktop Editor. Whether you're a beginner in 3D modeling or an experienced creator looking to streamline your workflow, you'll learn practical techniques and accessible tools to bring your visions to life. We’ll use industry-standard software like Blender for modeling, texturing and paiting and finally import the result into the Horizon World Desktop Editor, Meta’s platform for building immersive metaverse experiences. Get ready to unleash your creativity and craft assets that not only look stunning but are also optimized for games and virtual environments.
 
 This repository was created to show a tutorial on how to create a 3D model in Blender from a reference image, to which texture painting is applied manually. It can then be imported into the Horizon World Desktop Editor in FBX format to be used as part of any virtual world you want to develop. 
 
-# Requirements
+# ⚙️ Requirements.
 * Blender 2.93
 * Horizon World Desktop Editor
-* Reference image that will be used to create our 3D model.
+* Reference image that will be used to create our 3D model available in the repository.
 
-# TIPS
+# The stated Learning Objectives for this tutorial are:
+* Learn to model in 3D space using a background image without prior pencil and paper drawing skills.
+* Use the cube that appears in Blender as a guide to create the different pieces that appear in the reference image.
+* Learn to select vertices, add new cuts, and move them using the keyboard to cover the parts that appear in the reference image.
+* Eliminate all faces, vertices, and sides that are not necessarily visible to reduce the number of triangles in our final model.
+* Implement texturing techniques using UV Wrapping before applying it to our 3D model.
+* Use the different brushes included in Blender using the Texture Paint option.
+* Export our 3D model from Blender and import it into Horizon Word to see the final result of our work.
+
+### 💡 TIPS.
 
 Consider that working with Blender can be a challenging task, however, let me tell you a trick to help you progress more quickly in creating your own 3D model: one hand on the keyboard and one hand on the mouse. This is because Blender works with keyboard shortcuts to implement different techniques that will be used extensively throughout this tutorial. You'll find that some shortcuts are applied repeatedly, allowing you to gradually memorize them and feel more comfortable with the work environment.
 
-## Default Workspaces
+## Default Workspaces.
 
 Blender’s default startup shows the “Layout” workspace in the main area. This workspace is a general workspace to preview your scene and contains the following Editors:
 
@@ -24,4 +39,285 @@ Blender’s default startup shows the “Layout” workspace in the main area. T
 * Properties on bottom right.
 * Timeline on bottom left.
 
+![](docs/asset-library-import/Blender Interface.png)
+
+# 📖 First Part.
+
+Once we're in Blender, we find the image we'll use as a reference and drag it into Blender's workspace. It will look like this:
+
+![](docs/asset-library-import/ImportingImageReference.png)
+
+Once we have our reference image loaded in Blender, we need to adjust our camera view so that we have our reference in orthogonal projection. Because the way it appears referenced when we move the mouse scroll button, we can lose sight of the reference image. To avoid this, we must do the following: **Alt + G**. Our reference image will look like this:
+
+![](docs/asset-library-import/RelocatingImageBackground.png)
+
+Now that you have the reference image positioned, we need to put it in a two-dimensional projection view. To do this, go to the Transform panel on the right and look for the **Rotation** option. You'll notice some values ​​appear, and we'll set them to **0**.
+
+![](docs/asset-library-import/Reposition.png)
+
+![](docs/asset-library-import/RotationReference.png)
+
+Then having the previous image we press the key combination **R + X + 90** (this means that we want to rotate the image 90 degrees on the X axis) and we will obtain the following result.
+
+![](docs/asset-library-import/FinalRotationReference.png)
+
+Once we have the previous result, we press the number 1 on our numpad to center our orthographic perspective and then go to **Wireframe mode**, which allows us to change our cube that appears in the image from being visibly solid to having it in Wireframe form. To do this, we go to the top of our work window and click on the icon in the following image.
+
+![](docs/asset-library-import/WireframeMode.png)
+
+And we can see how the cube changes. This step allows us to model any 3D object from a reference image we have as a background. Then, we press **S** (to scale the cube) and then press **G** (to grab the cube) and position it as shown in the following image:
+
+![](docs/asset-library-import/ChangingCube.png)
+
+Next, press **Tab** to enter cube editing mode and move the vertices of our cube as close as possible to each part of our model. For this step, it's important to select both vertices of our cube, as shown in the following image. To select both vertices, left-click with the mouse, and the cursor will change to the following.
+
+![](docs/asset-library-import/CubeEdition.png)
+
+Once we have positioned all our vertices, we will have the following result.
+
+![](docs/asset-library-import/FirstApproach.png)
+
+As you can see, we need more vertices to complete our entire model. So, we'll use the **Ctrl + R** key combination and position ourselves over our cube. We'll notice a new cut has been added, which we can place wherever we see fit to help us cover our entire model. We repeat this step three times, and the final result will be as follows.
+
+![](docs/asset-library-import/Addingmorevertices.gif)
+
+### 💡 TIPS: If after pressing Ctrl + R you move the mouse scroll you can add more cuts automatically without doing the procedure manually.
+
+![](docs/asset-library-import/AddingMoreVertices.png)
+
+Next, we need to reposition the new vertices created in the previous step. To do this, while still in edit mode, press the **Tab key** to select each of the new vertices (both vertices must be selected for each new cut) and reposition them by pressing the **G key**, using our image background as a reference. The result should be as follows.
+
+![](docs/asset-library-import/RepositionVertices.png)
+
+### 💡 TIPS: To reposition our working view if we've moved our model with the mouse's scroll key, simply press the 1 key on the numpad to return to our working position.
+
+Now we'll proceed to cover the entire piece. To do this, we'll switch to solid mode and, while in edit mode, select the front face. Once we have it selected, press the **E key** (which means we're extruding outwards in this case) and then press **G** to reposition the vertices on the model. We'll repeat this step three times, and the result should be as follows.
+
+### 💡 TIPS: If you want to reposition vertices without adding new ones to the model, select the vertices first, then press G twice to place them where you think they'll fit over your model. Finally, press Enter again. You'll see how the cursor changes in Blender.
+
+Now we need to adjust how wide we want our model to be. To make it smaller, we'll scale it by pressing **S + Y** (scale along the Y axis only). The result should be as follows. Then, we'll press 1 again on the numpad to add new meshes to cover other parts of the model.
+
+![](docs/asset-library-import/PerspectiveYAxis.png)
+
+# 📖 Second Part.
+
+If you've made it this far into the tutorial, Congratulations...!!! The way we've worked in this first part is how we'll cover the rest of the tutorial.
+Now, let's add more graphic primitives to model the rest of the parts. In this second part, we'll add cylinders to cover the top of our 3D model. Press Tab to enter object mode, then press 1 on our numpad to change the view. Press **Shift + A** to go to the **Mesh option**, then look for **Cylinder**.
+
+![](docs/asset-library-import/MoreElements.png)
+
+Now we need to change the number of vertices our cylinder will have. To do this, go to the **Add Cylinder** tab (located in the lower left corner of our workspace) and change the number **from 32 vertices to 12 vertices**. As shown in the following image.
+
+![](docs/asset-library-import/AddCylinder.png)
+
+And then we scale it by pressing the **S key** and then we rotate it on the Y axis using the key combination **R + Y + 90** and then we scale it using **S + X** (scale on the X axis) until it covers the entire cylindrical part of our model. The result should be the following.
+
+![](docs/asset-library-import/RotatingCylinder.png)
+
+Now we're going to change the view so we can adjust the cylinder to our reference image. To do this, we'll press the **Toggle X-ray option**, which basically allows us to see our reference for better repositioning of our cylinder.
+
+![](docs/asset-library-import/ToggleXRay.png)
+
+Once we have it activated, we then add a new cut with the combination **Crtl + R** twice in our cylinder and the result would be the following.
+
+![](docs/asset-library-import/AddingCut.png)
+
+As we can see in the image, we have two "rings" that are part of the piece we're modeling. So, let's add four more new cuts using the Ctrl + R combination, and the final result will be as follows:
+
+![](docs/asset-library-import/AddingMoreCutCylinder.png)
+
+Now we will proceed to create the front part of our 3D model. First we will select all the end vertices of our cylinder that are located on the right. Then, we will repeat the **E + S** combination several times to cover each one of the front part. First we select **E** to extrude and then press **S** to scale the vertices and with the mouse we move the cursor outwards. Then we press **E + X** again (we extrude and move along the X axis) until we reach the end of the first shape in the reference image. Then we repeat the previous step again to cover the second shape. And when we are at the end, we just press **E + X** we reach the end and then with the **S key** we locate the vertices. And finally we just apply **E + X** to have the final edge of our model. The final result will be the following:
+
+![](docs/asset-library-import/ExtrudingParts.png)
+
+Great that you've finished this second part of the modeling. Now let's move on to the telescopic sight for our weapon. And the best part is that we can repeat some of the steps we used earlier. Next, let's place a cylinder (**Shift + A, select the Mesh option, then select Cylinder**) and rotate it 90 degrees along the Y axis. Then, scale the model and apply some cuts. The first result we'll get is the following:
+
+![](docs/asset-library-import/Telescopic.png)
+
+For the rear of the scope, we'll select all the vertices at the end. Then we'll proceed with the I combination to move the vertices inwards. Then we press **E** to extrude along the **X** axis, then we press **E + S** again until we reach the end of our scope.
+
+![](docs/asset-library-import/MoreTelescopic.png)
+
+Now we're going to model the back of our reference image. We need to move the cursor to the center of our workspace. To do this, we'll use the **Shift + Right Click** key combination in the area where we want to add a new cube. Then, we'll use the **Shift + A** key combination, select Mesh, and look for the Cube option. Next, we'll locate the cube and scale it so that it covers the back. To do this, we'll need to extrude it again with E and then move it over our reference image.
+
+![](docs/asset-library-import/BackPiece.png)
+
+### 💡 TIPS: To select multiple vertices of the same face without selecting other vertices, you can press the C key and when you have all the vertices selected, just press the Esc key.
+
+Then we proceed to finish fine-tuning the details of our telescopic sight that is in the model. For this, we will select the first cut with the key combination **Shift + Left Click** and observe how the entire area is selected. Then we apply **E + S + Shift + X** (this allows us to extrude and scale only on the X axis so that other parts of the model are not altered). We repeat this step for the other cut of our model that we have present in the reference image. It is important to note that we have to be in Edit Mode. Then for the part of the lens that is in the sight, we select all the vertices then press **I** (Insert), then extrude outwards and then apply **I** (Insert) again. We also repeat the process for the final part of the telescopic sight. With the peculiarity that we have to extrude inwards
+
+![](docs/asset-library-import/FinishingSeveralPieces.png)
+
+Now we'll complete the rest of our model's piece above the trigger. To do this, we'll select the last vertices located to the right of the piece we were working on previously and repeat the extrusion, scaling, and positioning processes on our reference image. The result will be as follows:
+
+![](docs/asset-library-import/BackPieceandBody.png)
+
+For the area where the trigger is, we'll add two cubes to cover the entire area. The final result will be as follows.
+
+![](docs/asset-library-import/Trigger.png)
+
+Now for the hammer part that activates once the trigger is pressed, we'll use another cube. The procedure for this piece is basically the same as the one we used previously. So the final result would be as follows.
+
+![](docs/asset-library-import/Hammer.png)
+
+If we review our model after completing all these steps, we can see that we will have something like the following.
+
+![](docs/asset-library-import/ReviewofModel.png)
+
+Now we're going to refine the model a little further. To do this, we're going to use a modifier called Mirror. Basically, what it does is copy everything modified on one side of the model exactly to the other side, providing a kind of symmetry that allows us to have a uniform model. We select the first piece we modeled at the beginning of this tutorial and apply the Mirror modifier to it by selecting the Y axis. Next, we need to implement a cut along the model because we're going to remove one side so the modifier can work without any problems.
+
+![](docs/asset-library-import/MirrorModifier.png)
+
+The side we have selected is the one left after removing the other faces. What you see next to it is the Mirror modifier implemented. **Don't forget to select the "Clipping" option within the modifier so that when you move the vertices, they don't separate**.
+
+![](docs/asset-library-import/Clipping.png)
+
+For the backend, we're going to implement a different method than the one we used previously. So, we'll go to the Edit option, then go to Preferences and the Add-ons tab. Enter the word Auto in the search bar and select the Mesh Auto Mirror option with a check mark. This will help us speed up the process of applying the Mirror modification. Then, we'll position ourselves between the two windows where the primitives we're adding to our project are located and the window of our work area until we get the vertical menu. We'll look for the Edit option and enter the values ​​that appear in the image. Finally, we'll click on the AutoMirror option. To enable this side menu, we can press the N key on the keyboard.
+
+![](docs/asset-library-import/Addon.png)
+
+And to check the changes in our model, something like this should appear.
+
+![](docs/asset-library-import/CheckAddon.png)
+
+Now we're going to avoid overlapping vertices in our model. To do this, we'll need to remove certain parts that aren't necessary or visible. The **Knife tool** (pressing the K key) will help us with this. For example, we'll remove the faces of the part that houses the trigger guard and another element of the trigger, as shown in the following image:
+
+![](docs/asset-library-import/KnifeTool.png)
+
+Before proceeding with **joining all of our model pieces**, we need to finalize by confirming that we want to apply the **Mirror modifier to our pieces**. We select the piece of our model and apply the modifier. After confirming the application of our modifier, we now proceed to join all of our pieces. To do this, we first select them and then apply the keyboard combination **Ctrl + J. Notice which pieces are highlighted in red in the following figure and how a uniform orange line is then placed**.
+
+![](docs/asset-library-import/ConfirmingMirrorModifier.png)
+
+Now we'll apply AutoMirror to all the pieces we joined in the previous step. This will help us copy the UV textures from one side of the model to the other and achieve a more uniform look. The final result of applying AutoMirror is as follows.
+
+![](docs/asset-library-import/AutoMirror.png)
+
+Next, we'll use a term called Retopology to get a better silhouette of the model. Using the Knife (pressing the K key in edit mode), we'll draw new vertices along the contour of our model. This will help us eliminate all the areas we don't need for our model.
+
+![](docs/asset-library-import/Retopology.png)
+
+Now if we **left click + L** in edit mode on our longest piece we will get the following:
+
+![](docs/asset-library-import/MainBody.png)
+
+Then we press **Shift + H** (to temporarily hide all the pieces we don't want to be displayed in our workspace) and **Alt + H** (to display the pieces we previously hid). We then proceed to select all the faces we created previously when we used the Knife tool. This gives us the following result:
+
+![](docs/asset-library-import/RemovingFaces.png)
+
+Now we're going to repeat the process to cut out another piece of our model. To do this, we'll use the Knife tool again (pressing the K key in edit mode). Press L to select the entire piece we're working on, then Shift + H (to hide the rest of the pieces we don't need at the moment) and proceed to select all the faces that won't be visible or necessary for our model.
+
+![](docs/asset-library-import/RemovingMoreFaces.png)
+
+Now we can view the hidden pieces with **Alt + H**, and we'll notice a space between the two models we've been working on. To join the vertices of both models, we have to activate the **Snap (Magnet Icon) + Vertex** option. Then, we select one of the vertices and, using the G key, join the vertices between the two models.
+
+![](docs/asset-library-import/SnapOption.png)
+
+We then repeat the same process with the rear, removing anything that can't be seen and is therefore unnecessary for our model. This also includes the mounts for our telescopic sight.
+
+![](docs/asset-library-import/BackFaces.png)
+
+After finishing the process of removing all the faces we don't need from our model, we'll move on to the Unwrapping part in Blender to apply Texture Painting. Before applying the texture, we need to make sure that our model has uniform Scale values. Therefore, we press **Ctrl + A** and then apply Scale and we'll notice how the values ​​change in the menu going from **0.061 to 1.000** for the **X, Y, and Z axes**. We repeat this process also for the 3 elements that are not yet attached to the rest of the model.
+
+![](docs/asset-library-import/ScaleAdjustment.png)
+
+![](docs/asset-library-import/ScaleAdjustment1.png)
+
+Next, we need to adjust the vertices to prevent them from overlapping. If we're in edit mode, we select all the vertices, and we'll get the following result. To correct this, we press **U (Unwrap)** and then select the **Smart UV Project** option. For **Island Margin**, we set the value to **0.010**, and the result will be as follows.
+
+![](docs/asset-library-import/UVProject.png)
+
+Now we'll proceed to mark our model to segment the areas where we want to apply different colors or textures. To do this, we mark only the edge area as shown in the image. Press **Ctrl + E** and select the option that says **Mark Sim**. The result of doing this is a red outlined line.
+
+![](docs/asset-library-import/MarkSim.png)
+
+# 📖 Third Part.
+
+In this third part of our tutorial, after we've finished marking our model, we'll proceed to see how to add the texture. To do this, in the UV Editing window, we add a new color and select the Color Grid option.
+
+![](docs/asset-library-import/UVEditing.png)
+
+In the top window, we switch to **Shader Editor mode** and, using the **Ctrl + A** combination, look for the option that says Image Texture. Then, we select the option that says **Untitledxxx** and connect the connector to see the final result.
+
+![](docs/asset-library-import/ImageTextureandColorGrid.png)
+
+![](docs/asset-library-import/ImageTextureandColorGrid1.png)
+
+Now we'll proceed to create a new material for our texture. To do so, we'll enter the following values, as shown in the image.
+
+![](docs/asset-library-import/NewTextureMaterial.png)
+
+Next, we add an Image Texture to our editor at the top of our UV window, and make sure to select the image we previously created. In our case, we named it stylizedweapon. The result will be as follows.
+
+![](docs/asset-library-import/ImageTexture.png)
+
+Then, at the top of our menu, select **Texture Paint**. A new window will open, and we'll always keep the Shader Editor option at the top.
+
+![](docs/asset-library-import/TexturePaint.png)
+
+Then, in Edit Mode, we make sure to select the entire front of our model. Then, we switch to Texture Paint and select the icon next to the name called Paint Mask. We select the Fill option and choose a color (in our case, red). We'll notice that the front part we selected previously is the only one that appears with the selected color.
+
+![](docs/asset-library-import/PaintMask.png)
+
+But to add details like those shown in our reference image, we must separate the pieces of our model that have the same color. That's why we switch to Layout view and then select the areas that share the same color. Once we have them selected, we press the P key and choose the Separate by selection option.
+
+![](docs/asset-library-import/SeparationPart.png)
+
+And so we do with the rest of the pieces in our model, separating all those that have the same color according to our reference image. Once we have all our pieces separated, we proceed to paint each one. To do this, we go to the Texture Paint option and proceed to implement the colors by selecting each of the pieces. It's important to mention that for each piece we're going to paint, we have to deselect the Paint Mask option. We add the selected color by going to the Color Palette option, which is located below our chosen color.
+
+![](docs/asset-library-import/ColorPalette.png)
+
+Then, for each of the pieces we repeat the process, keeping in mind that we must keep in mind which pieces have the same colors in common.
+
+![](docs/asset-library-import/MoreColorPalette.png)
+
+To select each piece and apply color, use the Ctrl + Tab key combination, and a menu will appear. Then, we switch from object mode to texture paint mode and can begin applying the colors we want. It's important to mention that before applying the color we choose, or if we want to select it from the color palette we already have saved, we must disable the Paint Mask option. Otherwise, the color won't be applied.
+
+![](docs/asset-library-import/MenuOption.png)
+
+Repeat the previous step and apply the desired color to each piece until the entire model is completely covered. It's important to note that if you save the model, the image will not be saved with the texture color you're applying. To prevent this from happening, you must also save the image separately. To confirm that the image has not been saved, an asterisk appears next to the image name (as indicated by the arrow in the following image). Therefore, we must save the image.
+
+![](docs/asset-library-import/SavingTextureandFile.png)
+
+Next, we select all the components of our model, right-click, and select Shade Smooth. We'll notice how the surface of our model has become a little more stylized.
+
+![](docs/asset-library-import/ShadeSmooth.png)
+
+To start painting, simply switch to Texture Paint mode, select the **Draw** option, and choose a few colors. Then, begin drawing several horizontal lines over the first piece of wood. Keep in mind that the brush size can be changed by pressing the F key, and you'll end up with something like this.
+
+![](docs/asset-library-import/DrawOption.png)
+
+Now let's add some shading where the models meet. We'll change our Brush mode in the **Brush Settings** panel and choose the Multiply option. Then, you can start implementing different brush styles and adding the different effects you want for your 3D model.
+
+![](docs/asset-library-import/BrushSettings.png)
+
+Now we're going to proceed to paint the rest of the parts of our 3D model. This time, we're going to join the three parts that have the same color in common (in our case, it would be yellow). To do this, we have to be in Object Mode. Then, we press Crtl + J to join them. In this last part, it basically involves applying the different types of Brushes that Blender has available. And when we're satisfied with the final results, we proceed to join all the parts of our model. In our case, we left it as follows.
+
+![](docs/asset-library-import/FinalResult.png)
+
+Finally, we need to export our model in .fbx format and then import it into Horizon World Desktop Editor. To do this, go to File, select Export, and then select FBX. Choose the path where you want to save it and click OK.
+
+![](docs/asset-library-import/ExportModel.png)
+
+# 📖 Fourth Part.
+
+## 💪 Importing our model into Horizon World Desktop Editor
+
+In this new section, we'll cover how to import our model created in Blender into Horizon World Editor. First, we launch the Horizon World Desktop Editor program. Then, we have the option to create a new world or enter a previously created world. Once we're in our world, under the Asset Library tab, we select the option that says My Assets. Then, we choose the folder where we want to upload our model and then click where it says Add New. We choose the 3D Model option and search for the model that we exported in the previous step from Blender. Once we have located the model, we click on the option that says Import. And we will be able to see our model imported successfully into our folder. Now, we repeat the previous step in the option that says Add New, but this time we select the option that says Texture. We locate where we have the file saved on our computer and proceed to import it. Both the model and the texture should be imported successfully.
+
+Now we just drag and drop our model into the scene of the world we're designing. Once we have the model incorporated into the scene, we select it and, using the Properties panel, we search for the Texture Asset option. We look for the one we previously imported and we'll notice that our model will be applied with its respective texture. Yay! We've managed to create our model, starting from "From Concept Art to Stunning 3D Game Assets."
+
+![](docs/asset-library-import/ImportingModelandTextureHWDE.png)
+
+![](docs/asset-library-import/ImportingIntoHWDE.png)
+
+![](docs/asset-library-import/BlendervsHWDE.png)
+
+# 👏 Conclusion
+
+As we have observed, a reference image was used to create a 3D model without prior knowledge. The possibilities with Blender are endless, as its graphics engine offers a wide range of tools that can be applied to various use cases, such as video games, animations, cinematics, modeling, sculpting, and more. On the other hand, the progress made in Horizon World is fascinating, with new tools continuously integrated into the platform, enabling the creation of stunning applications. These advancements allow users from different parts of the world to actively and concurrently participate in virtual worlds of various genres. By following this tutorial, you can unlock your creative potential and bring your ideas to life in Horizon World. Dive in, experiment, and join a global community of creators building immersive experiences that push the boundaries of imagination. Start creating today and shape the future of virtual worlds!
+
+### Contributors
+
+* @dochavez
+* @julioacuna28
 
