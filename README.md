@@ -3,7 +3,7 @@
 ## 🎯 Tutorial's objective:  
  Today we will learn about in-world monetization and purchases and their rules also following their types. Secondly,we will learn how to come up with valuable monetization ideas and identify a system or sequence for the following idea. At the end of the tutorial you will be able to identify valuable ideas for in-world monetization and fully understand the concept of monetization.
 ## 📖 Definition:
-Monetization - is the process of earning money from a business. In this tutorial it will be about earning from in-world purchases.
+Monetization - is the process of earning money from a business in this case world. In this tutorial it will be about earning from in-world purchases.
 
 ## 🧾 What is In - world purchase ?
 
@@ -41,7 +41,7 @@ There are different ways to test if your item is good for being purchased. This 
 ## 🏷️ Pricing:
 - Range yoru prices from the lowest to the highest across items to see which price suits your users
 - Usefull. Price your item based on the usefullness of the product.
-- New - member friendly. Make your prices lower for the new joining members and can add prices up.
+- New - member friendly. Make your prices lower for the new joining members.
 ---
 ## ⏰ Tracking your items:
 To check your items and sells yoru can do the following:
@@ -78,36 +78,36 @@ To check your items and sells yoru can do the following:
 📌 **Durable Items**  
 - Season pass for unlimited rides.  
 - VIP access to skip lines on rides.  
-- Souvenir photos that stay in your inventory forever.  
-- Special accessories (hat, balloon, badge).  
+- Photos.  
+- Special items like ballons that can be used for long time period.
 
 📌 **Consumable Items**  
 - Single ride tickets (one-time use).  
-- Popcorn, cotton candy, and other snacks.  
-- Temporary power-ups for arcade games.  
-- Discount packs (buy 10 tickets, get 1 free).  
+- Food that is eaten after getting.
+- If there is could be a movie ticket
+  
 
 ---
 
 ## ✅ Best Practices for Monetization
 
-- **Balance free & paid** → Always keep some rides or activities free so new visitors don’t feel excluded.  
-- **Encourage repeat spending** → Use consumables like tickets or food to keep purchases flowing.  
-- **Reward loyalty** → Offer bundles or discounts for frequent buyers.  
-- **Stay relevant** → Don’t add random items that don’t connect to your world theme.  
-- **Test often** → Update your world with new purchasable items weekly or bi-weekly to see what works.  
+- **Balance free & paid** → Try to keep your prices fair. 
+- **Encourage repeat spending** → Create more comsumable items that actually benefit. 
+- **Stay relevant** → Create itmes that are relevant to your world.
+- **Add often** → Add new items frequently and try to bring something new.
 
 ---
 
 ## 🎯 Conclusion
+**Monetization** is all about bringing benefits for both users and owners. It is the oppirtunity for owners to expand their worlds and improve. 
 
-Monetization isn’t just about selling—it’s about **enhancing the experience**.  
-- Consumables (tickets, food, power-ups) drive repeat visits.  
-- Durables (VIP passes, photos, badges) build loyalty and identity.  
-- Pricing, testing, and tracking ensure you’re improving over time.  
-
-With these strategies, your world becomes **fun, fair, and profitable**—a place players enjoy while you sustain your creativity.  
-
+In this lesson we covered topics such as:
+- What is monitzation and its usage
+- How to track your items
+- Difference between types of items
+- And example of world that uses monetization
 ---
 
-⚠️ **Note**: You must be a **Meta Horizon Creator Program (MHCP)** member to access in-world purchases, track sales, and monetize.  
+⚠️ **Reminder**: You must be a **Meta Horizon Creator Program (MHCP)** member to access in-world purchases, track sales, and monetize.  
+
+## Thank you for reading this tutorial. 
