@@ -1,4 +1,4 @@
-# 🌍 World Performance Optimization in Horizon Worlds
+# World Performance Optimization in Horizon Worlds
 
 Creating compelling art and smooth mechanics is what makes a Horizon World memorable. But even the most beautiful scene can lose its magic if performance lags. A single hiccup can break immersion, frustrate players, and reduce the chances of your world being revisited.
 
@@ -6,7 +6,7 @@ Performance optimization isn’t just technical—it’s emotional. It’s the d
 
 ---
 
-## 🧠 Why Optimization Matters
+## Why Optimization Matters
 
 For beginners, performance tuning can feel messy and overwhelming. But once you crack it, it becomes your secret weapon—eliminating stutters, improving responsiveness, and making your world feel alive.
 
@@ -14,7 +14,7 @@ Think of it like stage lighting: if the spotlight flickers, the audience loses f
 
 ---
 
-## 🔄 Decoupling Performance: Frame Time vs. Frame Rate
+## Decoupling Performance: Frame Time vs. Frame Rate
 
 Gamers often talk about **frames per second (FPS)**, but as a world creator, it’s better to think in **frame time**—measured in milliseconds per frame.
 
@@ -26,7 +26,7 @@ So instead of chasing average FPS, aim for **consistent frame time**.
 
 ---
 
-## ⏱️ Frame Budgeting
+## Frame Budgeting
 
 Every frame has a time budget based on your target FPS.
 
@@ -43,7 +43,7 @@ Setting this budget helps you benchmark and prioritize what’s worth rendering.
 
 ---
 
-## 📊 Real-Time Metrics Panel in VR
+## Real-Time Metrics Panel in VR
 
 The best way to analyze performance is **on the target device**—inside VR.
 
@@ -63,13 +63,13 @@ Once enabled, you’ll see live metrics while exploring your world—perfect for
 
 Here are simple ways to reduce workload and improve performance:
 
-- ✅ **Only enable necessary settings** for objects. Don’t use physics or collisions unless needed.
-- 👀 **Make hidden items invisible.** If the player can’t see it, don’t render it.
-- 🎨 **Use one texture per object.** In Blender, you can bake multiple materials into a single texture map to reduce draw calls.
+- **Only enable necessary settings** for objects. Don’t use physics or collisions unless needed.
+- **Make hidden items invisible.** If the player can’t see it, don’t render it.
+- **Use one texture per object.** In Blender, you can bake multiple materials into a single texture map to reduce draw calls.
 
 ---
 
-## 💡 Summary: Treat Workload Like Currency
+## Summary: Treat Workload Like Currency
 
 Think of performance like a budget. Every object you add costs something.
 
@@ -82,7 +82,7 @@ This mindset helps beginners prioritize wisely and build worlds that feel rich w
 
 ---
 
-## 🏁 Final Thoughts
+## Final Thoughts
 
 Performance optimization isn’t just about numbers—it’s about crafting an experience that feels smooth, intentional, and magical. With the right tools and mindset, you’ll turn technical tuning into creative empowerment.
 
