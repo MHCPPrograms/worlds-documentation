@@ -47,13 +47,23 @@ There are different ways to test if your item is good for being purchased. This 
 To check your items and sells yoru can do the following:
 1. Go to the Meta Horizon
 2. Click on the "My creations" button next your profile at the top
-<img width="553" height="296" alt="Screenshot 2025-09-10 at 16 56 07" src="https://github.com/user-attachments/assets/6d148cd1-2722-430b-98f3-b44f6a914c74" />
+
+ <img width="1466" height="68" alt="Screenshot 2025-09-10 at 17 08 22" src="https://github.com/user-attachments/assets/b1281300-0434-4d0d-a3fd-c6d382fd43f6" />
+
+
+
 3. Navigate to "Creator Program" under "Optimization Tools"
- <img width="553" height="296" alt="Screenshot 2025-09-10 at 16 56 07" src="https://github.com/user-attachments/assets/6d148cd1-2722-430b-98f3-b44f6a914c74" />
+   
+<img width="1462" height="822" alt="Screenshot 2025-09-10 at 17 10 09" src="https://github.com/user-attachments/assets/b43c300c-06ab-4efd-8302-776ce5e9ca60" />
+
 4. Click on "In-world Purchases"
-   <img width="553" height="296" alt="Screenshot 2025-09-10 at 16 56 07" src="https://github.com/user-attachments/assets/6d148cd1-2722-430b-98f3-b44f6a914c74" />
+   
+ <img width="1462" height="660" alt="Screenshot 2025-09-10 at 17 11 09" src="https://github.com/user-attachments/assets/a3957736-734a-47ce-845d-28314b4c6cf1" />
+
+  
 5. On the right you will see the graph and grow of your purchases.
-   <img width="553" height="296" alt="Screenshot 2025-09-10 at 16 56 07" src="https://github.com/user-attachments/assets/6d148cd1-2722-430b-98f3-b44f6a914c74" /> ( I don't have it yet)
+<img width="1465" height="582" alt="Screenshot 2025-09-10 at 17 11 56" src="https://github.com/user-attachments/assets/2d08cb4f-4529-47d3-8e79-00337fdd7280" />
+
 
 
 ###❗️Reminder: Must be a MHCP member to access in-world purcahses, make worlds and so-on.
