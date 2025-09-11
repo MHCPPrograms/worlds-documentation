@@ -222,3 +222,16 @@ ISelectable
 **In short:**  
 `ISelectable` = data holder per cube.  
 `FakeShadows` = central system that makes shadows follow their cubes.  
+
+---
+### Scene Colliders Overview
+That is how scene looks like in terms of overall structure. As you can see, all cubes are locked between
+colliders prevent them ovefrlow game field. 
+<img src="Content/Image8.png" alt="Multiple Cubes" width="1000">
+
+The question is how they go through colliders when they go to platform ?
+
+```ts
+  let physical = selectable.entity!.as(PhysicalEntity);
+  physical.simulated.set(false);
+```
