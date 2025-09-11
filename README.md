@@ -1,4 +1,4 @@
-# 🚀 Monetization 101.
+# 🚀 Monetization 101
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ## 🎯 Tutorial's objective:  
  Today we will learn about in-world monetization and purchases and their rules also following their types. Secondly,we will learn how to come up with valuable monetization ideas and identify a system or sequence for the following idea. At the end of the tutorial you will be able to identify valuable ideas for in-world monetization and fully understand the concept of monetization.
