@@ -9,6 +9,13 @@
 ### Today I’ll show you how I built the ⚡ **BLENDER HOLOGRAM ZAPPER 3000** ⚡
 
 ### This workflow shows how to use the Blender Shader Editor with Horizon’s unlit blend materials to make hologram textures. You can expand on this workflow to create your own custom textures to use in your worlds.
+
+#### You can also follow along with the tutorial video here:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TaZgO4xnnMo?si=wGRunxrF2XZ7P2BJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Or watch it directly on [YouTube](https://www.youtube.com/watch?v=TaZgO4xnnMo).
+
 # Contents
 
 - [What is a Texture?](#what-is-a-texture)
