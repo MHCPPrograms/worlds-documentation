@@ -99,7 +99,7 @@ To check your items and sells yoru can do the following:
 
 ---
 
-# 🎯 Conclusion
+## 🎯 Conclusion
 
 Monetization isn’t just about selling—it’s about **enhancing the experience**.  
 - Consumables (tickets, food, power-ups) drive repeat visits.  
