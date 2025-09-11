@@ -45,11 +45,15 @@ There are different ways to test if your item is good for being purchased. This 
 
 ### ⏰ Tracking your items:
 To check your items and sells yoru can do the following:
-1. Go to the "Horizon Creator Portal"
+1. Go to the Meta Horizon
+2. Click on the "My creations" button next your profile at the top
 <img width="553" height="296" alt="Screenshot 2025-09-10 at 16 56 07" src="https://github.com/user-attachments/assets/6d148cd1-2722-430b-98f3-b44f6a914c74" />
-2. Navigate to "Creator Program" under "My assets"
-3. Click on "In-world Purchases"
-4. On the right you will see the graph and grow of your purchases.
+3. Navigate to "Creator Program" under "Optimization Tools"
+ <img width="553" height="296" alt="Screenshot 2025-09-10 at 16 56 07" src="https://github.com/user-attachments/assets/6d148cd1-2722-430b-98f3-b44f6a914c74" />
+4. Click on "In-world Purchases"
+   <img width="553" height="296" alt="Screenshot 2025-09-10 at 16 56 07" src="https://github.com/user-attachments/assets/6d148cd1-2722-430b-98f3-b44f6a914c74" />
+5. On the right you will see the graph and grow of your purchases.
+   <img width="553" height="296" alt="Screenshot 2025-09-10 at 16 56 07" src="https://github.com/user-attachments/assets/6d148cd1-2722-430b-98f3-b44f6a914c74" /> ( I don't have it yet)
 
 
 ###❗️Reminder: Must be a MHCP member to access in-world purcahses, make worlds and so-on.
