@@ -1,5 +1,3 @@
-
-
 # SketchUp to Horizon Worlds Exporter: Step-by-Step Guide
 
 
