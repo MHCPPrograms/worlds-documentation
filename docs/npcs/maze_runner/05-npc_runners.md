@@ -140,14 +140,15 @@ We now have a global event being broadcast with the maze path coordinates once t
     private maze: ({ x: number, y: number, z: number, type: string } | undefined)[][] = [];
     private finished: boolean = false;
 ```
-So to setup our `start` function to cast our NPC to the correct type. We attached the script to the NPC object so we can use `this.entity` to get a reference to the entity the script is attached to. We will then cast this to an `Npc` object and then use the `tryGetPlayer` promise to retrieve a reference to the `NpcPlayer` object, which we can use to move the NPC.
+So to setup our `start` function to cast our NPC to the correct type. We attached the script to the NPC object so we can use `this.entity` to get a reference to the entity the script is attached to. We will then cast this to an `Npc` object and then use the `tryGetPlayer` promise to retrieve a reference to the `NpcPlayer` object, which we can use to move the NPC. We need to wrap this in a `setTimeout` to overcome a race condition you will only encounter after publishing your world.
 ```typescript
     start() {
-        this.entity.as(Npc).tryGetPlayer().then(player => this.npc = player);
-
+        this.async.setTimeout(() => {
+            this.entity.as(Npc).tryGetPlayer().then(player => this.npc = player);
+        }, 3000);
     }
 ```
-Within the same function we will setup the listener for the `mazeCarved` event we created earlier. When this event is received we will store the maze data in our private `maze` property.
+Within the same function we will setup the listener for the `mazeCarved` event we created earlier. When this event is received we will store the maze data in our private `maze` property. Add this before the `setTimeout`.
 ```typescript
         this.connectLocalBroadcastEvent(
             Events.mazeCarved,
