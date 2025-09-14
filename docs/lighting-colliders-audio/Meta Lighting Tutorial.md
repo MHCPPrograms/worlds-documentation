@@ -38,14 +38,25 @@ This comprehensive tutorial teaches you how to master all three lighting systems
 To complete this tutorial, you will accomplish the following tasks:
 
 :white_check_mark: Understand the differences between static and dynamic lighting gizmos
+
 :white_check_mark: Master all four static light shapes (Cuboid, Ellipsoid, Disk, Rectangle) and their use cases
+
 :white_check_mark: Implement dynamic point and spot lights with proper falloff settings
+
 :white_check_mark: Configure Environment Gizmo for atmosphere, fog, and time of day
+
 :white_check_mark: Create visible light sources by combining shapes with light gizmos
-:white_check_mark: Apply professional lighting techniques without code (glowing symbols, architectural glow, interior lighting, sunlight simulation)
-:white_check_mark: Script four dynamic effects with TypeScript (color cycling, flickering, pulsing, follow-me light)
+
+:white_check_mark: Apply professional lighting techniques without code (glowing symbols, architectural 
+glow, interior lighting, sunlight simulation)
+
+:white_check_mark: Script four dynamic effects with TypeScript (color cycling, flickering, pulsing, 
+follow-me light)
+
 :white_check_mark: Build complete lighting scenarios (cozy interior, dramatic stage, dungeon crawler)
+
 :white_check_mark: Optimize lighting performance for smooth gameplay
+
 :white_check_mark: Troubleshoot common lighting issues using the master guide
 
 ---
