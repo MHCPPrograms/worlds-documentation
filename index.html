@@ -1,364 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta property="og:image" content="images/MHCP_OG_image.jpg"/>
+  <meta property="og:image" content="images/MHCP_OG_image.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+  <meta property="og:image:height" content="630" />
   <title>MHCP Creator Doc Hub</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta name="google-site-verification" content="IYNUxE7ACfkxRf8svoazGNeMFAc723_E2toHTr-E0g8" />
 </head>
-  <body data-theme="dark">    
+
+<body data-theme="dark">
 
   <header class="site-header">
     <div class="left-nav">
-    <div class="logo"><a href="https://mhcpcreators.github.io/worlds-documentation/" id="logo-link">MHCP Creator Made Docs</a></div>
-    <nav class="nav-links">
-      <a href="https://mhcpcreators.github.io/worlds-documentation/docs.html#docs/manuals-and-cheat-sheets/get-started.md" target="_blank">Creator Docs</a>
-      <a href="https://developers.meta.com/horizon-worlds/learn" target="_blank">Meta Docs</a>
-      <a href="https://github.com/MHCPCreators/horizonCreatorManual" target="_blank">Creator Manual</a>
-      <a href="https://communityforums.atmeta.com/t5/Creator-Forum/ct-p/Meta_Horizon_Creator_Forums" target="_blank">Forums</a>
-      <a href="https://mhcpcreators.github.io/worlds-documentation/docs.html#docs/manuals-and-cheat-sheets/contribute-to-creator-documentation.md" target="_blank">Contribute</a>
-    </nav>
+      <div class="logo"><a href="#" id="logo-link">MHCP Creator Made Docs</a></div>
+      <nav class="nav-links">
+        <a href="docs/manuals-and-cheat-sheets/get-started/" target="_blank">Creator Docs</a>
+        <a href="https://developers.meta.com/horizon-worlds/learn" target="_blank">Meta Docs</a>
+        <a href="https://mhcpcreators.github.io/worlds-101" target="_blank">Worlds 101</a>
+        <a href="https://github.com/MHCPCreators/horizonCreatorManual" target="_blank">Creator Manual</a>
+        <a href="https://communityforums.atmeta.com/t5/Creator-Forum/ct-p/Meta_Horizon_Creator_Forums"
+          target="_blank">Forums</a>
+        <a href="docs/manuals-and-cheat-sheets/contribute-to-creator-documentation/" target="_blank">Contribute</a>
+      </nav>
+    </div>
+
+    <div class="right-controls">
+      <a href="https://www.youtube.com/@metahorizoncreatorprogram" target="_blank" style="color: #FF0000;">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌙/☀️</button>
+      <div class="search-container">
+        <button id="search-toggle" aria-label="Toggle Search" class="search-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" focusable="false"
+            class="search-icon">
+            <path
+              d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+          </svg>
+        </button>
+        <input type="search" id="search-input" placeholder="Search docs..." aria-label="Search docs" />
+        <ul id="search-suggestions" class="suggestions-list"></ul>
       </div>
-    
-<div class="right-controls">
-  <a href="https://www.youtube.com/@metahorizoncreatorprogram" target="_blank" style="color: #FF0000;">
-    <i class="fab fa-youtube"></i>
-    </a>
-  <button id="theme-toggle" aria-label="Toggle dark mode">🌙/☀️</button>
-    <div class="search-container">
-  <button id="search-toggle" aria-label="Toggle Search" class="search-btn">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" focusable="false" class="search-icon">
-      <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
-    </svg>
-  </button>
-  <input
-    type="search"
-    id="search-input"
-    placeholder="Search docs..."
-    aria-label="Search docs"
-  />
-  <ul id="search-suggestions" class="suggestions-list"></ul>
-</div> 
-    
-    <button class="hamburger" aria-label="Toggle navigation" aria-hidden="true" focusable="false">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24" fill="currentColor">
-    <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
-  </svg>
-</button>
+
+      <button class="hamburger" aria-label="Toggle navigation" aria-hidden="true" focusable="false">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24" fill="currentColor">
+          <path
+            d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+        </svg>
+      </button>
     </div>
     </div>
   </header>
 
   <header class="hero">
-      <div class="container">
-    <h1 class="hero-title">Fast track building Worlds in Meta Horizon</h1>
-    <p class="hero-subheader">Your launchpad for tools, tutorials, and docs made by creators like you.</p>
-        <div class="hero-button">
-      <a href="#get-started">Get Started</a>
-    </div>
-  
+    <div class="container">
+      <h1 class="hero-title">Fast track building Worlds in Meta Horizon</h1>
+      <p class="hero-subheader">Your launchpad for tools, tutorials, and docs made by creators like you.</p>
+      <div class="hero-button">
+        <a href="#get-started">Get Started</a>
+      </div>
+
     </div>
   </header>
 
-           <h1 class="main-heading-featured">Featured Content</h1>
-   <section class="featured-articles">
-  <div class="container">
-  <div class="featured-grid">
+  <h1 class="main-heading-featured">Featured Content</h1>
+  <section class="featured-articles">
+    <div class="container">
+      <div class="featured-grid">
 
-      <div class="card searchable">
-        <h3>Horizon Creator Manual</h3>
-        <p>The Horizon Creator Manual is a community-sourced, Meta-endorsed guide on using the Meta Horizon Worlds creation tools.</p>
-        <a href="https://github.com/MHCPCreators/horizonCreatorManual">Read More</a>
-      </div>
-      
-      <div class="card searchable">
-        <h3>Worlds Publishing Checklist</h3>
-        <p>This guide offers suggestions for late-stage development to enhance retention and reduce bounce rate.</p>
-        <a href="https://github.com/MHCPCreators/worlds-documentation/blob/main/docs/manuals-and-cheat-sheets/MHCP_Publishing_Checklist.pdf">Read More</a>
-      </div>
-      
-      <div class="card searchable">
-        <h3>Worlds Workarounds</h3>
-        <p>A running list of community-sourced workarounds and alternative approaches for overcoming creative obstacles.</p>
-        <a href="docs.html#docs/manuals-and-cheat-sheets/worlds-workarounds.md">Read More</a>
-      </div>
-       <div class = "card hidden-card">
-      <div class="card searchable">
-        <h3>Asset Library Import</h3>
-        <a href="#">Read More</a>
-      </div>
-      
-      <div class="card searchable">
-        <h3>Gizmos</h3>
-        <a href="#">Read More</a>
-      </div>
-      
-      <div class="card searchable">
-        <h3>Lighting, Colliders, Audio</h3>
-        <a href="#">Read More</a>
-      </div>
+        <div class="card searchable">
+          <h3>Horizon Creator Manual</h3>
+          <p>The Horizon Creator Manual is a community-sourced, Meta-endorsed guide on using the Meta Horizon Worlds
+            creation tools.</p>
+          <a href="https://github.com/MHCPCreators/horizonCreatorManual">Read More</a>
         </div>
-      <div class="card searchable">
-        <h3>Manuals and Cheat Sheets</h3>
-        <ul>
-       <li><a href="docs.html#docs/manuals-and-cheat-sheets/contribute-to-creator-documentation.md">Contribute to creator documentation</a></li>
-        <li><a href="docs.html#docs/manuals-and-cheat-sheets/how-to-make-your-world-go-viral.md">How to make your world go viral</a></li>
-        <li><a href="docs.html#docs/manuals-and-cheat-sheets/publishing-checklist-for-Horizon-Worlds.md">MHCP publishing checklist</a></li>
-        <li><a href="docs.html#docs/manuals-and-cheat-sheets/world-building-&-pre-production-guide.md">MHCP world planning guide</a></li>
-        <li><a href="docs.html#docs/manuals-and-cheat-sheets/plan-your-world---game-design-%26-monetization-sheet.md">Plan your world - game design & monetization sheet</a></li>
-        <li><a href="docs.html#docs/manuals-and-cheat-sheets/worlds-creator-manual-essentials-made-easy.md">Worlds creator manual essentials made easy</a></li>
-        <li><a href="docs.html#docs/manuals-and-cheat-sheets/worlds-workarounds.md">Worlds Workarounds</a></li>
-        </ul>
-      </div>
-      
-      <div class="card searchable">
-        <h3>Meshes, Materials, Import</h3>
-        <ul>
-       <li><a href="docs.html#docs/meshes-materials-import/15-blender-tips-for-Horizon-assets.md">15 Blender tips for Horizon assets</a></li>
-  <li><a href="docs.html#docs/meshes-materials-import/3d-modeling-in-Worlds-101.md">3D modeling in Worlds 101</a></li>
-  <li><a href="docs.html#docs/meshes-materials-import/blender-basics-%26-UV-unwrapping">Blender basics & UV unwrapping</a></li>
-  <li><a href="docs.html#docs/meshes-materials-import/custom-skydomes-guide-cinematic-horizons.md">Custom skydomes guide for cinematic horizons</a></li>
-  <li><a href="docs.html#docs/meshes-materials-import/how-to-use-lods-to-boost-your-world’s-performance.md">How to use LODs to boost your world’s performance</a></li>
-  <li><a href="docs.html#docs/meshes-materials-import/improve-custom-model-imports.md">Improve custom model imports</a></li>
-  <li><a href="docs.html#docs/meshes-materials-import/masked-texture-3d-asset-challenge-AMA-session.md">Masked texture 3D asset challenge - AMA session</a></li>
-  <li><a href="docs.html#docs/meshes-materials-import/optimize-iwp-assets-for-peak-performance.md">Optimize IWP assets For peak performance</a></li>
-  <li><a href="docs.html#docs/meshes-materials-import/roads-%26-fences-in-Horizon-paths-101.md">Roads & fences in Horizon - paths 101</a></li>
-  <li><a href="docs.html#docs/meshes-materials-import/space-glitters-blender-basics-hotkey-sheet.pdf">Space Glitter's Blender basics hotkey sheet</a></li>
-  <li><a href="docs.html#docs/meshes-materials-import/Worlds-asset-build-along-color-palette-%26-vertex-tuning.md">Worlds asset build-along - color palette & vertex tuning</a></li>
-  <li><a href="docs.html#docs/meshes-materials-import/import-images-and-add-texture-animation.md">Import images and add texture animation</a></li>
- </ul>
-      </div>
-      <div class="card searchable">
-        <h3>Scripting Concepts, Persistence, APIs</h3>
-        <ul>
-       <li><a href="docs.html#docs/scripting-concepts-persistence-apis/custom-ui/custom-ui-basics-to-boost-interaction.md">Custom UI basics to boost interaction</a></li>
-  <li><a href="docs.html#docs/scripting-concepts-persistence-apis/custom-ui/pro-tips-%26-tricks-for-a-high-performance-custom-ui.md">Pro tips & tricks for a high-performance custom UI</a></li>
-  <li><a href="docs.html#docs/scripting-concepts-persistence-apis/custom-ui/cui-api-introduction.md">Custom UI API Introduction</a></li>
-  <li><a href="docs.html#docs/scripting-concepts-persistence-apis/typescript-conventions-best-practices.md">TypeScript conventions & best practices</a></li>
-  <li><a href="docs.html#docs/scripting-concepts-persistence-apis/interactive-laser-pen-for-mobile-worlds-build-along.md">Interactive laser pen for mobile worlds build-along</a></li>
- </ul>
-      </div>
-    </div>
-  </div>
-</section>
 
-      <section id="get-started" class="get-started">
-          <div class="container">
-    <div class="get-started-text">
-      <h2>Get Started</h2>
-      <p>Supercharge your creative workflow with these essential articles written by MHCP creators. Learn how to use the desktop editor and integrate the latest Worlds features into your creations.
-      </p>
-      <a href="docs.html#docs%2Fmanuals-and-cheat-sheets%2Fget-started.md" target="_blank" class="button">All Docs</a>
-    </div>
-    <div class="get-started-grid">
-      <div class="card searchable">
-        <h3>Understanding the Desktop Editor</h3>
-        <ul><li><a href="docs.html#docs/understanding-the-desktop-editor/collaboratively-build-with-shared-asset-templates.md">Collaboratively build with shared asset templates</a></li>
-  <li><a href="docs.html#docs/understanding-the-desktop-editor/improve-frame-rates-and-custom-asset-bloat.md">Improve frame rates and custom asset bloat</a></li>
-  <li><a href="docs.html#docs/understanding-the-desktop-editor/trace,-fix,-%26-optimize-world-performance-issues.md">Trace, fix, & optimize world performance issues</a></li>
-  <li><a href="docs.html#docs/understanding-the-desktop-editor/Worlds-desktop-editor-101.md">Worlds desktop editor 101</a></li>
-  <li><a href="docs.html#docs/understanding-the-desktop-editor/Worlds-desktop-tools-basics.md">Worlds desktop tools basics</a></li>
-</ul>
-      </div>
-      <div class="card searchable">
-        <h3>Generative AI (GenAI) Tools</h3>
-        <ul>
-  <li><a href="docs.html#docs/generative-ai-tools/build-a-player-guided-lobby-with-mesh-gen.md">Build a player-guided lobby with mesh gen</a></li>
-  <li><a href="docs.html#docs/generative-ai-tools/code-faster-with-copilot-in-the-Worlds-desktop-editor-%26-vscode.md">Code faster with Copilot in the Worlds desktop editor & VSCode</a></li>
-  <li><a href="docs.html#docs/generative-ai-tools/genAI-sound-design-in-worlds-audio-tools-tour.md">GenAI sound design in Worlds - audio tools tour</a></li>
-  <li><a href="docs.html#docs/generative-ai-tools/genAI-world-concepts-greyboxing-and-refinements.md">GenAI world concepts - greyboxing and refinements</a></li>
-  <li><a href="docs.html#docs/generative-ai-tools/hands-on-with-GenAI-toolkit-for-Worlds-full-feature-tour.md">Hands-on with GenAI toolkit for Worlds - full feature tour</a></li>
-  <li><a href="docs.html#docs/generative-ai-tools/prompt-Meta-AI-in-the-Worlds-desktop-editor.md">Prompt Meta AI in the Worlds desktop editor</a></li>
-  <li><a href="docs.html#docs/generative-ai-tools/scripting-with-AI-support-GenAI-TypeScript.md">Scripting with AI support - GenAI TypeScript</a></li>
-  <li><a href="docs.html#docs/generative-ai-tools/topology-tune-up-for-GenAI-props-and-sets.md">Topology tune up for GenAI props and sets</a></li>
-   </ul>
-      </div>
-      <div class="card searchable">
-        <h3>Creating a World</h3>
-        <ul>
-  <li><a href="docs.html#docs/creating-a-world/building-your-first-world.md">Building your first world</a></li>
-  <li><a href="docs.html#docs/creating-a-world/create-a-clean-game-hud-for-Worlds.md">Create a clean game HUD for Worlds</a></li>
-  <li><a href="docs.html#docs/creating-a-world/create-a-versatile-holster-system-in-Worlds.md">Creating a versatile holster system in Worlds</a></li>
-  <li><a href="docs.html#docs/creating-a-world/designing-worlds-for-mobile-AMA-session.md">Designing worlds for mobile AMA session</a></li>
-  <li><a href="docs.html#docs/creating-a-world/inventory-systems-unlock-the-power-of-player-inventories.md">Inventory systems - unlock the power of player inventories</a></li>
-  <li><a href="docs.html#docs/creating-a-world/mentor-world-tour-mechanics,-art,-%26-gameplay-loop-design.md">Mentor world tour - mechanics, art, & gameplay loop design</a></li>
-  <li><a href="docs.html#docs/creating-a-world/what-makes-a-hit-mobile-game-4-winning-examples.md">What makes a hit mobile game - 4 winning examples</a></li>
-  <li><a href="docs.html#docs/creating-a-world/mobile-worlds-crash-course.md">Mobile worlds crash course</a></li>
-  <li><a href="docs.html#docs/creating-a-world/Worlds-tools-overview.md">Worlds tools overview</a></li>
-  </ul>
-      </div>
-      <div class="card searchable">
-        <h3>Getting Started with Scripting</h3>
-        <ul> <li><a href="docs.html#docs/getting-started-with-scripting/15-Worlds-TypeScript-API-2.0-tips-and-tricks.md">15 Worlds TypeScript API 2.0 tips and tricks</a></li>
-  <li><a href="docs.html#docs/getting-started-with-scripting/codeblocks-to-TypeScript.md">Codeblocks to TypeScript</a></li>
-  <li><a href="docs.html#docs/getting-started-with-scripting/PlayerControls-API-%26-focused-interaction-in-Worlds.md">PlayerControls API & focused interaction in Worlds</a></li>
-  <li><a href="docs.html#docs/getting-started-with-scripting/TypeScript-basics--beginner-friendly-session-for-Worlds.md">TypeScript basics- beginner-friendly session for Worlds</a></li>
-  <li><a href="docs.html#docs/getting-started-with-scripting/TypeScript-best-practices-101.md">TypeScript best practices 101</a></li>
-  <li><a href="docs.html#docs/getting-started-with-scripting/json-ppvs-and-versioning.md">Json PPVs and versioning</a></li>
-  <li><a href="docs.html#docs/getting-started-with-scripting/text-entry-tutorial.md">Text entry tutorial</a></li>
-  </ul>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="card searchable">
+          <h3>Worlds Publishing Checklist</h3>
+          <p>This guide offers suggestions for late-stage development to enhance retention and reduce bounce rate.</p>
+          <a
+            href="https://github.com/MHCPCreators/worlds-documentation/blob/main/docs/manuals-and-cheat-sheets/MHCP_Publishing_Checklist.pdf">Read
+            More</a>
+        </div>
 
-<section class="video-section">
-        <div class="container">
-    <p class="small-header">Latest Videos</p>
-    <div class="carousel-wrapper">
+        <div class="card searchable">
+          <h3>Worlds Workarounds</h3>
+          <p>A running list of community-sourced workarounds and alternative approaches for overcoming creative
+            obstacles.</p>
+          <a href="docs/manuals-and-cheat-sheets/worlds-workarounds/">Read More</a>
+        </div>
+        <div class="card hidden-card">
+          <div class="card searchable">
+            <h3>Asset Library Import</h3>
+            <a href="#">Read More</a>
+          </div>
+
+          <div class="card searchable">
+            <h3>Gizmos</h3>
+            <a href="#">Read More</a>
+          </div>
+
+          <div class="card searchable">
+            <h3>Lighting, Colliders, Audio</h3>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+        <div class="card searchable">
+          <h3>Manuals and Cheat Sheets</h3>
+          <ul>
+            <li><a href="docs/manuals-and-cheat-sheets/contribute-to-creator-documentation/">Contribute to creator
+                documentation</a></li>
+            <li><a href="docs/manuals-and-cheat-sheets/how-to-make-your-world-go-viral/">How to make your world go
+                viral</a></li>
+            <li><a href="docs/manuals-and-cheat-sheets/publishing-checklist-for-Horizon-Worlds/">MHCP publishing
+                checklist</a></li>
+            <li><a href="docs/manuals-and-cheat-sheets/world-building-&-pre-production-guide/">MHCP world planning
+                guide</a></li>
+            <li><a href="docs/manuals-and-cheat-sheets/plan-your-world-game-design-&-monetization-sheet/">Plan your
+                world - game design & monetization sheet</a></li>
+            <li><a href="docs/manuals-and-cheat-sheets/worlds-creator-manual-essentials-made-easy/">Worlds creator
+                manual essentials made easy</a></li>
+            <li><a href="docs/manuals-and-cheat-sheets/worlds-workarounds/">Worlds Workarounds</a></li>
+          </ul>
+        </div>
+
+        <div class="card searchable">
+          <h3>Meshes, Materials, Import</h3>
+          <ul>
+            <li><a href="docs/meshes-materials-import/15-blender-tips-for-Horizon-assets/">15 Blender tips for Horizon
+                assets</a></li>
+            <li><a href="docs/meshes-materials-import/3d-modeling-in-Worlds-101/">3D modeling in Worlds 101</a></li>
+            <li><a href="docs/meshes-materials-import/blender-basics-&-UV-unwrapping">Blender basics & UV unwrapping</a>
+            </li>
+            <li><a href="docs/meshes-materials-import/custom-skydomes-guide-cinematic-horizons/">Custom skydomes guide
+                for cinematic horizons</a></li>
+            <li><a href="docs/meshes-materials-import/how-to-use-LODs-to-boost-your-worlds-performance/">How to use LODs
+                to boost your world’s performance</a></li>
+            <li><a href="docs/meshes-materials-import/improve-custom-model-imports/">Improve custom model imports</a>
+            </li>
+            <li><a href="docs/meshes-materials-import/masked-texture-3D-asset-challenge-AMA-session/">Masked texture 3D
+                asset challenge - AMA session</a></li>
+            <li><a href="docs/meshes-materials-import/optimize-iwp-assets-for-peak-performance/">Optimize IWP assets For
+                peak performance</a></li>
+            <li><a href="docs/meshes-materials-import/roads-&-fences-in-Horizon-paths-101/">Roads & fences in Horizon -
+                paths 101</a></li>
+            <li><a
+                href="https://github.com/MHCPCreators/worlds-documentation/blob/main/docs/meshes-materials-import/Space%20Glitters%20Blender%20Basics%20Hotkey%20Sheet.pdf">Space
+                Glitter's Blender basics hotkey sheet</a></li>
+            <li><a href="docs/meshes-materials-import/Worlds-asset-build-along-color-palette-&-vertex-tuning/">Worlds
+                asset build-along - color palette & vertex tuning</a></li>
+            <li><a href="docs/meshes-materials-import/import-images-and-add-texture-animation/">Import images and add
+                texture animation</a></li>
+          </ul>
+        </div>
+        <div class="card searchable">
+          <h3>Scripting Concepts, Persistence, APIs</h3>
+          <ul>
+            <li><a href="docs/scripting-concepts-persistence-apis/custom-UI-basics-to-boost-interaction/">Custom UI
+                basics to boost interaction</a></li>
+            <li><a
+                href="docs/scripting-concepts-persistence-apis/pro-tips-&-tricks-for-a-high-performance-custom-UI/">Pro
+                tips & tricks for a high-performance custom UI</a></li>
+            <li><a href="docs/scripting-concepts-persistence-apis/cui-api-introduction/">Custom UI API Introduction</a>
+            </li>
+            <li><a href="docs/scripting-concepts-persistence-apis/typescript-conventions-best-practices/">TypeScript
+                conventions & best practices</a></li>
+            <li><a
+                href="docs/scripting-concepts-persistence-apis/interactive-laser-pen-for-mobile-worlds-build-along/">Interactive
+                laser pen for mobile worlds build-along</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="get-started" class="get-started">
+    <div class="container">
+      <div class="get-started-text">
+        <h2>Get Started</h2>
+        <p>Supercharge your creative workflow with these essential articles written by MHCP creators. Learn how to use
+          the desktop editor and integrate the latest Worlds features into your creations.
+        </p>
+        <a href="docs/manuals-and-cheat-sheets/get-started/" target="_blank" class="button">All Docs</a>
+      </div>
+      <div class="get-started-grid">
+        <div class="card searchable">
+          <h3>Understanding the Desktop Editor</h3>
+          <ul>
+            <li><a
+                href="docs/understanding-the-desktop-editor/collaboratively-build-with-shared-asset-templates/">Collaboratively
+                build with shared asset templates</a></li>
+            <li><a href="docs/understanding-the-desktop-editor/improve-frame-rates-and-custom-asset-bloat/">Improve
+                frame rates and custom asset bloat</a></li>
+            <li><a href="docs/understanding-the-desktop-editor/trace,-fix,-&-optimize-world-performance-issues/">Trace,
+                fix, & optimize world performance issues</a></li>
+            <li><a href="docs/understanding-the-desktop-editor/Worlds-desktop-editor-101/">Worlds desktop editor 101</a>
+            </li>
+            <li><a href="docs/understanding-the-desktop-editor/Worlds-desktop-tools-basics/">Worlds desktop tools
+                basics</a></li>
+          </ul>
+        </div>
+        <div class="card searchable">
+          <h3>Generative AI (GenAI) Tools</h3>
+          <ul>
+            <li><a href="docs/generative-ai-tools/build-a-player-guided-lobby-with-mesh-gen/">Build a player-guided
+                lobby with mesh gen</a></li>
+            <li><a href="docs/generative-ai-tools/code-faster-with-copilot-in-the-Worlds-desktop-editor-&-vscode/">Code
+                faster with Copilot in the Worlds desktop editor & VSCode</a></li>
+            <li><a href="docs/generative-ai-tools/genAI-sound-design-in-worlds-audio-tools-tour/">GenAI sound design in
+                Worlds - audio tools tour</a></li>
+            <li><a href="docs/generative-ai-tools/genAI-world-concepts-greyboxing-and-refinements/">GenAI world concepts
+                - greyboxing and refinements</a></li>
+            <li><a href="docs/generative-ai-tools/hands-on-with-GenAI-toolkit-for-Worlds-full-feature-tour/">Hands-on
+                with GenAI toolkit for Worlds - full feature tour</a></li>
+            <li><a href="docs/generative-ai-tools/prompt-Meta-AI-in-the-Worlds-desktop-editor/">Prompt Meta AI in the
+                Worlds desktop editor</a></li>
+            <li><a href="docs/generative-ai-tools/scripting-with-AI-support-GenAI-TypeScript/">Scripting with AI support
+                - GenAI TypeScript</a></li>
+            <li><a href="docs/generative-ai-tools/topology-tune-up-for-GenAI-props-and-sets/">Topology tune up for GenAI
+                props and sets</a></li>
+          </ul>
+        </div>
+        <div class="card searchable">
+          <h3>Creating a World</h3>
+          <ul>
+            <li><a href="docs/creating-a-world/building-your-first-world/">Building your first world</a></li>
+            <li><a href="docs/creating-a-world/create-a-clean-game-hud-for-Worlds/">Create a clean game HUD for
+                Worlds</a></li>
+            <li><a href="docs/creating-a-world/create-a-versatile-holster-system-in-Worlds/">Creating a versatile
+                holster system in Worlds</a></li>
+            <li><a href="docs/creating-a-world/designing-worlds-for-mobile-AMA-session/">Designing worlds for mobile AMA
+                session</a></li>
+            <li><a href="docs/creating-a-world/inventory-systems-unlock-the-power-of-player-inventories/">Inventory
+                systems - unlock the power of player inventories</a></li>
+            <li><a href="docs/creating-a-world/mentor-world-tour-mechanics-art-&-gameplay-loop-design">Mentor world tour
+                - mechanics, art, & gameplay loop design</a></li>
+            <li><a href="docs/creating-a-world/what-makes-a-hit-mobile-game-4-winning-examples/">What makes a hit mobile
+                game - 4 winning examples</a></li>
+            <li><a href="docs/creating-a-world/mobile-worlds-crash-course/">Mobile worlds crash course</a></li>
+            <li><a href="docs/creating-a-world/Worlds-tools-overview/">Worlds tools overview</a></li>
+          </ul>
+        </div>
+        <div class="card searchable">
+          <h3>Getting Started with Scripting</h3>
+          <ul>
+            <li><a href="docs/getting-started-with-scripting/15-Worlds-TypeScript-API-2.0-tips-and-tricks/">15 Worlds
+                TypeScript API 2.0 tips and tricks</a></li>
+            <li><a href="docs/getting-started-with-scripting/codeblocks-to-TypeScript/">Codeblocks to TypeScript</a>
+            </li>
+            <li><a
+                href="docs/getting-started-with-scripting/PlayerControls-API-&-focused-interaction-in-Worlds/">PlayerControls
+                API & focused interaction in Worlds</a></li>
+            <li><a
+                href="docs/getting-started-with-scripting/TypeScript-basics-beginner-friendly-session-for-Worlds/">TypeScript
+                basics- beginner-friendly session for Worlds</a></li>
+            <li><a href="docs/getting-started-with-scripting/TypeScript-best-practices-101/">TypeScript best practices
+                101</a></li>
+            <li><a href="docs/getting-started-with-scripting/json-ppvs-and-versioning/">Json PPVs and versioning</a>
+            </li>
+            <li><a href="docs/getting-started-with-scripting/text-entry-tutorial/">Text entry tutorial</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="video-section">
+    <div class="container">
+      <p class="small-header">Latest Videos</p>
+      <div class="carousel-wrapper">
         <button class="carousel-btn prev">‹</button>
         <div class="carousel-track-container">
-          <div class="carousel-track">    
-    <div class="carousel-item">
-              <div class="video-track-height">
-       <div class="video-wrapper">
-   <a href="https://www.youtube.com/watch?v=sWYHMS770XA" target="_blank" class="thumbnail-link">
-    <img src="https://img.youtube.com/vi/sWYHMS770XA/hqdefault.jpg" alt="Video thumbnail" />
-    <div class="play-button"></div>
-  </a>
-</div>
-      </div>
-  <h4 class="video-title">NEW FEATURES in Worlds (July 2025) | Feature Detective</h4>
-      <p class="video-description">Stay ahead of the curve with this deep dive into the latest features and APIs (as of July 2025) for Worlds.
-    </p>
-     </div>
-     <div class="carousel-item">
-              <div class="video-track-height">
-       <div class="video-wrapper">
-   <a href="https://www.youtube.com/watch?v=RwVN_l6RSfw" target="_blank" class="thumbnail-link">
-    <img src="https://img.youtube.com/vi/RwVN_l6RSfw/hqdefault.jpg" alt="Video thumbnail" />
-    <div class="play-button"></div>
-  </a>
-</div>
-      </div>
-  <h4 class="video-title">Hook Players & Boost Retention with a World Progression System</h4>
-      <p class="video-description"> Learn the core principles of creating compelling reward loops that keep players coming back for more, then dive into essential tools like the Shop, Inventory, and XP Bar public assets that you can use in your creations today.
-    </p>
-     </div>
+          <div class="carousel-track">
             <div class="carousel-item">
               <div class="video-track-height">
-       <div class="video-wrapper">
-   <a href="https://www.youtube.com/watch?v=JtXS_rsVhsg" target="_blank" class="thumbnail-link">
-    <img src="https://img.youtube.com/vi/JtXS_rsVhsg/hqdefault.jpg" alt="Video thumbnail" />
-    <div class="play-button"></div>
-  </a>
-</div>
-      </div>
-  <h4 class="video-title">Boost Performance: Top 7 Spawning & Streaming Tricks</h4>
-      <p class="video-description">Eliminate lag and frame drops for good with these 7 essential spawning and streaming tricks.
-    </p>
-     </div>
-    <div class="carousel-item">
-       <div class="video-wrapper">
-   <a href="https://www.youtube.com/watch?v=E33g129G6BA" target="_blank" class="thumbnail-link">
-    <img src="https://img.youtube.com/vi/E33g129G6BA/hqdefault.jpg" alt="Video thumbnail" />
-    <div class="play-button"></div>
-  </a>
-</div>
-        <h4 class="video-title">Topology Tune-Up for GenAI Props and Sets</h4>
-      <p class="video-description">Turn your incredible AI concepts into optimized, game-ready assets with this complete retopology workflow.</p>
-    </div>
-    <div class="carousel-item">
-       <div class="video-wrapper">
-    <a href="https://www.youtube.com/watch?v=jWVT3tBY0Pc" target="_blank" class="thumbnail-link">
-    <img src="https://img.youtube.com/vi/jWVT3tBY0Pc/hqdefault.jpg" alt="Video thumbnail" />
-    <div class="play-button"></div>
-  </a>
-</div>
-        <h4 class="video-title">Improve Frame Rates and Custom Asset Bloat</h4>
-      <p class="video-description">Stop guessing what's causing lag, black screens, and asset bloat, and start diagnosing the root cause.</p>
-    </div>
-    <div class="carousel-item">
-       <div class="video-wrapper">
-<a href="https://www.youtube.com/watch?v=mMaqtL2StzY" target="_blank" class="thumbnail-link">
-    <img src="https://img.youtube.com/vi/mMaqtL2StzY/hqdefault.jpg" alt="Video thumbnail" />
-    <div class="play-button"></div>
-  </a>
-</div>
-        <h4 class="video-title">Custom Skydomes Guide: Cinematic Horizons</h4>
-      <p class="video-description">Take full creative control of your world’s atmosphere by moving beyond the stock skybox.</p>
-    </div>
-     <div class="carousel-item">
-        <div class="video-wrapper">
-      <a href="https://www.youtube.com/watch?v=Q18hoNIK1Kk" target="_blank" class="thumbnail-link">
-    <img src="https://img.youtube.com/vi/Q18hoNIK1Kk/hqdefault.jpg" alt="Video thumbnail" />
-    <div class="play-button"></div>
-  </a>
-</div>
-         <h4 class="video-title">Collaboratively Build with Shared Asset Templates</h4>
-       <p class="video-description">
-      Learn how to use Shared Asset Templates to build in parallel and streamline your team's entire workflow.</p>
-    </div>
-        <div class="carousel-item">
-           <div class="video-wrapper">
-      <a href="https://www.youtube.com/watch?v=wIoXLM-uoto" target="_blank" class="thumbnail-link">
-    <img src="https://img.youtube.com/vi/wIoXLM-uoto/hqdefault.jpg" alt="Video thumbnail" />
-    <div class="play-button"></div>
-  </a>
-</div>
-         <h4 class="video-title">Prompt Meta AI in the Worlds Desktop Editor</h4>
-          <p class="video-description">It’s time to go beyond simple commands and learn how to use GenAI as a true creative partner.</p>          
-    </div>
+                <div class="video-wrapper">
+                  <a href="https://www.youtube.com/watch?v=sWYHMS770XA" target="_blank" class="thumbnail-link">
+                    <img src="https://img.youtube.com/vi/sWYHMS770XA/hqdefault.jpg" alt="Video thumbnail" />
+                    <div class="play-button"></div>
+                  </a>
+                </div>
+              </div>
+              <h4 class="video-title">NEW FEATURES in Worlds (July 2025) | Feature Detective</h4>
+              <p class="video-description">Stay ahead of the curve with this deep dive into the latest features and APIs
+                (as of July 2025) for Worlds.
+              </p>
+            </div>
             <div class="carousel-item">
-           <div class="video-wrapper">
-      <a href="https://www.youtube.com/watch?v=pF93BXBgn5s" target="_blank" class="thumbnail-link">
-    <img src="https://img.youtube.com/vi/pF93BXBgn5s/hqdefault.jpg" alt="Video thumbnail" />
-    <div class="play-button"></div>
-  </a>
-</div>
-         <h4 class="video-title">What Makes a Hit Mobile Game? 4 Winning Examples | Horizon Worlds</h4>
-          <p class="video-description">Discover the design secrets behind top-performing mobile worlds.</p>    
-    </div>
+              <div class="video-track-height">
+                <div class="video-wrapper">
+                  <a href="https://www.youtube.com/watch?v=RwVN_l6RSfw" target="_blank" class="thumbnail-link">
+                    <img src="https://img.youtube.com/vi/RwVN_l6RSfw/hqdefault.jpg" alt="Video thumbnail" />
+                    <div class="play-button"></div>
+                  </a>
+                </div>
+              </div>
+              <h4 class="video-title">Hook Players & Boost Retention with a World Progression System</h4>
+              <p class="video-description"> Learn the core principles of creating compelling reward loops that keep
+                players coming back for more, then dive into essential tools like the Shop, Inventory, and XP Bar public
+                assets that you can use in your creations today.
+              </p>
+            </div>
             <div class="carousel-item">
-           <div class="video-wrapper">
-      <a href="https://www.youtube.com/watch?v=zaffrPi0E8A" target="_blank" class="thumbnail-link">
-    <img src="https://img.youtube.com/vi/zaffrPi0E8A/hqdefault.jpg" alt="Video thumbnail" />
-    <div class="play-button"></div>
-  </a>
-</div>
-         <h4 class="video-title">Pro Tips & Tricks for a High-Performance Custom UI | Horizon Worlds</h4>
-          <p class="video-description">Harness the power of the UI binding system to build responsive, lag-free interfaces.</p>   
-    </div>
+              <div class="video-track-height">
+                <div class="video-wrapper">
+                  <a href="https://www.youtube.com/watch?v=JtXS_rsVhsg" target="_blank" class="thumbnail-link">
+                    <img src="https://img.youtube.com/vi/JtXS_rsVhsg/hqdefault.jpg" alt="Video thumbnail" />
+                    <div class="play-button"></div>
+                  </a>
+                </div>
+              </div>
+              <h4 class="video-title">Boost Performance: Top 7 Spawning & Streaming Tricks</h4>
+              <p class="video-description">Eliminate lag and frame drops for good with these 7 essential spawning and
+                streaming tricks.
+              </p>
+            </div>
+            <div class="carousel-item">
+              <div class="video-wrapper">
+                <a href="https://www.youtube.com/watch?v=E33g129G6BA" target="_blank" class="thumbnail-link">
+                  <img src="https://img.youtube.com/vi/E33g129G6BA/hqdefault.jpg" alt="Video thumbnail" />
+                  <div class="play-button"></div>
+                </a>
+              </div>
+              <h4 class="video-title">Topology Tune-Up for GenAI Props and Sets</h4>
+              <p class="video-description">Turn your incredible AI concepts into optimized, game-ready assets with this
+                complete retopology workflow.</p>
+            </div>
+            <div class="carousel-item">
+              <div class="video-wrapper">
+                <a href="https://www.youtube.com/watch?v=jWVT3tBY0Pc" target="_blank" class="thumbnail-link">
+                  <img src="https://img.youtube.com/vi/jWVT3tBY0Pc/hqdefault.jpg" alt="Video thumbnail" />
+                  <div class="play-button"></div>
+                </a>
+              </div>
+              <h4 class="video-title">Improve Frame Rates and Custom Asset Bloat</h4>
+              <p class="video-description">Stop guessing what's causing lag, black screens, and asset bloat, and start
+                diagnosing the root cause.</p>
+            </div>
+            <div class="carousel-item">
+              <div class="video-wrapper">
+                <a href="https://www.youtube.com/watch?v=mMaqtL2StzY" target="_blank" class="thumbnail-link">
+                  <img src="https://img.youtube.com/vi/mMaqtL2StzY/hqdefault.jpg" alt="Video thumbnail" />
+                  <div class="play-button"></div>
+                </a>
+              </div>
+              <h4 class="video-title">Custom Skydomes Guide: Cinematic Horizons</h4>
+              <p class="video-description">Take full creative control of your world’s atmosphere by moving beyond the
+                stock skybox.</p>
+            </div>
+            <div class="carousel-item">
+              <div class="video-wrapper">
+                <a href="https://www.youtube.com/watch?v=Q18hoNIK1Kk" target="_blank" class="thumbnail-link">
+                  <img src="https://img.youtube.com/vi/Q18hoNIK1Kk/hqdefault.jpg" alt="Video thumbnail" />
+                  <div class="play-button"></div>
+                </a>
+              </div>
+              <h4 class="video-title">Collaboratively Build with Shared Asset Templates</h4>
+              <p class="video-description">
+                Learn how to use Shared Asset Templates to build in parallel and streamline your team's entire workflow.
+              </p>
+            </div>
+            <div class="carousel-item">
+              <div class="video-wrapper">
+                <a href="https://www.youtube.com/watch?v=wIoXLM-uoto" target="_blank" class="thumbnail-link">
+                  <img src="https://img.youtube.com/vi/wIoXLM-uoto/hqdefault.jpg" alt="Video thumbnail" />
+                  <div class="play-button"></div>
+                </a>
+              </div>
+              <h4 class="video-title">Prompt Meta AI in the Worlds Desktop Editor</h4>
+              <p class="video-description">It’s time to go beyond simple commands and learn how to use GenAI as a true
+                creative partner.</p>
+            </div>
+            <div class="carousel-item">
+              <div class="video-wrapper">
+                <a href="https://www.youtube.com/watch?v=pF93BXBgn5s" target="_blank" class="thumbnail-link">
+                  <img src="https://img.youtube.com/vi/pF93BXBgn5s/hqdefault.jpg" alt="Video thumbnail" />
+                  <div class="play-button"></div>
+                </a>
+              </div>
+              <h4 class="video-title">What Makes a Hit Mobile Game? 4 Winning Examples | Horizon Worlds</h4>
+              <p class="video-description">Discover the design secrets behind top-performing mobile worlds.</p>
+            </div>
+            <div class="carousel-item">
+              <div class="video-wrapper">
+                <a href="https://www.youtube.com/watch?v=zaffrPi0E8A" target="_blank" class="thumbnail-link">
+                  <img src="https://img.youtube.com/vi/zaffrPi0E8A/hqdefault.jpg" alt="Video thumbnail" />
+                  <div class="play-button"></div>
+                </a>
+              </div>
+              <h4 class="video-title">Pro Tips & Tricks for a High-Performance Custom UI | Horizon Worlds</h4>
+              <p class="video-description">Harness the power of the UI binding system to build responsive, lag-free
+                interfaces.</p>
+            </div>
 
-      </div>
-      </div>
+          </div>
+        </div>
         <button class="carousel-btn next">›</button>
       </div>
-  </div>
-    </section>
+    </div>
+  </section>
 
-      <section id="community" class="community">
-        <div class="container">
-     <h1 class="main-heading">Become an MHCP Creator</h1>
-          </div>
-    <p class="subheading">Unleash your imagination to create worlds—immersive experiences across mobile and VR. Earn money for what you build, and join a community that's shaping the future of fun.</p>
-                     <div class="center-button">
-           <a href="https://developers.meta.com/horizon-worlds/programs" class="button" target="_blank">Learn more</a>
-      </div>
-    </section>
-    
+  <section id="community" class="community">
+    <div class="container">
+      <h1 class="main-heading">Become an MHCP Creator</h1>
+    </div>
+    <p class="subheading">Unleash your imagination to create worlds—immersive experiences across mobile and VR. Earn
+      money for what you build, and join a community that's shaping the future of fun.</p>
+    <div class="center-button">
+      <a href="https://developers.meta.com/horizon-worlds/programs" class="button" target="_blank">Learn more</a>
+    </div>
+  </section>
+
   <footer class="site-footer">
-    <p>Built by MHCP Creators • <a href="https://github.com/MHCPCreators/worlds-documentation" target="_blank">GitHub</a> • <a href="https://communityforums.atmeta.com/t5/Creator-Forum/ct-p/Meta_Horizon_Creator_Forums" target="_blank">Forums</a></p>
-      <a href="https://www.youtube.com/@metahorizoncreatorprogram" target="_blank" aria-label="Creator Programs YouTube Channel" style="color: #FF0000;">
-    <i class="fab fa-youtube"></i>
+    <p>Built by MHCP Creators • <a href="https://github.com/MHCPCreators/worlds-documentation"
+        target="_blank">GitHub</a> • <a
+        href="https://communityforums.atmeta.com/t5/Creator-Forum/ct-p/Meta_Horizon_Creator_Forums"
+        target="_blank">Forums</a></p>
+    <a href="https://www.youtube.com/@metahorizoncreatorprogram" target="_blank"
+      aria-label="Creator Programs YouTube Channel" style="color: #FF0000;">
+      <i class="fab fa-youtube"></i>
     </a>
   </footer>
 
-<script src="main.js"></script>
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR-TRACKING-ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-YOUR-TRACKING-ID');
-</script>
+  <script src="main.js"></script>
 
 </body>
+
 </html>
