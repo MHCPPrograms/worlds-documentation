@@ -1,4 +1,4 @@
-![Gen AI Tutorial Cover](/images/gen-ai-cover.png)
+![Gen AI Tutorial Cover](/images/1.png)
 
 > **Watch the full video tutorial here:**  
 > [https://youtu.be/gaBi6tnIwQ0](https://youtu.be/gaBi6tnIwQ0)
