@@ -11,8 +11,8 @@ This guide will walk you through creating a simple scene using the Gen AI Creato
 
 ---
 
-**Step 1: Create a 3D Model**
-![3D Model](../../images/model_image1.png)
+**Step 1: Create a 3D Model**  
+![3D Model](../../images/3d%20model%20Image%201.png)
 1. Click the **Gen AI** tab at the top of your screen.  
 2. Select the **3D models** icon.  
 3. In the prompt field, enter "A Cowboy Riding a Horse."  
@@ -23,8 +23,8 @@ This guide will walk you through creating a simple scene using the Gen AI Creato
 
 ---
 
-**Step 2: Add a Script Using the Assistant**
-![Assistant](../../images/assistant_image2.png)
+**Step 2: Add a Script Using the Assistant**  
+![Assistant](../../images/Assitant%20Image%202.png)
 1. Click the **Assistants** Icon.   
 2. Type "I would like the cowboy to move forward" in the prompt field.  
 3. Click **Generate** to create the code.  
@@ -32,8 +32,8 @@ This guide will walk you through creating a simple scene using the Gen AI Creato
 
 ---
 
-**Step 3: Add Sound to the Horse**
-![Sound](../../images/sound_image3.png)
+**Step 3: Add Sound to the Horse**  
+![Sound](../../images/sound%20Image%203.png)
 1. Click the **Sound** icon.  
 2. Type "the sound of a horse walking" in the prompt field.  
 3. From the list of options, choose the sound you prefer and click **Save to Asset Library**.  
@@ -44,8 +44,8 @@ This guide will walk you through creating a simple scene using the Gen AI Creato
 
 ---
 
-**Step 4: Apply a Texture**
-![Texture](../../images/texture_image4.png)
+**Step 4: Apply a Texture**  
+![Texture](../../images/texture%20Image%204.png)
 1. In the **Build** tab at the top of your screen, select a **Cylinder** shape and add it to your platform.  
 2. Click the **Texture** icon.  
 3. Type "firewood" in the prompt field.  
@@ -53,8 +53,8 @@ This guide will walk you through creating a simple scene using the Gen AI Creato
 
 ---
 
-**Step 5: Add Ambient Audio**
-![Ambient Audio](../../images/ambient_audio_image5.png)
+**Step 5: Add Ambient Audio**  
+![Ambient Audio](../../images/ambient%20audio%20Image%205.png)
 1. Click the **Ambient Audio** icon.  
 2. In the prompt field, type "Forest and Mountain."  
 3. Choose your preferred sound from the options and click **Generate**.  
@@ -62,16 +62,16 @@ This guide will walk you through creating a simple scene using the Gen AI Creato
 
 ---
 
-**Step 6: Create a Sky**
-![Sky](../../images/sky_image6.png)
+**Step 6: Create a Sky**  
+![Sky](../../images/sky%20Image%206.png)
 1. Click the **Sky** icon.  
 2. Type "forest, mountain and lakes" in the prompt field.  
 3. Once the sky dome is generated, click **Save and Apply Sky Dome**.
 
 ---
 
-**Step 7: Generate an Environment**
-![Environment](../../images/environment_image7.png)
+**Step 7: Generate an Environment**  
+![Environment](../../images/enviornment%20Image%207.png)
 1. Click the **Environment Generation** icon.  
 2. You will see several pre-defined options.  
 3. Choose the option "Forest in Fall."  
