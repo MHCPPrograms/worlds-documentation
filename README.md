@@ -1,20 +1,20 @@
-Adding Tutorial Content for the MHCP Doc Mini Challenge
+*Adding Tutorial Content for the MHCP Doc Mini Challenge*
 This document outlines the standard procedure for adding or updating documentation for the MHCP Doc Mini Challenge. It involves forking the main repository, making changes in your fork, and then submitting a Pull Request to the main repository, all using the GitHub web interface.
 
 When contributing documentation, please ensure your additions or edits fit into one of the existing high-level documentation folders/categories. If you are unsure where your contribution belongs, please discuss it with the project maintainers.
 
-1. Prerequisites
+**1. Prerequisites**
 
 A GitHub account.
 Familiarity with Markdown syntax.
 A basic understanding of what forking a repository means.
-2. Procedure
+**2. Procedure**
 
 The process of contributing documentation is broken down into two main phases:
 
 Initial Setup: A one-time (or infrequent) process to prepare your environment by forking the repository.
 Contribution Workflow: The set of steps you'll follow each time you want to add or update documentation.
-2.1. Initial Setup (One-time or Infrequent)
+**2.1. Initial Setup (One-time or Infrequent)**
 
 This section covers the steps you need to take once to set up your own copy (fork) of the main documentation repository.
 
