@@ -1,4 +1,4 @@
-*Adding Tutorial Content for the MHCP Doc Mini Challenge
+*Adding Tutorial Content for the MHCP Doc Mini Challenge*
 
 This document outlines the standard procedure for adding or updating documentation for the MHCP Doc Mini Challenge. It involves forking the main repository, making changes in your fork, and then submitting a Pull Request to the main repository, all using the GitHub web interface.
 
@@ -22,7 +22,7 @@ This section covers the steps you need to take once to set up your own copy (for
 
 https://github.com/MHCPPrograms/worlds-documentation
 
-2.1.1. Fork the Repository
+**2.1.1. Fork the Repository**
 
 Forking creates your own copy of the project repository where you can make changes without affecting the original project.
 
@@ -34,11 +34,11 @@ If prompted (e.g., if you belong to multiple organizations), select your GitHub 
 
 You will be redirected to your newly created fork (e.g., https://github.com/your-username/repository-name). This is now your personal copy.
 
-2.2. Contribution Workflow (For Each Documentation Change)
+**2.2. Contribution Workflow (For Each Documentation Change)**
 
 Once you have your fork set up, follow these steps to submit or update your tutorial for the MHCP Doc Mini Challenge.
 
-2.2.1. Add or Edit Documentation Files (in Your Fork)
+**2.2.1. Add or Edit Documentation Files (in Your Fork)**
 
 On your main branch, add or edit documentation files. Crucially, place your files in the correct category folder that corresponds with the tutorial challenge category you are creating content for. If you're unsure about the correct category, please consult with project maintainers before proceeding.
 
@@ -72,7 +72,7 @@ Make your desired changes in the editor.
 
 
 
-2.2.2. Linking to YouTube Videos
+**2.2.2. Linking to YouTube Videos**
 
 If you are creating a short-form video to accompany your written tutorial, upload it to YouTube and then follow the steps below to embed the video in your Markdown file.
 
@@ -82,7 +82,7 @@ Click Embed
 Copy and paste the Embed Video code to the File Editor in GitHub 
 Note: No preview will be available because iframe is not supported in markdown. Please use the GitHub
 
-2.2.3. Commit Your Changes (in Your Fork)
+**2.2.3. Commit Your Changes (in Your Fork)**
 
 Save your work by committing the changes to your branch in your fork.
 
@@ -92,7 +92,8 @@ The first line should be a short summary (max 50-72 characters is a good guideli
 Good commit message practice: Start with a prefix indicating the type of change (e.g., docs:, fix:), followed by a concise description.
 Ensure the option "Commit directly to the main branch" is selected. This refers to the branch in your fork.
 Click the green "Commit changes" button.
-2.2.4. Create a Pull Request (PR) from Your Fork to the MHCPPrograms/worlds-documentation Repository
+
+**2.2.4. Create a Pull Request (PR) from Your Fork to the MHCPPrograms/worlds-documentation Repository**
 
 You are almost done! The Pull Request (PR) submission process is how you propose your changes to the doc mini challenge Github repo.
 
@@ -120,26 +121,26 @@ When submitting your tutorial for the first time, list the tutorial category and
 When updating an existing tutorial, describe the changes.
 Click "Create pull request". This submits your changes for review to the maintainers of the original repository. 
 
-2.2.5. Review Process
+**2.2.5. Review Process**
 
 After submitting your PR, project maintainers will review your contribution.
 
 Maintainers of the MHCP competition repository will review your changes. They may ask questions, request modifications, or suggest improvements directly on the PR page using comments and review tools.
 Monitor your PR for feedback. You will typically receive notifications from GitHub.
 If changes are requested, address the feedback by making further edits and commits to your branch in your forked repository. New commits pushed to that branch in your fork will automatically update the existing Pull Request.
-2.2.6. Merging the Pull Request
+**2.2.6. Merging the Pull Request**
 
 Once your PR is approved and any automated checks pass, a maintainer will merge it.
 
 After any necessary discussions and revisions, if the maintainers are satisfied, they will merge your PR into the main (or target) branch of the MHCPPrograms/worlds-documentation repository used for this doc mini challenge.
 Your tutorial has now been successfully submitted for the MHCP Doc Mini Challenge! If you need to make updates to your submission, you can do so until the contest ends.
-2.2.7. Keep Fork Up-to-Date
+**2.2.7. Keep Fork Up-to-Date**
 
 If you need to make further updates, it's a good practice to keep your fork's main branch in sync with the upstream repository. Occasionally, press the "Sync Fork" button on your forked repository's main page to retrieve any updates to the original (upstream) repository.
 
 
 
-3. Frequently Asked Questions (FAQ)
+**3. Frequently Asked Questions (FAQ)**
 
 Q: I’ve already written tutorials for the community. Can I submit one of those?
 
